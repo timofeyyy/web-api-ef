@@ -1,0 +1,496 @@
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 15:44:53
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 15:56:28
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 15:58:52
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 16:05:31
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 16:08:35
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 16:23:34
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 16:45:02
+####################
+An error occurred using the connection to database '' on server 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:127.0.0.1,1433;Initial Catalog=master;Persist Security Info=False;User ID=Администратор;Password=dA54!&J9V0T9%X17@r!B7pOa!HonPnm2w$#11&s3UKWyHy&NQ@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;'.
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at EntityFrameworkCore.Jet.Data.JetStoreSchemaDefinition.JetStoreDatabaseHandling.ExpandFileName(String fileName)
+   at EntityFrameworkCore.Jet.Data.JetConnection.ExpandDatabaseFilePath(String connectionString, DbProviderFactory dataAccessProviderFactory)
+   at EntityFrameworkCore.Jet.Data.JetConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at EntityFrameworkCore.Jet.Storage.Internal.JetExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 16:47:03
+####################
+An error occurred using the connection to database '' on server 'Driver={SQL Server};Server=tcp:127.0.0.1,1433;Initial Catalog=master;Persist Security Info=False;User ID=Администратор;Password=dA54!&J9V0T9%X17@r!B7pOa!HonPnm2w$#11&s3UKWyHy&NQ@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;'.
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at EntityFrameworkCore.Jet.Data.JetStoreSchemaDefinition.JetStoreDatabaseHandling.ExpandFileName(String fileName)
+   at EntityFrameworkCore.Jet.Data.JetConnection.ExpandDatabaseFilePath(String connectionString, DbProviderFactory dataAccessProviderFactory)
+   at EntityFrameworkCore.Jet.Data.JetConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at EntityFrameworkCore.Jet.Storage.Internal.JetExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 16:47:33
+####################
+An error occurred using the connection to database '' on server 'Driver={SQL Server};Server=tcp:127.0.0.1,1433;Initial Catalog=master;Persist Security Info=False;User ID=Администратор;Password=dA54!&J9V0T9%X17@r!B7pOa!HonPnm2w$#11&s3UKWyHy&NQ@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;'.
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at EntityFrameworkCore.Jet.Data.JetStoreSchemaDefinition.JetStoreDatabaseHandling.ExpandFileName(String fileName)
+   at EntityFrameworkCore.Jet.Data.JetConnection.ExpandDatabaseFilePath(String connectionString, DbProviderFactory dataAccessProviderFactory)
+   at EntityFrameworkCore.Jet.Data.JetConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at EntityFrameworkCore.Jet.Storage.Internal.JetExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 16:49:45
+####################
+An error occurred using the connection to database '' on server 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:127.0.0.1,1433;Initial Catalog=master;Persist Security Info=False;User ID=Администратор;Password=dA54!&J9V0T9%X17@r!B7pOa!HonPnm2w$#11&s3UKWyHy&NQ@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;'.
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at EntityFrameworkCore.Jet.Data.JetStoreSchemaDefinition.JetStoreDatabaseHandling.ExpandFileName(String fileName)
+   at EntityFrameworkCore.Jet.Data.JetConnection.ExpandDatabaseFilePath(String connectionString, DbProviderFactory dataAccessProviderFactory)
+   at EntityFrameworkCore.Jet.Data.JetConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at EntityFrameworkCore.Jet.Storage.Internal.JetExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 16:50:09
+####################
+An error occurred using the connection to database '' on server 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:127.0.0.1,1433;Initial Catalog=master;Persist Security Info=False;User ID=Администратор;Password=dA54!&J9V0T9%X17@r!B7pOa!HonPnm2w$#11&s3UKWyHy&NQ@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;'.
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at EntityFrameworkCore.Jet.Data.JetStoreSchemaDefinition.JetStoreDatabaseHandling.ExpandFileName(String fileName)
+   at EntityFrameworkCore.Jet.Data.JetConnection.ExpandDatabaseFilePath(String connectionString, DbProviderFactory dataAccessProviderFactory)
+   at EntityFrameworkCore.Jet.Data.JetConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at EntityFrameworkCore.Jet.Storage.Internal.JetExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 16:53:59
+####################
+An error occurred using the connection to database '' on server 'Driver={ODBC Driver 18 for SQL Server};ODBC Driver 18 for SQL Server};Server=tcp:127.0.0.1,1433;Database=ComponentDB;Uid=Администратор;Pwd=dA54!&J9V0T9%X17@r!B7pOa!HonPnm2w$#11&s3UKWyHy&NQ@;Encrypt=yes;TrustServerCertificate=yes;Connection Timeout=30;'.
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
+   at EntityFrameworkCore.Jet.Data.JetStoreSchemaDefinition.JetStoreDatabaseHandling.ExpandFileName(String fileName)
+   at EntityFrameworkCore.Jet.Data.JetConnection.ExpandDatabaseFilePath(String connectionString, DbProviderFactory dataAccessProviderFactory)
+   at EntityFrameworkCore.Jet.Data.JetConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at EntityFrameworkCore.Jet.Storage.Internal.JetExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+Request: /api/microchips/bitdepthvalue2 13.02.2025 16:56:20
+####################
+An error occurred using the connection to database '' on server ''.
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+An error occurred using the connection to database 'master' on server 'tcp:127.0.0.1,1433'.
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'Администратор'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:5745ddbd-674d-4417-93cb-38c51f45875c
+Error Number:18456,State:1,Class:14
+####################
+An error occurred using the connection to database 'master' on server 'tcp:127.0.0.1,1433'.
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'Администратор'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:e79189b3-bf2a-4ce7-ad63-062aad672b79
+Error Number:18456,State:1,Class:14
+####################
+An error occurred using the connection to database 'master' on server 'tcp:127.0.0.1,1433'.
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'Администратор'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:12e13b02-5402-44bc-9557-1efc63b76fe1
+Error Number:18456,State:1,Class:14
+####################
+Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue1 14.02.2025 9:47:33
+####################
+Executed DbCommand (47ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+ORDER BY [m0].[ManufacturerName]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 9:48:11
+####################
+Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[BitDepthValue], [m0].[ManufacturerName]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+ORDER BY [m].[BitDepthValue]
+####################
+An error occurred using the connection to database 'master' on server 'tcp:127.0.0.1,1433'.
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.)
+ ---> System.ComponentModel.Win32Exception (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:10061,State:0,Class:20
+####################
+Executed DbCommand (111ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:10:16
+####################
+Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[BitDepthValue], [m0].[ManufacturerName]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+ORDER BY [m].[BitDepthValue]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:10:23
+####################
+Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[BitDepthValue], [m0].[ManufacturerName]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+ORDER BY [m].[BitDepthValue]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:18:07
+####################
+Executed DbCommand (56ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:18:59
+####################
+Executed DbCommand (34ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:19:32
+####################
+Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue1 14.02.2025 23:19:40
+####################
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:32:48
+####################
+Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s0].[BitDepthValue], [s0].[ID], [s0].[ID0]
+FROM (
+    SELECT [m0].[ManufacturerName]
+    FROM [Microchips] AS [m]
+    INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    GROUP BY [m0].[ManufacturerName]
+) AS [s]
+LEFT JOIN (
+    SELECT [m1].[BitDepthValue], [m1].[ID], [m2].[ID] AS [ID0], [m2].[ManufacturerName]
+    FROM [Microchips] AS [m1]
+    INNER JOIN [Manufacturers] AS [m2] ON [m1].[ManufacturerName_ID] = [m2].[ID]
+) AS [s0] ON [s].[ManufacturerName] = [s0].[ManufacturerName]
+ORDER BY [s].[ManufacturerName], [s0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:50:03
+####################
+Executed DbCommand (43ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:50:43
+####################
+Executed DbCommand (97ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:50:53
+####################
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:51:16
+####################
+Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:51:32
+####################
+Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:52:04
+####################
+Executed DbCommand (263ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:52:34
+####################
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:52:47
+####################
+Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:52:52
+####################
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:54:41
+####################
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 14.02.2025 23:55:16
+####################
+Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 15.02.2025 0:11:53
+####################
+Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 15.02.2025 0:17:32
+####################
+Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 15.02.2025 0:17:48
+####################
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 15.02.2025 0:17:55
+####################
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 15.02.2025 0:18:11
+####################
+Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 15.02.2025 0:19:14
+####################
+Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
