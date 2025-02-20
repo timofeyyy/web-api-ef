@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Numerics;
+using System.Text.Json.Serialization;
 
 namespace app.Entities
 {
@@ -11,11 +12,16 @@ namespace app.Entities
  
         [StringLength(450)]
         public string ComponentName { get; set; }
-        public ComponentTypes? Type_ { get; set; }
-        public ComponentKinds? Kind_ { get; set; }
-        public Manufacturers? ManufacturerName_ { get; set; }
-        
-        public double? MaxPermissibleDCVoltage { get; set; }
+		public int? Type_ID { get; set; }
+		[JsonIgnore]
+		public ComponentTypes Type { get; set; }
+		public int? Kind_ID { get; set; }
+		[JsonIgnore]
+		public ComponentKinds Kind { get; set; }
+		public int? ManufacturerName_ID { get; set; }
+		[JsonIgnore]
+		public Manufacturers Manufacturer { get; set; }
+		public double? MaxPermissibleDCVoltage { get; set; }
         public double? MinOperatingTemperature { get; set; }
         public double? MaxOperatingTemperature { get; set; }
         public double? MaxPermissibleAverageDirectCurrent { get; set; }

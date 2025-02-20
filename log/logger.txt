@@ -1,496 +1,317 @@
 ####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 15:44:53
+Request: /api/transistors 20.02.2025 10:16:12
 ####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 15:56:28
-####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 15:58:52
-####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 16:05:31
-####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 16:08:35
-####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 16:23:34
-####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 16:45:02
-####################
-An error occurred using the connection to database '' on server 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:127.0.0.1,1433;Initial Catalog=master;Persist Security Info=False;User ID=Администратор;Password=dA54!&J9V0T9%X17@r!B7pOa!HonPnm2w$#11&s3UKWyHy&NQ@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;'.
+Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID]
+FROM [Transistors] AS [t]
 ####################
 An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
-System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
-   at EntityFrameworkCore.Jet.Data.JetStoreSchemaDefinition.JetStoreDatabaseHandling.ExpandFileName(String fileName)
-   at EntityFrameworkCore.Jet.Data.JetConnection.ExpandDatabaseFilePath(String connectionString, DbProviderFactory dataAccessProviderFactory)
-   at EntityFrameworkCore.Jet.Data.JetConnection.Open()
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
-   at EntityFrameworkCore.Jet.Storage.Internal.JetExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at lambda_method34(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
    at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
 ####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 16:47:03
+Request: /api/transistors 20.02.2025 10:17:57
 ####################
-An error occurred using the connection to database '' on server 'Driver={SQL Server};Server=tcp:127.0.0.1,1433;Initial Catalog=master;Persist Security Info=False;User ID=Администратор;Password=dA54!&J9V0T9%X17@r!B7pOa!HonPnm2w$#11&s3UKWyHy&NQ@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;'.
+Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID]
+FROM [Transistors] AS [t]
 ####################
 An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
-System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
-   at EntityFrameworkCore.Jet.Data.JetStoreSchemaDefinition.JetStoreDatabaseHandling.ExpandFileName(String fileName)
-   at EntityFrameworkCore.Jet.Data.JetConnection.ExpandDatabaseFilePath(String connectionString, DbProviderFactory dataAccessProviderFactory)
-   at EntityFrameworkCore.Jet.Data.JetConnection.Open()
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
-   at EntityFrameworkCore.Jet.Storage.Internal.JetExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at lambda_method24(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
    at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
 ####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 16:47:33
+Request: /api/transistors 20.02.2025 10:24:02
 ####################
-An error occurred using the connection to database '' on server 'Driver={SQL Server};Server=tcp:127.0.0.1,1433;Initial Catalog=master;Persist Security Info=False;User ID=Администратор;Password=dA54!&J9V0T9%X17@r!B7pOa!HonPnm2w$#11&s3UKWyHy&NQ@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;'.
+Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID]
+FROM [Transistors] AS [t]
 ####################
 An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
-System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
-   at EntityFrameworkCore.Jet.Data.JetStoreSchemaDefinition.JetStoreDatabaseHandling.ExpandFileName(String fileName)
-   at EntityFrameworkCore.Jet.Data.JetConnection.ExpandDatabaseFilePath(String connectionString, DbProviderFactory dataAccessProviderFactory)
-   at EntityFrameworkCore.Jet.Data.JetConnection.Open()
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
-   at EntityFrameworkCore.Jet.Storage.Internal.JetExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt32(Int32 i)
+   at lambda_method34(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
    at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
 ####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 16:49:45
+Request: /api/transistors 20.02.2025 10:30:26
 ####################
-An error occurred using the connection to database '' on server 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:127.0.0.1,1433;Initial Catalog=master;Persist Security Info=False;User ID=Администратор;Password=dA54!&J9V0T9%X17@r!B7pOa!HonPnm2w$#11&s3UKWyHy&NQ@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;'.
+Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID]
+FROM [Transistors] AS [t]
 ####################
-An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
-System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
-   at EntityFrameworkCore.Jet.Data.JetStoreSchemaDefinition.JetStoreDatabaseHandling.ExpandFileName(String fileName)
-   at EntityFrameworkCore.Jet.Data.JetConnection.ExpandDatabaseFilePath(String connectionString, DbProviderFactory dataAccessProviderFactory)
-   at EntityFrameworkCore.Jet.Data.JetConnection.Open()
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
-   at EntityFrameworkCore.Jet.Storage.Internal.JetExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+Request: /api/transistors 20.02.2025 10:39:16
 ####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 16:50:09
+Executed DbCommand (40ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID]
+FROM [Transistors] AS [t]
 ####################
-An error occurred using the connection to database '' on server 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:127.0.0.1,1433;Initial Catalog=master;Persist Security Info=False;User ID=Администратор;Password=dA54!&J9V0T9%X17@r!B7pOa!HonPnm2w$#11&s3UKWyHy&NQ@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;'.
+Request: /api/transistors 20.02.2025 10:41:03
 ####################
-An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
-System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
-   at EntityFrameworkCore.Jet.Data.JetStoreSchemaDefinition.JetStoreDatabaseHandling.ExpandFileName(String fileName)
-   at EntityFrameworkCore.Jet.Data.JetConnection.ExpandDatabaseFilePath(String connectionString, DbProviderFactory dataAccessProviderFactory)
-   at EntityFrameworkCore.Jet.Data.JetConnection.Open()
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
-   at EntityFrameworkCore.Jet.Storage.Internal.JetExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID]
+FROM [Transistors] AS [t]
 ####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 16:53:59
+Request: /api/resistors 20.02.2025 10:48:29
 ####################
-An error occurred using the connection to database '' on server 'Driver={ODBC Driver 18 for SQL Server};ODBC Driver 18 for SQL Server};Server=tcp:127.0.0.1,1433;Database=ComponentDB;Uid=Администратор;Pwd=dA54!&J9V0T9%X17@r!B7pOa!HonPnm2w$#11&s3UKWyHy&NQ@;Encrypt=yes;TrustServerCertificate=yes;Connection Timeout=30;'.
+Executed DbCommand (31ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID]
+FROM [Resistors] AS [r]
 ####################
-An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
-System.ArgumentNullException: Value cannot be null. (Parameter 'fileName')
-   at EntityFrameworkCore.Jet.Data.JetStoreSchemaDefinition.JetStoreDatabaseHandling.ExpandFileName(String fileName)
-   at EntityFrameworkCore.Jet.Data.JetConnection.ExpandDatabaseFilePath(String connectionString, DbProviderFactory dataAccessProviderFactory)
-   at EntityFrameworkCore.Jet.Data.JetConnection.Open()
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
-   at EntityFrameworkCore.Jet.Storage.Internal.JetExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+Request: /api/transistors 20.02.2025 10:48:38
 ####################
-Request: /api/microchips/bitdepthvalue2 13.02.2025 16:56:20
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID]
+FROM [Transistors] AS [t]
 ####################
-An error occurred using the connection to database '' on server ''.
+Request: /api/resistors 20.02.2025 10:54:30
 ####################
-An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
-System.InvalidOperationException: The ConnectionString property has not been initialized.
-   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
-   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
-   at Microsoft.Data.SqlClient.SqlConnection.Open()
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID]
+FROM [Resistors] AS [r]
 ####################
-An error occurred using the connection to database 'master' on server 'tcp:127.0.0.1,1433'.
+Request: /api/transistors 20.02.2025 10:54:38
 ####################
-An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
-Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'Администратор'.
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
-   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
-   at Microsoft.Data.SqlClient.SqlConnection.Open()
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
-ClientConnectionId:5745ddbd-674d-4417-93cb-38c51f45875c
-Error Number:18456,State:1,Class:14
+Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID]
+FROM [Transistors] AS [t]
 ####################
-An error occurred using the connection to database 'master' on server 'tcp:127.0.0.1,1433'.
+Request: /api/diods 20.02.2025 10:54:50
 ####################
-An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
-Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'Администратор'.
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
-   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
-   at Microsoft.Data.SqlClient.SqlConnection.Open()
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
-ClientConnectionId:e79189b3-bf2a-4ce7-ad63-062aad672b79
-Error Number:18456,State:1,Class:14
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID]
+FROM [Diods] AS [d]
 ####################
-An error occurred using the connection to database 'master' on server 'tcp:127.0.0.1,1433'.
+Request: /api/microchips 20.02.2025 10:55:01
 ####################
-An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
-Microsoft.Data.SqlClient.SqlException (0x80131904): Login failed for user 'Администратор'.
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
-   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
-   at Microsoft.Data.SqlClient.SqlConnection.Open()
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
-ClientConnectionId:12e13b02-5402-44bc-9557-1efc63b76fe1
-Error Number:18456,State:1,Class:14
-####################
-Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID]
 FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
 ####################
-Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+Request: /api/capacitors 20.02.2025 10:55:11
 ####################
-Request: /api/microchips/bitdepthvalue1 14.02.2025 9:47:33
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID]
+FROM [Capacitors] AS [c]
 ####################
-Executed DbCommand (47ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
-ORDER BY [m0].[ManufacturerName]
-####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 9:48:11
-####################
-Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m].[BitDepthValue], [m0].[ManufacturerName]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
-ORDER BY [m].[BitDepthValue]
-####################
-An error occurred using the connection to database 'master' on server 'tcp:127.0.0.1,1433'.
-####################
-An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
-Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.)
- ---> System.ComponentModel.Win32Exception (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
-   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
-   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
-   at Microsoft.Data.SqlClient.SqlConnection.Open()
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
-ClientConnectionId:00000000-0000-0000-0000-000000000000
-Error Number:10061,State:0,Class:20
-####################
-Executed DbCommand (111ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
-####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:10:16
-####################
-Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m].[BitDepthValue], [m0].[ManufacturerName]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
-ORDER BY [m].[BitDepthValue]
-####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:10:23
-####################
-Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m].[BitDepthValue], [m0].[ManufacturerName]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
-ORDER BY [m].[BitDepthValue]
-####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:18:07
-####################
-Executed DbCommand (56ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
-####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:18:59
-####################
-Executed DbCommand (34ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
-####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:19:32
+Request: /api/microchips/bitdepthvalue 20.02.2025 10:55:19
 ####################
 Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
 FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
 ####################
-Request: /api/microchips/bitdepthvalue1 14.02.2025 23:19:40
+Request: /api/microchips/bitdepthvalue/b/64 20.02.2025 10:55:34
 ####################
-Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+Executed DbCommand (138ms) [Parameters=[@__value_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
 SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
 FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m].[BitDepthValue] = @__value_0
 ####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:32:48
+Request: /api/microchips/bitdepthvalue/m/%D0%90%D0%9E%20%D0%9D%D0%9F%D0%A6%20%D0%AD%D0%9B%D0%92%D0%98%D0%A1 20.02.2025 10:55:55
 ####################
-Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [s].[ManufacturerName], [s0].[BitDepthValue], [s0].[ID], [s0].[ID0]
-FROM (
-    SELECT [m0].[ManufacturerName]
-    FROM [Microchips] AS [m]
-    INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
-    GROUP BY [m0].[ManufacturerName]
-) AS [s]
-LEFT JOIN (
-    SELECT [m1].[BitDepthValue], [m1].[ID], [m2].[ID] AS [ID0], [m2].[ManufacturerName]
-    FROM [Microchips] AS [m1]
-    INNER JOIN [Manufacturers] AS [m2] ON [m1].[ManufacturerName_ID] = [m2].[ID]
-) AS [s0] ON [s].[ManufacturerName] = [s0].[ManufacturerName]
-ORDER BY [s].[ManufacturerName], [s0].[ID]
-####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:50:03
-####################
-Executed DbCommand (43ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+Executed DbCommand (8ms) [Parameters=[@__value_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
 SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
 FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m0].[ManufacturerName] = @__value_0
 ####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:50:43
+Request: /api/microchips/bitdepthvalue/%D0%90%D0%9E%20%D0%9D%D0%9F%D0%A6%20%D0%AD%D0%9B%D0%92%D0%98%D0%A1/64 20.02.2025 10:56:10
 ####################
-Executed DbCommand (97ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+Executed DbCommand (8ms) [Parameters=[@__manufacturername_0='?' (Size = 450), @__bitdepthvalue_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
 SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
 FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m0].[ManufacturerName] = @__manufacturername_0 AND [m].[BitDepthValue] = @__bitdepthvalue_1
 ####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:50:53
+Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
 ####################
-Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
-####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:51:16
+Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
 ####################
 Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
 ####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:51:32
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
 ####################
-Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
 ####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:52:04
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
 ####################
-Executed DbCommand (263ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
 ####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:52:34
+Applying migration '20241202152141_init'.
 ####################
-Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+Failed executing DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [ComponentKinds] (
+    [ID] int NOT NULL IDENTITY,
+    [RuComponentKind] nvarchar(450) NOT NULL,
+    [EnComponentKind] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_ComponentKinds] PRIMARY KEY ([ID])
+);
 ####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:52:47
+Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
 ####################
-Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
 ####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:52:52
+Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
 ####################
-Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
 ####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:54:41
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
 ####################
-Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
 ####################
-Request: /api/microchips/bitdepthvalue 14.02.2025 23:55:16
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
 ####################
-Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+Applying migration '20241202152141_init'.
 ####################
-Request: /api/microchips/bitdepthvalue 15.02.2025 0:11:53
+Failed executing DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [ComponentKinds] (
+    [ID] int NOT NULL IDENTITY,
+    [RuComponentKind] nvarchar(450) NOT NULL,
+    [EnComponentKind] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_ComponentKinds] PRIMARY KEY ([ID])
+);
 ####################
 Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+SELECT 1
 ####################
-Request: /api/microchips/bitdepthvalue 15.02.2025 0:17:32
+Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
 ####################
-Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
 ####################
-Request: /api/microchips/bitdepthvalue 15.02.2025 0:17:48
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
 ####################
 Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
-####################
-Request: /api/microchips/bitdepthvalue 15.02.2025 0:17:55
+SELECT 1
 ####################
 Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+####################
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+####################
+Applying migration '20241202152141_init'.
+####################
+Failed executing DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [ComponentKinds] (
+    [ID] int NOT NULL IDENTITY,
+    [RuComponentKind] nvarchar(450) NOT NULL,
+    [EnComponentKind] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_ComponentKinds] PRIMARY KEY ([ID])
+);
+####################
+Request: /api/resistors 20.02.2025 16:21:06
+####################
+Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID]
+FROM [Resistors] AS [r]
+####################
+Request: /api/transistors 20.02.2025 16:21:16
+####################
+Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID]
+FROM [Transistors] AS [t]
+####################
+Request: /api/diods 20.02.2025 16:21:44
+####################
+Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID]
+FROM [Diods] AS [d]
+####################
+Request: /api/microchips 20.02.2025 16:22:08
+####################
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID]
 FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
 ####################
-Request: /api/microchips/bitdepthvalue 15.02.2025 0:18:11
+Request: /api/capacitors 20.02.2025 16:22:40
 ####################
-Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
-FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID]
+FROM [Capacitors] AS [c]
 ####################
-Request: /api/microchips/bitdepthvalue 15.02.2025 0:19:14
+Request: /api/microchips/bitdepthvalue 20.02.2025 16:23:08
 ####################
 Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
 FROM [Microchips] AS [m]
-INNER JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue/b/64 20.02.2025 16:23:25
+####################
+Executed DbCommand (27ms) [Parameters=[@__value_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m].[BitDepthValue] = @__value_0
+####################
+Request: /api/microchips/bitdepthvalue/m/Teledyne%20e2v 20.02.2025 16:23:47
+####################
+Executed DbCommand (9ms) [Parameters=[@__value_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m0].[ManufacturerName] = @__value_0
+####################
+Request: /api/microchips/bitdepthvalue/Teledyne%20e2v/32 20.02.2025 16:24:03
+####################
+Executed DbCommand (8ms) [Parameters=[@__manufacturername_0='?' (Size = 450), @__bitdepthvalue_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m0].[ManufacturerName] = @__manufacturername_0 AND [m].[BitDepthValue] = @__bitdepthvalue_1

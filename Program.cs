@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
 //строка подключений
 var builder = WebApplication.CreateBuilder(args);
@@ -116,11 +117,47 @@ app.MapGet("/api/microchips/bitdepthvalue", async (DataBase db, HttpContext cont
 {
 	var response = context.Response;
 	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
-	var items = db.Microchips.Select(m => new { m.ManufacturerName_.ManufacturerName, m.BitDepthValue }).ToList();
+	var items = db.Microchips.Select(m => new { m.Manufacturer.ManufacturerName, m.BitDepthValue }).ToList();
 	response.ContentType = "application/json";
 	await response.WriteAsJsonAsync(items);
 });
 
+app.MapGet("/api/microchips/bitdepthvalue/b/{value}", async (DataBase db, HttpContext context, string value) =>
+{
+	//Console.WriteLine($"{context.Request.Query["manufacturername"].IsNullOrEmpty()}");
+	//Console.WriteLine($"{context.Request.Query["bitdepthvalue"].IsNullOrEmpty()}");
+
+	var response = context.Response;
+	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
+	var items = db.Microchips.Select(m => new { m.Manufacturer.ManufacturerName, m.BitDepthValue }).Where(m => m.BitDepthValue == value).ToList();
+	response.ContentType = "application/json";
+	await response.WriteAsJsonAsync(items);
+});
+
+app.MapGet("/api/microchips/bitdepthvalue/m/{value}", async (DataBase db, HttpContext context, string value) =>
+{
+	//Console.WriteLine($"{context.Request.Query["manufacturername"].IsNullOrEmpty()}");
+	//Console.WriteLine($"{context.Request.Query["bitdepthvalue"].IsNullOrEmpty()}");
+	
+	var response = context.Response;
+	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
+	var items = db.Microchips.Select(m => new { m.Manufacturer.ManufacturerName, m.BitDepthValue }).Where(m => m.ManufacturerName == value).ToList();
+	response.ContentType = "application/json";
+	await response.WriteAsJsonAsync(items);
+});
+
+app.MapGet("/api/microchips/bitdepthvalue/{manufacturername}/{bitdepthvalue}", async (DataBase db, HttpContext context, string manufacturername, string bitdepthvalue) =>
+{
+	//Console.WriteLine($"{context.Request.Query["manufacturername"].IsNullOrEmpty()}");
+	//Console.WriteLine($"{context.Request.Query["bitdepthvalue"].IsNullOrEmpty()}");
+	Console.WriteLine(manufacturername);
+	Console.WriteLine(bitdepthvalue);
+	var response = context.Response;
+	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
+	var items = db.Microchips.Select(m => new { m.Manufacturer.ManufacturerName, m.BitDepthValue }).Where(m => m.ManufacturerName == manufacturername && m.BitDepthValue == bitdepthvalue).ToList();
+	response.ContentType = "application/json";
+	await response.WriteAsJsonAsync(items);
+});
 
 
 //async Task TestSQL(DataBase db, HttpContext context) {

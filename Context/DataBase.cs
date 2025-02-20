@@ -1,6 +1,7 @@
 ﻿using app.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.Diagnostics;
 using System.Globalization;
 
 namespace app.Context
@@ -188,9 +189,8 @@ namespace app.Context
                 v => v,
                 v => v != null ? (double)v : null
             );
-             
-          
-            modelBuilder.Entity<Resistors>()
+
+			modelBuilder.Entity<Resistors>()
            .Property(p => p.DocID)
            .HasColumnType("bigint");
 
@@ -335,6 +335,87 @@ namespace app.Context
                 v => v,
                 v => v != null ? (double)v : null
            );
-        }
+
+			modelBuilder.Entity<Transistors>()
+	       .HasOne(t => t.Kind)
+	       .WithMany(k => k.Transistors)
+	       .HasForeignKey(t => t.Kind_ID);
+
+
+			modelBuilder.Entity<Transistors>()
+		   .HasOne(t => t.Type)
+		   .WithMany(t => t.Transistors)
+		   .HasForeignKey(t => t.Type_ID);
+
+			modelBuilder.Entity<Transistors>()
+		   .HasOne(t => t.Manufacturer)
+		   .WithMany(m => m.Transistors)
+		   .HasForeignKey(t => t.ManufacturerName_ID);
+
+			modelBuilder.Entity<Resistors>()
+		   .HasOne(t => t.Kind)
+		   .WithMany(k => k.Resistors)
+		   .HasForeignKey(t => t.Kind_ID);
+
+			modelBuilder.Entity<Resistors>()
+		   .HasOne(t => t.Type)
+		   .WithMany(t => t.Resistors)
+		   .HasForeignKey(t => t.Type_ID);
+
+			modelBuilder.Entity<Resistors>()
+		   .HasOne(t => t.Manufacturer)
+		   .WithMany(m => m.Resistors)
+		   .HasForeignKey(t => t.ManufacturerName_ID);
+
+			modelBuilder.Entity<Diods>()
+		   .HasOne(t => t.Kind)
+		   .WithMany(k => k.Diods)
+		   .HasForeignKey(t => t.Kind_ID);
+
+			modelBuilder.Entity<Diods>()
+		   .HasOne(t => t.Type)
+		   .WithMany(t => t.Diods)
+		   .HasForeignKey(t => t.Type_ID);
+
+			modelBuilder.Entity<Diods>()
+		   .HasOne(t => t.Manufacturer)
+		   .WithMany(m => m.Diods)
+		   .HasForeignKey(t => t.ManufacturerName_ID);
+
+			modelBuilder.Entity<Microchips>()
+		   .HasOne(t => t.Kind)
+		   .WithMany(k => k.Microchips)
+		   .HasForeignKey(t => t.Kind_ID);
+
+			modelBuilder.Entity<Microchips>()
+		   .HasOne(t => t.Type)
+		   .WithMany(t => t.Microchips)
+		   .HasForeignKey(t => t.Type_ID);
+
+			modelBuilder.Entity<Microchips>()
+		   .HasOne(t => t.Manufacturer)
+		   .WithMany(m => m.Microchips)
+		   .HasForeignKey(t => t.ManufacturerName_ID);
+
+			modelBuilder.Entity<Microchips>()
+		   .HasOne(t => t.Technology)
+		   .WithMany(m => m.Microchips)
+		   .HasForeignKey(t => t.TechnologyName_ID);
+
+			modelBuilder.Entity<Capacitors>()
+		   .HasOne(t => t.Kind)
+		   .WithMany(k => k.Capacitors)
+		   .HasForeignKey(t => t.Kind_ID);
+
+			modelBuilder.Entity<Capacitors>()
+		   .HasOne(t => t.Type)
+		   .WithMany(t => t.Capacitors)
+		   .HasForeignKey(t => t.Type_ID);
+
+			modelBuilder.Entity<Capacitors>()
+		   .HasOne(t => t.Manufacturer)
+		   .WithMany(m => m.Capacitors)
+		   .HasForeignKey(t => t.ManufacturerName_ID);
+		}
 	}
 }
