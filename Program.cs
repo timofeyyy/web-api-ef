@@ -120,7 +120,7 @@ app.MapGet("/api/microchips/bitdepthvalue", async (DataBase db, HttpContext cont
 
 	var response = context.Response;
 	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
-	var items = db.Microchips.Select(m => new { m.Manufacturer.ManufacturerName, m.BitDepthValue });
+	var items = db.Microchips.Select(m => new { m.Manufacturer.ManufacturerName, m.BitDepthValue, m.ComponentName });
 	if(!manufacturername.IsNullOrEmpty())
 	{
 		items = items.Where(m => m.ManufacturerName == manufacturername);

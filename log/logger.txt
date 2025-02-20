@@ -400,3 +400,10 @@ SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
 FROM [Microchips] AS [m]
 LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
 WHERE [m0].[ManufacturerName] = @__manufacturername_0
+####################
+Request: /api/microchips/bitdepthvalue 20.02.2025 20:40:30
+####################
+Executed DbCommand (44ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue], [m].[ComponentName]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
