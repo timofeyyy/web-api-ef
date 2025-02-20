@@ -315,3 +315,88 @@ SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
 FROM [Microchips] AS [m]
 LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
 WHERE [m0].[ManufacturerName] = @__manufacturername_0 AND [m].[BitDepthValue] = @__bitdepthvalue_1
+####################
+Request: /api/microchips/bitdepthvalue 20.02.2025 18:41:15
+####################
+Executed DbCommand (57ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue/m/w%20s 20.02.2025 18:42:44
+####################
+Executed DbCommand (83ms) [Parameters=[@__value_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m0].[ManufacturerName] = @__value_0
+####################
+Request: /api/microchips/bitdepthvalue 20.02.2025 18:43:02
+####################
+Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m].[BitDepthValue] IS NULL
+####################
+Request: /api/microchips/bitdepthvalue 20.02.2025 18:43:45
+####################
+Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue/m/%D0%9E%D0%90%D0%9E%20%D0%98%D0%9D%D0%A2%D0%95%D0%93%D0%A0%D0%90%D0%9B 20.02.2025 18:44:14
+####################
+Executed DbCommand (12ms) [Parameters=[@__value_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m0].[ManufacturerName] = @__value_0
+####################
+Request: /api/microchips/bitdepthvalue/m/%D0%9E%D0%90%D0%9E%20%D0%98%D0%9D%D0%A2%D0%95%D0%93%D0%A0%D0%90%D0%9B 20.02.2025 18:44:48
+####################
+Executed DbCommand (5ms) [Parameters=[@__value_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m0].[ManufacturerName] = @__value_0
+####################
+Request: /api/microchips/bitdepthvalue 20.02.2025 18:44:59
+####################
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+####################
+Request: /api/microchips/bitdepthvalue 20.02.2025 18:45:06
+####################
+Executed DbCommand (5ms) [Parameters=[@__manufacturername_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m0].[ManufacturerName] = @__manufacturername_0
+####################
+Request: /api/microchips/bitdepthvalue 20.02.2025 18:45:15
+####################
+Executed DbCommand (8ms) [Parameters=[@__manufacturername_0='?' (Size = 450), @__bitdepthvalue_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m0].[ManufacturerName] = @__manufacturername_0 AND [m].[BitDepthValue] = @__bitdepthvalue_1
+####################
+Request: /api/microchips/bitdepthvalue 20.02.2025 18:45:19
+####################
+Executed DbCommand (4ms) [Parameters=[@__manufacturername_0='?' (Size = 450), @__bitdepthvalue_1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m0].[ManufacturerName] = @__manufacturername_0 AND [m].[BitDepthValue] = @__bitdepthvalue_1
+####################
+Request: /api/microchips/bitdepthvalue 20.02.2025 18:45:21
+####################
+Executed DbCommand (4ms) [Parameters=[@__manufacturername_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+WHERE [m0].[ManufacturerName] = @__manufacturername_0

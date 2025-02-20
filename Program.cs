@@ -115,11 +115,22 @@ app.MapGet("/api/capacitors", async (DataBase db, HttpContext context) =>
 
 app.MapGet("/api/microchips/bitdepthvalue", async (DataBase db, HttpContext context) =>
 {
+	string manufacturername = context.Request.Query["m"];
+	string bitdepthvalue = context.Request.Query["b"];
+
 	var response = context.Response;
 	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
-	var items = db.Microchips.Select(m => new { m.Manufacturer.ManufacturerName, m.BitDepthValue }).ToList();
+	var items = db.Microchips.Select(m => new { m.Manufacturer.ManufacturerName, m.BitDepthValue });
+	if(!manufacturername.IsNullOrEmpty())
+	{
+		items = items.Where(m => m.ManufacturerName == manufacturername);
+	}
+	if(!bitdepthvalue.IsNullOrEmpty())
+	{
+		items = items.Where(m => m.BitDepthValue == bitdepthvalue);
+	}
 	response.ContentType = "application/json";
-	await response.WriteAsJsonAsync(items);
+	await response.WriteAsJsonAsync(items.ToList());
 });
 
 app.MapGet("/api/microchips/bitdepthvalue/b/{value}", async (DataBase db, HttpContext context, string value) =>
