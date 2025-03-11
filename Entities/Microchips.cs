@@ -6,6 +6,8 @@ namespace app.Entities
 {
     public class Microchips
     {
+        static public string Name { get { return "microchips"; } }
+
         [Key]
         public int ID { get; set; }
         public long? DocID { get; set; }

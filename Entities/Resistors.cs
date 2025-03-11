@@ -6,7 +6,9 @@ namespace app.Entities
 {
     public class Resistors
     {
-        [Key]
+		static public string Name { get { return "resistors"; } }
+
+		[Key]
         public int ID { get; set; }
         public long? DocID { get; set; }
  
