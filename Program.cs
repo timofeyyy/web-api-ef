@@ -68,25 +68,25 @@ app.MapGet("/", (HttpContext context) =>
     //await TestSQL(context);
 });
 
-app.MapGet("/api/componentTypes", async (DataBase db, HttpContext context) =>
-{
-	var response = context.Response;
-	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
-	var items = db.ComponentTypes.ToList();
-	response.ContentType = "application/json";
-	await response.WriteAsJsonAsync(items);
-});
+//app.MapGet("/api/componentTypes", async (DataBase db, HttpContext context) =>
+//{
+//	var response = context.Response;
+//	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
+//	var items = db.ComponentTypes.ToList();
+//	response.ContentType = "application/json";
+//	await response.WriteAsJsonAsync(items);
+//});
 
-app.MapGet("/api/componentKinds", async (DataBase db, HttpContext context) =>
-{
-	var response = context.Response;
-	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
-	var items = db.ComponentKinds.ToList();
-	response.ContentType = "application/json";
-	await response.WriteAsJsonAsync(items);
-});
+//app.MapGet("/api/componentKinds", async (DataBase db, HttpContext context) =>
+//{
+//	var response = context.Response;
+//	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
+//	var items = db.ComponentKinds.ToList();
+//	response.ContentType = "application/json";
+//	await response.WriteAsJsonAsync(items);
+//});
 
-app.MapGet("/api/test", async (DataBase db, HttpContext context) =>
+app.MapGet("/api/components", async (DataBase db, HttpContext context, string? componentType, string? componentKind, string? manufacturerName) =>
 {
 	var response = context.Response;
 	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
@@ -112,16 +112,16 @@ app.MapGet("/api/test", async (DataBase db, HttpContext context) =>
 			t.Type.EnComponentType,
 			t.ComponentName
 		}))
-	//.Concat(db.Resistors
-	//	.Select(r => new
-	//	{
-	//		r.Manufacturer.ManufacturerName,
-	//		r.Kind.RuComponentKind,
-	//		r.Kind.EnComponentKind,
-	//		r.Type.RuComponentType,
-	//		r.Type.EnComponentType,
-	//		r.ComponentName
-	//	}))
+	.Concat(db.Resistors
+		.Select(r => new
+		{
+			r.Manufacturer.ManufacturerName,
+			r.Kind.RuComponentKind,
+			r.Kind.EnComponentKind,
+			r.Type.RuComponentType,
+			r.Type.EnComponentType,
+			r.ComponentName
+		}))
 	.Concat(db.Capacitors
 		.Select(ca => new
 		{
@@ -141,56 +141,69 @@ app.MapGet("/api/test", async (DataBase db, HttpContext context) =>
 			d.Type.RuComponentType,
 			d.Type.EnComponentType,
 			d.ComponentName
-		}))
-	.ToList();
+		}));
+
+	if (componentType != null)
+	{
+		items = items.Where(t => t.RuComponentType == componentType );
+	}
+	if (componentKind != null)
+	{
+		items = items.Where(t => t.RuComponentKind == componentKind);
+	}
+	if (manufacturerName != null)
+	{
+		items = items.Where(t => t.ManufacturerName == manufacturerName);
+	}
+	
+	items.ToList();
 
 	response.ContentType = "application/json";
 	await response.WriteAsJsonAsync(items);
 });
 
 
-app.MapGet("/api/options", async (DataBase db, HttpContext context) =>
-{
-	var response = context.Response;
-	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
-	var items = 
-	db.Microchips
-	.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName })
-	.GroupBy(m => m.ManufacturerName)
-	//.Union(db.Transistors.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
-	//.Union(db.Resistors.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
-	//.Union(db.Capacitors.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
-	//.Union(db.Diods.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
-	.ToList();
-	response.ContentType = "application/json";
-	await response.WriteAsJsonAsync(items);
-});
+//app.MapGet("/api/options", async (DataBase db, HttpContext context) =>
+//{
+//	var response = context.Response;
+//	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
+//	var items = 
+//	db.Microchips
+//	.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName })
+//	.GroupBy(m => m.ManufacturerName)
+//	//.Union(db.Transistors.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
+//	//.Union(db.Resistors.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
+//	//.Union(db.Capacitors.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
+//	//.Union(db.Diods.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
+//	.ToList();
+//	response.ContentType = "application/json";
+//	await response.WriteAsJsonAsync(items);
+//});
 
-app.MapGet("/api/componentNames", async (DataBase db, HttpContext context) =>
-{
-	var response = context.Response;
-	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
-	var items = db.Microchips
-	.Select(m => new {m.ComponentName })
-	.Union(db.Capacitors.Select(m => new { m.ComponentName, }))
-	.Union(db.Resistors.Select(m => new { m.ComponentName }))
-	.Union(db.Transistors.Select(m => new { m.ComponentName }))
-	.Union(db.Diods.Select(m => new { m.ComponentName }))
-	.ToList();
-	response.ContentType = "application/json";
-	await response.WriteAsJsonAsync(items);
-});
+//app.MapGet("/api/componentNames", async (DataBase db, HttpContext context) =>
+//{
+//	var response = context.Response;
+//	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
+//	var items = db.Microchips
+//	.Select(m => new {m.ComponentName })
+//	.Union(db.Capacitors.Select(m => new { m.ComponentName, }))
+//	.Union(db.Resistors.Select(m => new { m.ComponentName }))
+//	.Union(db.Transistors.Select(m => new { m.ComponentName }))
+//	.Union(db.Diods.Select(m => new { m.ComponentName }))
+//	.ToList();
+//	response.ContentType = "application/json";
+//	await response.WriteAsJsonAsync(items);
+//});
 
-app.MapGet("/api/manufacturers", async (DataBase db, HttpContext context) =>
-{
-	var response = context.Response;
-	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
-	var items = db.Manufacturers.Select(m => new { m.ManufacturerName }).ToList();
+//app.MapGet("/api/manufacturers", async (DataBase db, HttpContext context) =>
+//{
+//	var response = context.Response;
+//	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
+//	var items = db.Manufacturers.Select(m => new { m.ManufacturerName }).ToList();
 
-	response.ContentType = "application/json";
-	await response.WriteAsJsonAsync(items);
-});
-
+//	response.ContentType = "application/json";
+//	await response.WriteAsJsonAsync(items);
+//});
 
 app.MapGet("/api/resistors", async (DataBase db, HttpContext context) =>
 {
@@ -382,6 +395,40 @@ app.MapGet("/api/microchips/bitdepthvalue", async (DataBase db, HttpContext cont
 	response.ContentType = "application/json";
 	await response.WriteAsJsonAsync(items.ToList());
 });
+
+//app.MapGet("/api/manufacturerstatistic", async (DataBase db, HttpContext context) =>
+//{
+//	var response = context.Response;
+//	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
+//	var items =
+//	db.Microchips
+//	.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName })
+//	.GroupBy(m => m.ManufacturerName)
+//	//.Union(db.Transistors.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
+//	//.Union(db.Resistors.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
+//	//.Union(db.Capacitors.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
+//	//.Union(db.Diods.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
+//	.ToList();
+//	response.ContentType = "application/json";
+//	await response.WriteAsJsonAsync(items);
+//});
+
+//app.MapGet("/api/all", async (DataBase db, HttpContext context) =>
+//{
+//	var response = context.Response;
+//	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
+//	var items =
+//	db.Microchips
+//	.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName })
+//	.GroupBy(m => m.ManufacturerName)
+//	//.Union(db.Transistors.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
+//	//.Union(db.Resistors.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
+//	//.Union(db.Capacitors.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
+//	//.Union(db.Diods.Select(m => new { m.Manufacturer.ManufacturerName, m.Kind.RuComponentKind, m.Kind.EnComponentKind, m.Type.RuComponentType, m.Type.EnComponentType, m.ComponentName }))
+//	.ToList();
+//	response.ContentType = "application/json";
+//	await response.WriteAsJsonAsync(items);
+//});
 
 
 //app.MapGet("/api/microchips/bitdepthvalue", async (DataBase db, HttpContext context, string? manufacturername, string? componentkind, string? componentname, string? bitdepthvalue) =>

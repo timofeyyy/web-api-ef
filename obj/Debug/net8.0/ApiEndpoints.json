@@ -113,6 +113,22 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__17",
+    "RelativePath": "api/manufacturerstatistic",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Program\u002B\u003C\u003Ec__DisplayClass0_0",
     "Method": "\u003C\u003CMain\u003E$\u003Eb__14",
     "RelativePath": "api/microchips",
     "HttpMethod": "GET",
@@ -136,7 +152,17 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "manufacturername",
+        "Name": "ManufacturerName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "componentKind",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "componentName",
         "Type": "System.String",
         "IsRequired": false
       },
@@ -193,7 +219,13 @@
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "componentType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Void",
