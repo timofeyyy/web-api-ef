@@ -7,11 +7,14 @@ using Microsoft.OpenApi.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using app.Entities;
+using System.Text.Json;
 
 //строка подключений
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("container_sql_oim1");
 var logPath = builder.Configuration["Logging:FilePath:Value"];
+var alliasPath = builder.Configuration["Allias"];
+Console.WriteLine(alliasPath);
 
 //логирование
 var loggerFactory = LoggerFactory.Create(builder => {
@@ -86,7 +89,7 @@ app.MapGet("/", (HttpContext context) =>
 //	await response.WriteAsJsonAsync(items);
 //});
 
-app.MapGet("/api/components", async (DataBase db, HttpContext context, string? componentType, string? componentKind, string? manufacturerName) =>
+app.MapGet("/api/components", async (DataBase db, HttpContext context, string? ruComponentType, string? ruComponentKind, string? manufacturerName) =>
 {
 	var response = context.Response;
 	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
@@ -143,13 +146,13 @@ app.MapGet("/api/components", async (DataBase db, HttpContext context, string? c
 			d.ComponentName
 		}));
 
-	if (componentType != null)
+	if (ruComponentType != null)
 	{
-		items = items.Where(t => t.RuComponentType == componentType );
+		items = items.Where(t => t.RuComponentType == ruComponentType);
 	}
-	if (componentKind != null)
+	if (ruComponentKind != null)
 	{
-		items = items.Where(t => t.RuComponentKind == componentKind);
+		items = items.Where(t => t.RuComponentKind == ruComponentKind);
 	}
 	if (manufacturerName != null)
 	{
@@ -159,6 +162,17 @@ app.MapGet("/api/components", async (DataBase db, HttpContext context, string? c
 	items.ToList();
 
 	response.ContentType = "application/json";
+	await response.WriteAsJsonAsync(items);
+});
+
+app.MapGet("/api/allias", async (DataBase db, HttpContext context) =>
+{
+	var response = context.Response;
+	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
+
+	response.ContentType = "application/json";
+	var json = File.ReadAllText(alliasPath);
+	var items = JsonSerializer.Deserialize<object>(json);
 	await response.WriteAsJsonAsync(items);
 });
 
@@ -205,12 +219,13 @@ app.MapGet("/api/components", async (DataBase db, HttpContext context, string? c
 //	await response.WriteAsJsonAsync(items);
 //});
 
-app.MapGet("/api/resistors", async (DataBase db, HttpContext context) =>
+app.MapGet("/api/resistors", async (DataBase db, HttpContext context, string? componentName) =>
 {
     var response = context.Response;
 	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
 	var items = db.Resistors
-	.Select(r => new {
+	.Select(r => new
+	{
 		r.ID,
 		r.DocID,
 		r.Kind.RuComponentKind,
@@ -233,18 +248,23 @@ app.MapGet("/api/resistors", async (DataBase db, HttpContext context) =>
 		r.Package,
 		r.Remark1,
 		r.Remark2
-	})
-	.ToList();
+	});
+	if (!componentName.IsNullOrEmpty())
+	{
+		items = items.Where(r => r.ComponentName == componentName);
+	}
+
     response.ContentType = "application/json";
-    await response.WriteAsJsonAsync(items);
+    await response.WriteAsJsonAsync(items.ToList());
 });
 
-app.MapGet("/api/transistors", async (DataBase db, HttpContext context) =>
+app.MapGet("/api/transistors", async (DataBase db, HttpContext context, string? componentName) =>
 {
     var response = context.Response;
 	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
 	var items = db.Transistors
-	.Select(t => new {
+	.Select(t => new
+	{
 		t.ID,
 		t.DocID,
 		t.Kind.RuComponentKind,
@@ -264,17 +284,20 @@ app.MapGet("/api/transistors", async (DataBase db, HttpContext context) =>
 		t.Package,
 		t.Remark1,
 		t.Remark2
-	})
-	.ToList();
-    response.ContentType = "application/json";
-    await response.WriteAsJsonAsync(items);
+	});
+	if (!componentName.IsNullOrEmpty())
+	{
+		items = items.Where(r => r.ComponentName == componentName);
+	}
+	response.ContentType = "application/json";
+    await response.WriteAsJsonAsync(items.ToList());
 });
 
-app.MapGet("/api/diods", async (DataBase db, HttpContext context) =>
+app.MapGet("/api/diods", async (DataBase db, HttpContext context, string? componentName) =>
 {
     var response = context.Response;
 	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
-	object items = db.Diods
+	var items = db.Diods
 	.Select(d => new {
 		d.ID,
 		d.DocID,
@@ -296,18 +319,22 @@ app.MapGet("/api/diods", async (DataBase db, HttpContext context) =>
 		d.Package,
 		d.Remark1,
 		d.Remark2
-	})
-	.ToList();
-    response.ContentType = "application/json";
-    await response.WriteAsJsonAsync(items);
+	});
+	if (!componentName.IsNullOrEmpty())
+	{
+		items = items.Where(r => r.ComponentName == componentName);
+	}
+	response.ContentType = "application/json";
+	await response.WriteAsJsonAsync(items.ToList());
 });
 
-app.MapGet("/api/microchips", async (DataBase db, HttpContext context) =>
+app.MapGet("/api/microchips", async (DataBase db, HttpContext context, string? componentName) =>
 {
     var response = context.Response;
 	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
 	var items = db.Microchips
-	.Select(m => new {
+	.Select(m => new
+	{
 		m.ID,
 		m.DocID,
 		m.Kind.RuComponentKind,
@@ -332,13 +359,16 @@ app.MapGet("/api/microchips", async (DataBase db, HttpContext context) =>
 		m.SamplingTime,
 		m.Qualication,
 		m.Remark1
-	})
-	.ToList();
-    response.ContentType = "application/json";
-    await response.WriteAsJsonAsync(items);
+	});
+	if (!componentName.IsNullOrEmpty())
+	{
+		items = items.Where(r => r.ComponentName == componentName);
+	}
+	response.ContentType = "application/json";
+    await response.WriteAsJsonAsync(items.ToList());
 });
 
-app.MapGet("/api/capacitors", async (DataBase db, HttpContext context) =>
+app.MapGet("/api/capacitors", async (DataBase db, HttpContext context, string? componentName) =>
 {
     var response = context.Response;
 	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
@@ -365,24 +395,27 @@ app.MapGet("/api/capacitors", async (DataBase db, HttpContext context) =>
 		c.QualicationЕС,
 		c.Remark1,
 		c.Remark2
-	})
-	.ToList();
-    response.ContentType = "application/json";
-    await response.WriteAsJsonAsync(items);
+	});
+	if (!componentName.IsNullOrEmpty())
+	{
+		items = items.Where(r => r.ComponentName == componentName);
+	}
+	response.ContentType = "application/json";
+    await response.WriteAsJsonAsync(items.ToList());
 });
 
-app.MapGet("/api/microchips/bitdepthvalue", async (DataBase db, HttpContext context, string? ManufacturerName, string? componentKind, string? componentName, string? bitdepthvalue) =>
+app.MapGet("/api/microchips/bitdepthvalue", async (DataBase db, HttpContext context, string? manufacturerName, string? ruComponentKind, string? componentName, string? bitdepthvalue) =>
 {
 	var response = context.Response;
 	logger.LogInformation($"Request: {context.Request.Path} {DateTime.Now}");
 	var items = db.Microchips.Select(m => new { m.Manufacturer.ManufacturerName, m.BitDepthValue, m.ComponentName, m.Kind.RuComponentKind });
-	if(!ManufacturerName.IsNullOrEmpty())
+	if(!manufacturerName.IsNullOrEmpty())
 	{
-		items = items.Where(m => m.ManufacturerName == ManufacturerName);
+		items = items.Where(m => m.ManufacturerName == manufacturerName);
 	}
-	if (!componentKind.IsNullOrEmpty())
+	if (!ruComponentKind.IsNullOrEmpty())
 	{
-		items = items.Where(m => m.RuComponentKind == componentKind);
+		items = items.Where(m => m.RuComponentKind == ruComponentKind);
 	}
 	if (!componentName.IsNullOrEmpty())
 	{

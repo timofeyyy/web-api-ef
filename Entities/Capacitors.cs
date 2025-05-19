@@ -7,11 +7,9 @@ namespace app.Entities
     public class Capacitors
     {
 		static public string Name { get { return "capacitors"; } }
-
 		[Key]
         public int ID { get; set; }
         public long? DocID { get; set; }
- 
         [StringLength(450)]
         public string ComponentName { get; set; }
 		public int? Type_ID { get; set; }

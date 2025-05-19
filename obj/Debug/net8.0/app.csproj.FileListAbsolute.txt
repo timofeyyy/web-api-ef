@@ -688,3 +688,4 @@ D:\work\web-api-ef\bin\Debug\net8.0\app.pdb
 D:\work\web-api-ef\obj\Debug\net8.0\app.genruntimeconfig.cache
 D:\work\web-api-ef\obj\Debug\net8.0\ref\app.dll
 D:\work\web-api-ef\obj\Debug\net8.0\app.sourcelink.json
+D:\work\web-api-ef\bin\Debug\net8.0\src\allias.json
