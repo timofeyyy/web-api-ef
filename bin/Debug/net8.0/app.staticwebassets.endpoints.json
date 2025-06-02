@@ -1,5 +1,1 @@
-{
-  "Version": 1,
-  "ManifestType": "Build",
-  "Endpoints": []
-}
+{"Version":1,"ManifestType":"Build","Endpoints":[{"Route":"allias.json","AssetFile":"allias.json","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2514"},{"Name":"Content-Type","Value":"application/json"},{"Name":"ETag","Value":"\"j1KMXhkXWtR1UeuOcIAaxHwetJOpCgmGMPyO9+qaBI0=\""},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 13:10:43 GMT"}],"EndpointProperties":[{"Name":"integrity","Value":"sha256-j1KMXhkXWtR1UeuOcIAaxHwetJOpCgmGMPyO9+qaBI0="}]},{"Route":"allias.zbu4o2wmpq.json","AssetFile":"allias.json","Selectors":[],"ResponseHeaders":[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2514"},{"Name":"Content-Type","Value":"application/json"},{"Name":"ETag","Value":"\"j1KMXhkXWtR1UeuOcIAaxHwetJOpCgmGMPyO9+qaBI0=\""},{"Name":"Last-Modified","Value":"Mon, 19 May 2025 13:10:43 GMT"}],"EndpointProperties":[{"Name":"fingerprint","Value":"zbu4o2wmpq"},{"Name":"integrity","Value":"sha256-j1KMXhkXWtR1UeuOcIAaxHwetJOpCgmGMPyO9+qaBI0="},{"Name":"label","Value":"allias.json"}]}]}
