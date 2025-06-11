@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\work\\web-api-ef-old\\app.csproj": {}
+    "C:\\work\\web-api-ef\\app.csproj": {}
   },
   "projects": {
-    "C:\\work\\web-api-ef-old\\app.csproj": {
+    "C:\\work\\web-api-ef\\app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\work\\web-api-ef-old\\app.csproj",
+        "projectUniqueName": "C:\\work\\web-api-ef\\app.csproj",
         "projectName": "app",
-        "projectPath": "C:\\work\\web-api-ef-old\\app.csproj",
+        "projectPath": "C:\\work\\web-api-ef\\app.csproj",
         "packagesPath": "C:\\Users\\Тимофей\\.nuget\\packages\\",
-        "outputPath": "C:\\work\\web-api-ef-old\\obj\\",
+        "outputPath": "C:\\work\\web-api-ef\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
