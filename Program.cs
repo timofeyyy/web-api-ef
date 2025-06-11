@@ -69,7 +69,7 @@ app.UseStaticFiles(new StaticFileOptions
 		   ),
 	RequestPath = "/datasheets"
 });
-//app.UseStaticFiles();
+app.UseStaticFiles();
 
 
 app.MapGet("/", (HttpContext context) =>
