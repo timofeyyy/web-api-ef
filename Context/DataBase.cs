@@ -1,5 +1,6 @@
 ﻿using app.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
 using System.Globalization;
@@ -416,6 +417,11 @@ namespace app.Context
 		   .HasOne(t => t.Manufacturer)
 		   .WithMany(m => m.Capacitors)
 		   .HasForeignKey(t => t.ManufacturerName_ID);
+		}
+
+		public static implicit operator Database(DataBase v)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

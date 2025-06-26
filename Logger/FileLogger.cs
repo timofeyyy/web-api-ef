@@ -24,9 +24,9 @@
 			{
 				lock (_lock)
 				{
-					string fileName = $"{DateTime.Now.Year}_{DateTime.Now.Day}.txt";
+					string fileName = $"{DateTime.Now.Year}_{DateTime.Now.Month}_{DateTime.Now.Day}.txt";
 					File.AppendAllText($"{filePath}/{fileName}",
-						$"####################{Environment.NewLine}{formatter(state, exception)}{Environment.NewLine}"
+						$"#################### {DateTime.Now} {Environment.NewLine}{formatter(state, exception)}{Environment.NewLine}"
 						);
 				}
 			}

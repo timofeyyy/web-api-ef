@@ -27,13 +27,13 @@
   "frequency": "Частота",
   "enTechnologyName": "Технология изготовления(en)",
   "ruTechnologyName": "Технология изготовления",
-  "radiationResistance": "Доза излучения",
-  "radiationResistanceI": "Доза излучения (обозначения)",
+  "radiationResistance": "Радиационная стойкость, крад",
+  "radiationResistanceI": "Радиационная стойкость (И)/",
   "samplingTime": "Время выборки",
   "qualication": "Квалификация",
   "maxPermissibleDCCollectorCurrent": "Максимально допустимый постоянный /импульсный/ ток коллектор-эмиттер",
   "maxPermissibleDCVoltage": "Максимально допустимое постоянное напряжение коллектор-эмиттер",
-  "package": "Package",
+  "package": "Корпус",
   "maxiPermissibleDirectCurrent": "Максимально допустимый постоянный /импульсный/ прямой ток",
   "maxPermissibleAverageDirectCurrent": "Максимально допустимый средний прямой ток"
 }

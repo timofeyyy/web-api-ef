@@ -1,0 +1,1759 @@
+####################
+Request: /api/components 17.06.2025 16:41:52
+####################
+Request: /api/diods 17.06.2025 16:41:56
+####################
+Request: /api/microchips 17.06.2025 16:41:56
+####################
+Request: /api/capacitors 17.06.2025 16:41:56
+####################
+Request: /api/transistors 17.06.2025 16:41:56
+####################
+Request: /api/resistors 17.06.2025 16:41:56
+####################
+An error occurred using the connection to database 'ComponentDB' on server 'tcp:127.0.0.1,1433'.
+####################
+An error occurred using the connection to database 'ComponentDB' on server 'tcp:127.0.0.1,1433'.
+####################
+An error occurred using the connection to database 'ComponentDB' on server 'tcp:127.0.0.1,1433'.
+####################
+An error occurred using the connection to database 'ComponentDB' on server 'tcp:127.0.0.1,1433'.
+####################
+An error occurred using the connection to database 'ComponentDB' on server 'tcp:127.0.0.1,1433'.
+####################
+An error occurred using the connection to database 'ComponentDB' on server 'tcp:127.0.0.1,1433'.
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 0 - Удаленный хост принудительно разорвал существующее подключение.)
+ ---> System.ComponentModel.Win32Exception (10054): Удаленный хост принудительно разорвал существующее подключение.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+ClientConnectionId:b6573256-66f7-40e1-a37e-cb0a054c6529
+Error Number:10054,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 0 - Удаленный хост принудительно разорвал существующее подключение.)
+ ---> System.ComponentModel.Win32Exception (10054): Удаленный хост принудительно разорвал существующее подключение.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+ClientConnectionId:b6573256-66f7-40e1-a37e-cb0a054c6529
+Error Number:10054,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 0 - Удаленный хост принудительно разорвал существующее подключение.)
+ ---> System.ComponentModel.Win32Exception (10054): Удаленный хост принудительно разорвал существующее подключение.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+ClientConnectionId:b6573256-66f7-40e1-a37e-cb0a054c6529
+Error Number:10054,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 0 - Удаленный хост принудительно разорвал существующее подключение.)
+ ---> System.ComponentModel.Win32Exception (10054): Удаленный хост принудительно разорвал существующее подключение.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+ClientConnectionId:b6573256-66f7-40e1-a37e-cb0a054c6529
+Error Number:10054,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 0 - Удаленный хост принудительно разорвал существующее подключение.)
+ ---> System.ComponentModel.Win32Exception (10054): Удаленный хост принудительно разорвал существующее подключение.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+ClientConnectionId:b6573256-66f7-40e1-a37e-cb0a054c6529
+Error Number:10054,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 0 - Удаленный хост принудительно разорвал существующее подключение.)
+ ---> System.ComponentModel.Win32Exception (10054): Удаленный хост принудительно разорвал существующее подключение.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ThrowExceptionAndWarning(Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst, String serverCert)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+ClientConnectionId:b6573256-66f7-40e1-a37e-cb0a054c6529
+Error Number:10054,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+####################
+Request: /api/components 17.06.2025 16:42:20
+####################
+Request: /api/components 17.06.2025 16:42:24
+####################
+Request: /api/diods 17.06.2025 16:42:25
+####################
+Request: /api/transistors 17.06.2025 16:42:25
+####################
+Request: /api/resistors 17.06.2025 16:42:25
+####################
+Request: /api/microchips 17.06.2025 16:42:25
+####################
+Request: /api/capacitors 17.06.2025 16:42:25
+####################
+Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [r].[PowerRating], [r].[ComponentName], [r].[MinVoltage], [r].[MaxVoltage], [r].[MinRatedResistance], [r].[MaxRatedResistance], [r].[ResistanceTolerance], [r].[MinOperatingTemperature], [r].[MaxOperatingTemperature], [r].[CurrentLimit], [r].[QualicationSG], [r].[QualicationЕС], [r].[Package], [r].[Remark1], [r].[Remark2]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (46ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [d].[MaxPermissibleDCVoltage], [d].[ComponentName], [d].[MinOperatingTemperature], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxiPermissibleDirectCurrent], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[QualicationSG], [d].[QualicationЕС], [d].[Package], [d].[Remark1], [d].[Remark2]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [t].[MaxPermissibleDCVoltage], [t].[ComponentName], [t].[MinOperatingTemperature], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[QualicationSG], [t].[QualicationЕС], [t].[Package], [t].[Remark1], [t].[Remark2]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (139ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Executed DbCommand (166ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Executed DbCommand (54ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Interfaces], [m].[MinVoltage], [m].[MaxVoltage], [m].[Frequency], [t].[EnTechnologyName], [t].[RuTechnologyName], [m].[MinOperatingTemperature], [m].[MaxOperatingTemperature], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[MemoryFormat], [m].[SamplingTime], [m].[Qualication], [m].[Remark1]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+####################
+Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[DocID], [c0].[RuComponentKind], [c0].[EnComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName], [c].[OutputType], [c].[ComponentName], [c].[MinVoltage], [c].[MaxVoltage], [c].[MaxCapacity], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MaxOperatingTemperature], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Request: /api/components 17.06.2025 16:46:27
+####################
+Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Request: /api/components 17.06.2025 16:46:28
+####################
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Request: /api/components 17.06.2025 16:46:28
+####################
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Request: /api/resistors 17.06.2025 16:46:31
+####################
+Request: /api/transistors 17.06.2025 16:46:31
+####################
+Request: /api/capacitors 17.06.2025 16:46:31
+####################
+Request: /api/microchips 17.06.2025 16:46:31
+####################
+Request: /api/diods 17.06.2025 16:46:31
+####################
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [t].[MaxPermissibleDCVoltage], [t].[ComponentName], [t].[MinOperatingTemperature], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[QualicationSG], [t].[QualicationЕС], [t].[Package], [t].[Remark1], [t].[Remark2]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [d].[MaxPermissibleDCVoltage], [d].[ComponentName], [d].[MinOperatingTemperature], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxiPermissibleDirectCurrent], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[QualicationSG], [d].[QualicationЕС], [d].[Package], [d].[Remark1], [d].[Remark2]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [r].[PowerRating], [r].[ComponentName], [r].[MinVoltage], [r].[MaxVoltage], [r].[MinRatedResistance], [r].[MaxRatedResistance], [r].[ResistanceTolerance], [r].[MinOperatingTemperature], [r].[MaxOperatingTemperature], [r].[CurrentLimit], [r].[QualicationSG], [r].[QualicationЕС], [r].[Package], [r].[Remark1], [r].[Remark2]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Interfaces], [m].[MinVoltage], [m].[MaxVoltage], [m].[Frequency], [t].[EnTechnologyName], [t].[RuTechnologyName], [m].[MinOperatingTemperature], [m].[MaxOperatingTemperature], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[MemoryFormat], [m].[SamplingTime], [m].[Qualication], [m].[Remark1]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+####################
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[DocID], [c0].[RuComponentKind], [c0].[EnComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName], [c].[OutputType], [c].[ComponentName], [c].[MinVoltage], [c].[MaxVoltage], [c].[MaxCapacity], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MaxOperatingTemperature], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+####################
+Request: /api/diods 17.06.2025 16:46:39
+####################
+Request: /api/transistors 17.06.2025 16:46:39
+####################
+Request: /api/capacitors 17.06.2025 16:46:39
+####################
+Request: /api/resistors 17.06.2025 16:46:39
+####################
+Request: /api/microchips 17.06.2025 16:46:39
+####################
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [r].[PowerRating], [r].[ComponentName], [r].[MinVoltage], [r].[MaxVoltage], [r].[MinRatedResistance], [r].[MaxRatedResistance], [r].[ResistanceTolerance], [r].[MinOperatingTemperature], [r].[MaxOperatingTemperature], [r].[CurrentLimit], [r].[QualicationSG], [r].[QualicationЕС], [r].[Package], [r].[Remark1], [r].[Remark2]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [t].[MaxPermissibleDCVoltage], [t].[ComponentName], [t].[MinOperatingTemperature], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[QualicationSG], [t].[QualicationЕС], [t].[Package], [t].[Remark1], [t].[Remark2]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[DocID], [c0].[RuComponentKind], [c0].[EnComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName], [c].[OutputType], [c].[ComponentName], [c].[MinVoltage], [c].[MaxVoltage], [c].[MaxCapacity], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MaxOperatingTemperature], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Interfaces], [m].[MinVoltage], [m].[MaxVoltage], [m].[Frequency], [t].[EnTechnologyName], [t].[RuTechnologyName], [m].[MinOperatingTemperature], [m].[MaxOperatingTemperature], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[MemoryFormat], [m].[SamplingTime], [m].[Qualication], [m].[Remark1]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+####################
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [d].[MaxPermissibleDCVoltage], [d].[ComponentName], [d].[MinOperatingTemperature], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxiPermissibleDirectCurrent], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[QualicationSG], [d].[QualicationЕС], [d].[Package], [d].[Remark1], [d].[Remark2]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+####################
+Request: /api/diods 17.06.2025 16:46:42
+####################
+Request: /api/capacitors 17.06.2025 16:46:42
+####################
+Request: /api/transistors 17.06.2025 16:46:42
+####################
+Request: /api/microchips 17.06.2025 16:46:42
+####################
+Request: /api/resistors 17.06.2025 16:46:42
+####################
+Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [d].[MaxPermissibleDCVoltage], [d].[ComponentName], [d].[MinOperatingTemperature], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxiPermissibleDirectCurrent], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[QualicationSG], [d].[QualicationЕС], [d].[Package], [d].[Remark1], [d].[Remark2]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[DocID], [c0].[RuComponentKind], [c0].[EnComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName], [c].[OutputType], [c].[ComponentName], [c].[MinVoltage], [c].[MaxVoltage], [c].[MaxCapacity], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MaxOperatingTemperature], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [t].[MaxPermissibleDCVoltage], [t].[ComponentName], [t].[MinOperatingTemperature], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[QualicationSG], [t].[QualicationЕС], [t].[Package], [t].[Remark1], [t].[Remark2]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Interfaces], [m].[MinVoltage], [m].[MaxVoltage], [m].[Frequency], [t].[EnTechnologyName], [t].[RuTechnologyName], [m].[MinOperatingTemperature], [m].[MaxOperatingTemperature], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[MemoryFormat], [m].[SamplingTime], [m].[Qualication], [m].[Remark1]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+####################
+Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [r].[PowerRating], [r].[ComponentName], [r].[MinVoltage], [r].[MaxVoltage], [r].[MinRatedResistance], [r].[MaxRatedResistance], [r].[ResistanceTolerance], [r].[MinOperatingTemperature], [r].[MaxOperatingTemperature], [r].[CurrentLimit], [r].[QualicationSG], [r].[QualicationЕС], [r].[Package], [r].[Remark1], [r].[Remark2]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+####################
+Request: /api/capacitors 17.06.2025 16:48:48
+####################
+Request: /api/microchips 17.06.2025 16:48:48
+####################
+Request: /api/resistors 17.06.2025 16:48:48
+####################
+Request: /api/diods 17.06.2025 16:48:48
+####################
+Request: /api/transistors 17.06.2025 16:48:48
+####################
+Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[DocID], [c0].[RuComponentKind], [c0].[EnComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName], [c].[OutputType], [c].[ComponentName], [c].[MinVoltage], [c].[MaxVoltage], [c].[MaxCapacity], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MaxOperatingTemperature], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [t].[MaxPermissibleDCVoltage], [t].[ComponentName], [t].[MinOperatingTemperature], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[QualicationSG], [t].[QualicationЕС], [t].[Package], [t].[Remark1], [t].[Remark2]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [r].[PowerRating], [r].[ComponentName], [r].[MinVoltage], [r].[MaxVoltage], [r].[MinRatedResistance], [r].[MaxRatedResistance], [r].[ResistanceTolerance], [r].[MinOperatingTemperature], [r].[MaxOperatingTemperature], [r].[CurrentLimit], [r].[QualicationSG], [r].[QualicationЕС], [r].[Package], [r].[Remark1], [r].[Remark2]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [d].[MaxPermissibleDCVoltage], [d].[ComponentName], [d].[MinOperatingTemperature], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxiPermissibleDirectCurrent], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[QualicationSG], [d].[QualicationЕС], [d].[Package], [d].[Remark1], [d].[Remark2]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (191ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Interfaces], [m].[MinVoltage], [m].[MaxVoltage], [m].[Frequency], [t].[EnTechnologyName], [t].[RuTechnologyName], [m].[MinOperatingTemperature], [m].[MaxOperatingTemperature], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[MemoryFormat], [m].[SamplingTime], [m].[Qualication], [m].[Remark1]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+####################
+Request: /api/components 17.06.2025 16:48:51
+####################
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Request: /api/components 17.06.2025 16:48:51
+####################
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Request: /api/components 17.06.2025 16:48:52
+####################
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Request: /api/transistors 17.06.2025 16:48:55
+####################
+Request: /api/diods 17.06.2025 16:48:55
+####################
+Request: /api/capacitors 17.06.2025 16:48:55
+####################
+Request: /api/microchips 17.06.2025 16:48:55
+####################
+Request: /api/resistors 17.06.2025 16:48:55
+####################
+Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [d].[MaxPermissibleDCVoltage], [d].[ComponentName], [d].[MinOperatingTemperature], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxiPermissibleDirectCurrent], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[QualicationSG], [d].[QualicationЕС], [d].[Package], [d].[Remark1], [d].[Remark2]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [t].[MaxPermissibleDCVoltage], [t].[ComponentName], [t].[MinOperatingTemperature], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[QualicationSG], [t].[QualicationЕС], [t].[Package], [t].[Remark1], [t].[Remark2]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[DocID], [c0].[RuComponentKind], [c0].[EnComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName], [c].[OutputType], [c].[ComponentName], [c].[MinVoltage], [c].[MaxVoltage], [c].[MaxCapacity], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MaxOperatingTemperature], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Interfaces], [m].[MinVoltage], [m].[MaxVoltage], [m].[Frequency], [t].[EnTechnologyName], [t].[RuTechnologyName], [m].[MinOperatingTemperature], [m].[MaxOperatingTemperature], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[MemoryFormat], [m].[SamplingTime], [m].[Qualication], [m].[Remark1]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+####################
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [r].[PowerRating], [r].[ComponentName], [r].[MinVoltage], [r].[MaxVoltage], [r].[MinRatedResistance], [r].[MaxRatedResistance], [r].[ResistanceTolerance], [r].[MinOperatingTemperature], [r].[MaxOperatingTemperature], [r].[CurrentLimit], [r].[QualicationSG], [r].[QualicationЕС], [r].[Package], [r].[Remark1], [r].[Remark2]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+####################
+Request: /api/transistors 17.06.2025 16:52:31
+####################
+Request: /api/microchips 17.06.2025 16:52:31
+####################
+Request: /api/resistors 17.06.2025 16:52:31
+####################
+Request: /api/capacitors 17.06.2025 16:52:31
+####################
+Request: /api/diods 17.06.2025 16:52:31
+####################
+Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [r].[PowerRating], [r].[ComponentName], [r].[MinVoltage], [r].[MaxVoltage], [r].[MinRatedResistance], [r].[MaxRatedResistance], [r].[ResistanceTolerance], [r].[MinOperatingTemperature], [r].[MaxOperatingTemperature], [r].[CurrentLimit], [r].[QualicationSG], [r].[QualicationЕС], [r].[Package], [r].[Remark1], [r].[Remark2]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [d].[MaxPermissibleDCVoltage], [d].[ComponentName], [d].[MinOperatingTemperature], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxiPermissibleDirectCurrent], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[QualicationSG], [d].[QualicationЕС], [d].[Package], [d].[Remark1], [d].[Remark2]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Interfaces], [m].[MinVoltage], [m].[MaxVoltage], [m].[Frequency], [t].[EnTechnologyName], [t].[RuTechnologyName], [m].[MinOperatingTemperature], [m].[MaxOperatingTemperature], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[MemoryFormat], [m].[SamplingTime], [m].[Qualication], [m].[Remark1]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+####################
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[DocID], [c0].[RuComponentKind], [c0].[EnComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName], [c].[OutputType], [c].[ComponentName], [c].[MinVoltage], [c].[MaxVoltage], [c].[MaxCapacity], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MaxOperatingTemperature], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [t].[MaxPermissibleDCVoltage], [t].[ComponentName], [t].[MinOperatingTemperature], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[QualicationSG], [t].[QualicationЕС], [t].[Package], [t].[Remark1], [t].[Remark2]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+####################
+Request: /api/components 17.06.2025 16:53:25
+####################
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Request: /api/components 17.06.2025 16:53:25
+####################
+Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Request: /api/components 17.06.2025 16:53:25
+####################
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+FROM [ComponentTypes] AS [c]
+INNER JOIN (
+    SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+    FROM [Microchips] AS [m]
+    LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+    LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+    LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+UNION ALL
+SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+UNION ALL
+SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+UNION ALL
+SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+FROM [Capacitors] AS [c6]
+LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+UNION ALL
+SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+####################
+Request: /api/components 17.06.2025 16:53:28
+####################
+Executed DbCommand (73ms) [Parameters=[@__ruComponentType_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [u2].[ManufacturerName], [u2].[RuComponentKind], [u2].[EnComponentKind], [u2].[RuComponentType], [u2].[EnComponentType], [u2].[ComponentName]
+FROM (
+    SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+    FROM [ComponentTypes] AS [c]
+    INNER JOIN (
+        SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+        FROM [Microchips] AS [m]
+        LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+        LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+        LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+    ) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+    UNION ALL
+    SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+    FROM [Transistors] AS [t]
+    LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+    LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+    LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+    UNION ALL
+    SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+    FROM [Resistors] AS [r]
+    LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+    LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+    LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+    UNION ALL
+    SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+    FROM [Capacitors] AS [c6]
+    LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+    LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+    LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+    UNION ALL
+    SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+    FROM [Diods] AS [d]
+    LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+    LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+    LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+) AS [u2]
+WHERE [u2].[RuComponentType] = @__ruComponentType_0
+####################
+Executed DbCommand (4ms) [Parameters=[@__ruComponentType_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [u2].[ManufacturerName], [u2].[RuComponentKind], [u2].[EnComponentKind], [u2].[RuComponentType], [u2].[EnComponentType], [u2].[ComponentName]
+FROM (
+    SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+    FROM [ComponentTypes] AS [c]
+    INNER JOIN (
+        SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+        FROM [Microchips] AS [m]
+        LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+        LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+        LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+    ) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+    UNION ALL
+    SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+    FROM [Transistors] AS [t]
+    LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+    LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+    LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+    UNION ALL
+    SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+    FROM [Resistors] AS [r]
+    LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+    LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+    LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+    UNION ALL
+    SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+    FROM [Capacitors] AS [c6]
+    LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+    LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+    LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+    UNION ALL
+    SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+    FROM [Diods] AS [d]
+    LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+    LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+    LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+) AS [u2]
+WHERE [u2].[RuComponentType] = @__ruComponentType_0
+####################
+Request: /api/components 17.06.2025 16:53:29
+####################
+Executed DbCommand (5ms) [Parameters=[@__ruComponentType_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [u2].[ManufacturerName], [u2].[RuComponentKind], [u2].[EnComponentKind], [u2].[RuComponentType], [u2].[EnComponentType], [u2].[ComponentName]
+FROM (
+    SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+    FROM [ComponentTypes] AS [c]
+    INNER JOIN (
+        SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+        FROM [Microchips] AS [m]
+        LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+        LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+        LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+    ) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+    UNION ALL
+    SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+    FROM [Transistors] AS [t]
+    LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+    LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+    LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+    UNION ALL
+    SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+    FROM [Resistors] AS [r]
+    LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+    LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+    LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+    UNION ALL
+    SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+    FROM [Capacitors] AS [c6]
+    LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+    LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+    LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+    UNION ALL
+    SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+    FROM [Diods] AS [d]
+    LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+    LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+    LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+) AS [u2]
+WHERE [u2].[RuComponentType] = @__ruComponentType_0
+####################
+Executed DbCommand (8ms) [Parameters=[@__ruComponentType_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [u2].[ManufacturerName], [u2].[RuComponentKind], [u2].[EnComponentKind], [u2].[RuComponentType], [u2].[EnComponentType], [u2].[ComponentName]
+FROM (
+    SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+    FROM [ComponentTypes] AS [c]
+    INNER JOIN (
+        SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+        FROM [Microchips] AS [m]
+        LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+        LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+        LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+    ) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+    UNION ALL
+    SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+    FROM [Transistors] AS [t]
+    LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+    LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+    LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+    UNION ALL
+    SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+    FROM [Resistors] AS [r]
+    LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+    LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+    LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+    UNION ALL
+    SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+    FROM [Capacitors] AS [c6]
+    LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+    LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+    LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+    UNION ALL
+    SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+    FROM [Diods] AS [d]
+    LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+    LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+    LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+) AS [u2]
+WHERE [u2].[RuComponentType] = @__ruComponentType_0
+####################
+Request: /api/components 17.06.2025 16:53:32
+####################
+Executed DbCommand (5ms) [Parameters=[@__ruComponentType_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [u2].[ManufacturerName], [u2].[RuComponentKind], [u2].[EnComponentKind], [u2].[RuComponentType], [u2].[EnComponentType], [u2].[ComponentName]
+FROM (
+    SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+    FROM [ComponentTypes] AS [c]
+    INNER JOIN (
+        SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+        FROM [Microchips] AS [m]
+        LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+        LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+        LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+    ) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+    UNION ALL
+    SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+    FROM [Transistors] AS [t]
+    LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+    LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+    LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+    UNION ALL
+    SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+    FROM [Resistors] AS [r]
+    LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+    LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+    LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+    UNION ALL
+    SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+    FROM [Capacitors] AS [c6]
+    LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+    LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+    LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+    UNION ALL
+    SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+    FROM [Diods] AS [d]
+    LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+    LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+    LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+) AS [u2]
+WHERE [u2].[RuComponentType] = @__ruComponentType_0
+####################
+Executed DbCommand (4ms) [Parameters=[@__ruComponentType_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [u2].[ManufacturerName], [u2].[RuComponentKind], [u2].[EnComponentKind], [u2].[RuComponentType], [u2].[EnComponentType], [u2].[ComponentName]
+FROM (
+    SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+    FROM [ComponentTypes] AS [c]
+    INNER JOIN (
+        SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+        FROM [Microchips] AS [m]
+        LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+        LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+        LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+    ) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+    UNION ALL
+    SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+    FROM [Transistors] AS [t]
+    LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+    LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+    LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+    UNION ALL
+    SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+    FROM [Resistors] AS [r]
+    LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+    LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+    LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+    UNION ALL
+    SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+    FROM [Capacitors] AS [c6]
+    LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+    LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+    LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+    UNION ALL
+    SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+    FROM [Diods] AS [d]
+    LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+    LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+    LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+) AS [u2]
+WHERE [u2].[RuComponentType] = @__ruComponentType_0
+####################
+Request: /api/components 17.06.2025 16:53:33
+####################
+Executed DbCommand (5ms) [Parameters=[@__ruComponentType_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [u2].[ManufacturerName], [u2].[RuComponentKind], [u2].[EnComponentKind], [u2].[RuComponentType], [u2].[EnComponentType], [u2].[ComponentName]
+FROM (
+    SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+    FROM [ComponentTypes] AS [c]
+    INNER JOIN (
+        SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+        FROM [Microchips] AS [m]
+        LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+        LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+        LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+    ) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+    UNION ALL
+    SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+    FROM [Transistors] AS [t]
+    LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+    LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+    LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+    UNION ALL
+    SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+    FROM [Resistors] AS [r]
+    LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+    LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+    LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+    UNION ALL
+    SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+    FROM [Capacitors] AS [c6]
+    LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+    LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+    LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+    UNION ALL
+    SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+    FROM [Diods] AS [d]
+    LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+    LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+    LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+) AS [u2]
+WHERE [u2].[RuComponentType] = @__ruComponentType_0
+####################
+Executed DbCommand (7ms) [Parameters=[@__ruComponentType_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [u2].[ManufacturerName], [u2].[RuComponentKind], [u2].[EnComponentKind], [u2].[RuComponentType], [u2].[EnComponentType], [u2].[ComponentName]
+FROM (
+    SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+    FROM [ComponentTypes] AS [c]
+    INNER JOIN (
+        SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+        FROM [Microchips] AS [m]
+        LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+        LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+        LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+    ) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+    UNION ALL
+    SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+    FROM [Transistors] AS [t]
+    LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+    LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+    LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+    UNION ALL
+    SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+    FROM [Resistors] AS [r]
+    LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+    LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+    LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+    UNION ALL
+    SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+    FROM [Capacitors] AS [c6]
+    LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+    LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+    LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+    UNION ALL
+    SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+    FROM [Diods] AS [d]
+    LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+    LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+    LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+) AS [u2]
+WHERE [u2].[RuComponentType] = @__ruComponentType_0
+####################
+Request: /api/microchips/bitdepthvalue 17.06.2025 16:53:35
+####################
+Executed DbCommand (11ms) [Parameters=[@__manufacturerName_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ManufacturerName], [m].[BitDepthValue], [m].[ComponentName], [c].[RuComponentKind]
+FROM [Microchips] AS [m]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+WHERE [m0].[ManufacturerName] = @__manufacturerName_0
+####################
+Request: /api/diods 17.06.2025 16:53:37
+####################
+Request: /api/transistors 17.06.2025 16:53:37
+####################
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [d].[MaxPermissibleDCVoltage], [d].[ComponentName], [d].[MinOperatingTemperature], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxiPermissibleDirectCurrent], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[QualicationSG], [d].[QualicationЕС], [d].[Package], [d].[Remark1], [d].[Remark2]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+####################
+Request: /api/capacitors 17.06.2025 16:53:37
+####################
+Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [t].[MaxPermissibleDCVoltage], [t].[ComponentName], [t].[MinOperatingTemperature], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[QualicationSG], [t].[QualicationЕС], [t].[Package], [t].[Remark1], [t].[Remark2]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+####################
+Request: /api/resistors 17.06.2025 16:53:37
+####################
+Request: /api/microchips 17.06.2025 16:53:37
+####################
+Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[DocID], [c0].[RuComponentKind], [c0].[EnComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName], [c].[OutputType], [c].[ComponentName], [c].[MinVoltage], [c].[MaxVoltage], [c].[MaxCapacity], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MaxOperatingTemperature], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName], [r].[PowerRating], [r].[ComponentName], [r].[MinVoltage], [r].[MaxVoltage], [r].[MinRatedResistance], [r].[MaxRatedResistance], [r].[ResistanceTolerance], [r].[MinOperatingTemperature], [r].[MaxOperatingTemperature], [r].[CurrentLimit], [r].[QualicationSG], [r].[QualicationЕС], [r].[Package], [r].[Remark1], [r].[Remark2]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+####################
+Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[DocID], [c].[RuComponentKind], [c].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Interfaces], [m].[MinVoltage], [m].[MaxVoltage], [m].[Frequency], [t].[EnTechnologyName], [t].[RuTechnologyName], [m].[MinOperatingTemperature], [m].[MaxOperatingTemperature], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[MemoryFormat], [m].[SamplingTime], [m].[Qualication], [m].[Remark1]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+####################
+Request: /api/components 17.06.2025 16:56:23
+####################
+Executed DbCommand (11ms) [Parameters=[@__ruComponentType_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [u2].[ManufacturerName], [u2].[RuComponentKind], [u2].[EnComponentKind], [u2].[RuComponentType], [u2].[EnComponentType], [u2].[ComponentName]
+FROM (
+    SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+    FROM [ComponentTypes] AS [c]
+    INNER JOIN (
+        SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+        FROM [Microchips] AS [m]
+        LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+        LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+        LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+    ) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+    UNION ALL
+    SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+    FROM [Transistors] AS [t]
+    LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+    LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+    LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+    UNION ALL
+    SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+    FROM [Resistors] AS [r]
+    LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+    LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+    LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+    UNION ALL
+    SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+    FROM [Capacitors] AS [c6]
+    LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+    LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+    LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+    UNION ALL
+    SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+    FROM [Diods] AS [d]
+    LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+    LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+    LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+) AS [u2]
+WHERE [u2].[RuComponentType] = @__ruComponentType_0
+####################
+Executed DbCommand (8ms) [Parameters=[@__ruComponentType_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [u2].[ManufacturerName], [u2].[RuComponentKind], [u2].[EnComponentKind], [u2].[RuComponentType], [u2].[EnComponentType], [u2].[ComponentName]
+FROM (
+    SELECT [s].[ManufacturerName], [s].[RuComponentKind], [s].[EnComponentKind], [s].[RuComponentType], [s].[EnComponentType], [s].[ComponentName]
+    FROM [ComponentTypes] AS [c]
+    INNER JOIN (
+        SELECT [m0].[ManufacturerName], [c1].[RuComponentKind], [c1].[EnComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ComponentName]
+        FROM [Microchips] AS [m]
+        LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+        LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+        LEFT JOIN [ComponentKinds] AS [c1] ON [m].[Kind_ID] = [c1].[ID]
+    ) AS [s] ON [c].[RuComponentType] = [s].[RuComponentType]
+    UNION ALL
+    SELECT [m1].[ManufacturerName], [c2].[RuComponentKind], [c2].[EnComponentKind], [c3].[RuComponentType], [c3].[EnComponentType], [t].[ComponentName]
+    FROM [Transistors] AS [t]
+    LEFT JOIN [Manufacturers] AS [m1] ON [t].[ManufacturerName_ID] = [m1].[ID]
+    LEFT JOIN [ComponentKinds] AS [c2] ON [t].[Kind_ID] = [c2].[ID]
+    LEFT JOIN [ComponentTypes] AS [c3] ON [t].[Type_ID] = [c3].[ID]
+    UNION ALL
+    SELECT [m2].[ManufacturerName], [c4].[RuComponentKind], [c4].[EnComponentKind], [c5].[RuComponentType], [c5].[EnComponentType], [r].[ComponentName]
+    FROM [Resistors] AS [r]
+    LEFT JOIN [Manufacturers] AS [m2] ON [r].[ManufacturerName_ID] = [m2].[ID]
+    LEFT JOIN [ComponentKinds] AS [c4] ON [r].[Kind_ID] = [c4].[ID]
+    LEFT JOIN [ComponentTypes] AS [c5] ON [r].[Type_ID] = [c5].[ID]
+    UNION ALL
+    SELECT [m3].[ManufacturerName], [c7].[RuComponentKind], [c7].[EnComponentKind], [c8].[RuComponentType], [c8].[EnComponentType], [c6].[ComponentName]
+    FROM [Capacitors] AS [c6]
+    LEFT JOIN [Manufacturers] AS [m3] ON [c6].[ManufacturerName_ID] = [m3].[ID]
+    LEFT JOIN [ComponentKinds] AS [c7] ON [c6].[Kind_ID] = [c7].[ID]
+    LEFT JOIN [ComponentTypes] AS [c8] ON [c6].[Type_ID] = [c8].[ID]
+    UNION ALL
+    SELECT [m4].[ManufacturerName], [c9].[RuComponentKind], [c9].[EnComponentKind], [c10].[RuComponentType], [c10].[EnComponentType], [d].[ComponentName]
+    FROM [Diods] AS [d]
+    LEFT JOIN [Manufacturers] AS [m4] ON [d].[ManufacturerName_ID] = [m4].[ID]
+    LEFT JOIN [ComponentKinds] AS [c9] ON [d].[Kind_ID] = [c9].[ID]
+    LEFT JOIN [ComponentTypes] AS [c10] ON [d].[Type_ID] = [c10].[ID]
+) AS [u2]
+WHERE [u2].[RuComponentType] = @__ruComponentType_0
