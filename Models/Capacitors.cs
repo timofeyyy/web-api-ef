@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Numerics;
 using System.Text.Json.Serialization;
 
@@ -6,7 +7,17 @@ namespace app.Entities
 {
     public class Capacitors
     {
-		static public string Name { get { return "capacitors"; } }
+		[NotMapped]
+		public string? RuComponentType { get; set; }
+		[NotMapped]
+		public string? RuComponentKind { get; set; }
+		[NotMapped]
+		public string? ManufacturerName { get; set; }
+		[NotMapped]
+		public string? EnComponentType { get; set; }
+		[NotMapped]
+		public string? EnComponentKind { get; set; }
+
 		[Key]
         public int ID { get; set; }
         public long? DocID { get; set; }
@@ -35,5 +46,26 @@ namespace app.Entities
         public string? QualicationЕС { get; set; }
         public string? Remark1 { get; set; }
         public string? Remark2 { get; set; }
-    }
+		
+		public Capacitors() { }
+		public Capacitors(Capacitors c) {
+			ID = c.ID;
+			DocID = c.DocID;
+		
+			OutputType = c.OutputType;
+			ComponentName = c.ComponentName;
+			MinVoltage = c.MinVoltage;
+			MaxVoltage = c.MaxVoltage;
+			MaxCapacity = c.MaxCapacity;
+			MinCapacity = c.MinCapacity;
+			MinOperatingTemperature = c.MinOperatingTemperature;
+			MaxOperatingTemperature = c.MaxOperatingTemperature;
+			AcceptableCapacityIncrease = c.AcceptableCapacityIncrease;
+			AcceptableСapacityReduction = c.AcceptableСapacityReduction;
+			QualicationSG = c.QualicationSG;
+			QualicationЕС = c.QualicationЕС;
+			Remark1 = c.Remark1;
+			Remark2 = c.Remark2;
+		}
+	}
 }

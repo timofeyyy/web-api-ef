@@ -26,7 +26,16 @@ namespace WebAPIApp.Controllers
 			)
         {
 			var items = db.Microchips
-	        .Select(m => m);
+			.Select(m => new Microchips(m)
+			{
+				RuComponentKind = m.Kind.RuComponentKind,
+				EnComponentKind = m.Kind.RuComponentKind,
+				RuComponentType = m.Type.RuComponentType,
+				EnComponentType = m.Type.EnComponentType,
+				ManufacturerName = m.Manufacturer.ManufacturerName,
+				EnTechnologyName = m.Technology.EnTechnologyName,
+				RuTechnologyName = m.Technology.RuTechnologyName
+			});
 
 			if (!componentName.IsNullOrEmpty())
 			{

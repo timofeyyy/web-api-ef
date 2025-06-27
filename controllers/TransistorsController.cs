@@ -26,7 +26,14 @@ namespace WebAPIApp.Controllers
 			)
         {
 			var items = db.Transistors
-			.Select(m => m);
+			.Select(t => new Transistors(t)
+			{
+				RuComponentKind = t.Kind.RuComponentKind,
+				EnComponentKind = t.Kind.RuComponentKind,
+				RuComponentType = t.Type.RuComponentType,
+				EnComponentType = t.Type.EnComponentType,
+				ManufacturerName = t.Manufacturer.ManufacturerName
+			});
 
 			if (!componentName.IsNullOrEmpty())
 			{

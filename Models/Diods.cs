@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Numerics;
 using System.Text.Json.Serialization;
 
@@ -6,7 +7,18 @@ namespace app.Entities
 {
     public class Diods
     {
-        [Key]
+		[NotMapped]
+		public string? RuComponentType { get; set; }
+		[NotMapped]
+		public string? RuComponentKind { get; set; }
+		[NotMapped]
+		public string? ManufacturerName { get; set; }
+		[NotMapped]
+		public string? EnComponentType { get; set; }
+		[NotMapped]
+		public string? EnComponentKind { get; set; }
+
+		[Key]
         public int ID { get; set; }
         public long? DocID { get; set; }
  
@@ -33,5 +45,26 @@ namespace app.Entities
         public string? Package { get; set; }
         public string? Remark1 { get; set; } 
         public string? Remark2 { get; set; }
+
+        public Diods() { }
+        public Diods(Diods d) {
+			ID = d.ID;
+			DocID = d.DocID;
+
+
+			MaxPermissibleDCVoltage = d.MaxPermissibleDCVoltage;
+			ComponentName = d.ComponentName;
+			MinOperatingTemperature = d.MinOperatingTemperature;
+			MaxOperatingTemperature = d.MaxOperatingTemperature;
+			MaxPermissibleAverageDirectCurrent = d.MaxPermissibleAverageDirectCurrent;
+			MaxiPermissibleDirectCurrent = d.MaxiPermissibleDirectCurrent;
+			RadiationResistance = d.RadiationResistance;
+			RadiationResistanceI = d.RadiationResistanceI;
+			QualicationSG = d.QualicationSG;
+			QualicationЕС = d.QualicationЕС;
+			Package = d.Package;
+			Remark1 = d.Remark1;
+			Remark2 = d.Remark2;
+		}
     }
 }

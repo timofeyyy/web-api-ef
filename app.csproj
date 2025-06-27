@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <Content Update="wwwroot\allias.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

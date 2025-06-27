@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Numerics;
 using System.Text.Json.Serialization;
 
@@ -6,7 +7,16 @@ namespace app.Entities
 {
     public class Resistors
     {
-		static public string Name { get { return "resistors"; } }
+		[NotMapped]
+		public string? RuComponentType { get; set; }
+		[NotMapped]
+		public string? RuComponentKind { get; set; }
+		[NotMapped]
+		public string? ManufacturerName { get; set; }
+		[NotMapped]
+		public string? EnComponentType { get; set; }
+		[NotMapped]
+		public string? EnComponentKind { get; set; }
 
 		[Key]
         public int ID { get; set; }
@@ -37,5 +47,26 @@ namespace app.Entities
         public string? Package { get; set; }
         public string? Remark1 { get; set; }
         public string? Remark2 { get; set; }
+    
+        public Resistors() { }
+        public Resistors(Resistors r) {
+			ID = r.ID;
+			DocID = r.DocID;
+			PowerRating = r.PowerRating;
+			ComponentName = r.ComponentName;
+			MinVoltage = r.MinVoltage;
+			MaxVoltage = r.MaxVoltage;
+			MinRatedResistance = r.MinRatedResistance;
+			MaxRatedResistance = r.MaxRatedResistance;
+			ResistanceTolerance = r.ResistanceTolerance;
+			MinOperatingTemperature = r.MinOperatingTemperature;
+			MaxOperatingTemperature = r.MaxOperatingTemperature;
+			CurrentLimit = r.CurrentLimit;
+			QualicationSG = r.QualicationSG;
+			QualicationЕС = r.QualicationЕС;
+			Package = r.Package;
+			Remark1 = r.Remark1;
+			Remark2 = r.Remark2;
+		}
     }
 }

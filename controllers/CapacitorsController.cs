@@ -26,7 +26,14 @@ namespace WebAPIApp.Controllers
 			)
         {
 			var items = db.Capacitors
-			.Select(m => m);
+			.Select(c => new Capacitors(c)
+			{
+				RuComponentKind = c.Kind.RuComponentKind,
+				EnComponentKind = c.Kind.RuComponentKind,
+				RuComponentType = c.Type.RuComponentType,
+				EnComponentType = c.Type.EnComponentType,
+				ManufacturerName = c.Manufacturer.ManufacturerName
+			});
 
 			if (!componentName.IsNullOrEmpty())
 			{

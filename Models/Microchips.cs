@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Numerics;
 using System.Text.Json.Serialization;
 
@@ -6,9 +7,21 @@ namespace app.Entities
 {
     public class Microchips
     {
-        static public string Name { get { return "microchips"; } }
-
-        [Key]
+		[NotMapped]
+		public string? RuComponentType { get; set; }
+		[NotMapped]
+		public string? RuComponentKind { get; set; }
+		[NotMapped]
+		public string? ManufacturerName { get; set; }
+		[NotMapped]
+		public string? EnComponentType { get; set; }
+		[NotMapped]
+		public string? EnComponentKind { get; set; }
+		[NotMapped]
+		public string? RuTechnologyName { get; set; }
+		[NotMapped]
+		public string? EnTechnologyName { get; set; }
+		[Key]
         public int ID { get; set; }
         public long? DocID { get; set; }
         [StringLength(450)]
@@ -39,5 +52,29 @@ namespace app.Entities
         public double? SamplingTime { get; set; }
         public string? Qualication { get; set; }
         public string? Remark1 { get; set; }
-    }
+
+		public Microchips() { }
+
+		public Microchips(Microchips m) {
+			ID = m.ID;
+			DocID = m.DocID;
+	
+		
+			BitDepthValue = m.BitDepthValue;
+			ComponentName = m.ComponentName;
+			ConsumptionCurrent = m.ConsumptionCurrent;
+			Interfaces = m.Interfaces;
+			MinVoltage = m.MinVoltage;
+			MaxVoltage = m.MaxVoltage;
+			Frequency = m.Frequency;
+			MinOperatingTemperature = m.MinOperatingTemperature;
+			MaxOperatingTemperature = m.MaxOperatingTemperature;
+			RadiationResistance = m.RadiationResistance;
+			RadiationResistanceI = m.RadiationResistanceI;
+			MemoryFormat = m.MemoryFormat;
+			SamplingTime = m.SamplingTime;
+			Qualication = m.Qualication;
+			Remark1 = m.Remark1;
+		}
+	}
 }

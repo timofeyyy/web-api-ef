@@ -26,7 +26,14 @@ namespace WebAPIApp.Controllers
 			)
         {
 			var items = db.Diods
-	        .Select(m => m);
+			.Select(d => new Diods(d)
+			{
+				RuComponentKind = d.Kind.RuComponentKind,
+				EnComponentKind = d.Kind.RuComponentKind,
+				RuComponentType = d.Type.RuComponentType,
+				EnComponentType = d.Type.EnComponentType,
+				ManufacturerName = d.Manufacturer.ManufacturerName,
+			});
 
 			if (!componentName.IsNullOrEmpty())
 			{
