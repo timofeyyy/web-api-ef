@@ -25,22 +25,25 @@ namespace WebAPIApp.Controllers
 			[FromQuery] string? componentName
 			)
         {
-			var items = db.Capacitors
-			.Select(c => new Capacitors(c)
-			{
-				RuComponentKind = c.Kind.RuComponentKind,
-				EnComponentKind = c.Kind.RuComponentKind,
-				RuComponentType = c.Type.RuComponentType,
-				EnComponentType = c.Type.EnComponentType,
-				ManufacturerName = c.Manufacturer.ManufacturerName
-			});
+			var query = db.Capacitors.AsQueryable();
 
-			if (!componentName.IsNullOrEmpty())
+			if (!string.IsNullOrEmpty(componentName))
 			{
-				items = items.Where(r => r.ComponentName == componentName);
+				query = query.Where(d => d.ComponentName == componentName);
 			}
 
-			return await items.ToListAsync();
-        }
+			var items = await query
+				.Select(c => new Capacitors(c)
+				{
+					RuComponentKind = c.Kind.RuComponentKind,
+					EnComponentKind = c.Kind.RuComponentKind,
+					RuComponentType = c.Type.RuComponentType,
+					EnComponentType = c.Type.EnComponentType,
+					ManufacturerName = c.Manufacturer.ManufacturerName,
+				})
+				.ToListAsync();
+
+			return items;
+		}
     }
 }

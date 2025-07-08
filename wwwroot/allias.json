@@ -2,7 +2,7 @@
   "acceptableCapacityIncrease": "Допускаемое увелечение отклонения емкости",
   "acceptableСapacityReduction": "Допускаемое уменьшение отклонения емкости",
   "bitDepthValue": "Битность",
-  "componentName": "Название компонента",
+  "componentName": "Индетификатор компонента",
   "consumptionCurrent": "Ток потребления",
   "docID": "Название информационного файла",
   "enComponentKind": "Вид компонента(en)",
@@ -17,8 +17,8 @@
   "minOperatingTemperature": "Минимальная рабочая температура",
   "minVoltage": "Минимальное напряжение",
   "outputType": "Вид вывода",
-  "qualicationSG": "Квалификация SG",
-  "qualicationЕС": "Квалификация EC",
+  "qualicationSG": "Категория качества SG",
+  "qualicationЕС": "Категория качества EC",
   "remark1": "Remark1",
   "remark2": "Remark2",
   "ruComponentKind": "Вид компонента",
@@ -35,5 +35,10 @@
   "maxPermissibleDCVoltage": "Максимально допустимое постоянное напряжение коллектор-эмиттер",
   "package": "Корпус",
   "maxiPermissibleDirectCurrent": "Максимально допустимый постоянный /импульсный/ прямой ток",
-  "maxPermissibleAverageDirectCurrent": "Максимально допустимый средний прямой ток"
+  "maxPermissibleAverageDirectCurrent": "Максимально допустимый средний прямой ток",
+  "powerRating": "Номинальная мощность",
+  "resistanceTolerance": "Допускаемое отклонение сопротивления",
+  "minRatedResistance": "Минимальное номинальное сопротивление",
+  "maxRatedResistance": "Максимальное номинальное сопротивление",
+  "currentLimit": "Предельный рабочий ток"
 }

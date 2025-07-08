@@ -4,6 +4,7 @@ using app.Logger;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,22 +26,25 @@ namespace WebAPIApp.Controllers
 			[FromQuery] string? componentName
 			)
         {
-			var items = db.Diods
-			.Select(d => new Diods(d)
-			{
-				RuComponentKind = d.Kind.RuComponentKind,
-				EnComponentKind = d.Kind.RuComponentKind,
-				RuComponentType = d.Type.RuComponentType,
-				EnComponentType = d.Type.EnComponentType,
-				ManufacturerName = d.Manufacturer.ManufacturerName,
-			});
+			var query = db.Diods.AsQueryable();
 
-			if (!componentName.IsNullOrEmpty())
+			if (!string.IsNullOrEmpty(componentName))
 			{
-				items = items.Where(r => r.ComponentName == componentName);
+				query = query.Where(d => d.ComponentName == componentName);
 			}
 
-			return await items.ToListAsync();
+			var items = await query
+				.Select(d => new Diods(d)
+				{
+					RuComponentKind = d.Kind.RuComponentKind,
+					EnComponentKind = d.Kind.RuComponentKind,
+					RuComponentType = d.Type.RuComponentType,
+					EnComponentType = d.Type.EnComponentType,
+					ManufacturerName = d.Manufacturer.ManufacturerName,
+				})
+				.ToListAsync();
+
+			return items;
         }
     }
 }

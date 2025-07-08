@@ -25,25 +25,26 @@ namespace WebAPIApp.Controllers
 			[FromQuery] string? componentName
 			)
         {
-			var items = db.Microchips
-			.Select(m => new Microchips(m)
-			{
-				RuComponentKind = m.Kind.RuComponentKind,
-				EnComponentKind = m.Kind.RuComponentKind,
-				RuComponentType = m.Type.RuComponentType,
-				EnComponentType = m.Type.EnComponentType,
-				ManufacturerName = m.Manufacturer.ManufacturerName,
-				EnTechnologyName = m.Technology.EnTechnologyName,
-				RuTechnologyName = m.Technology.RuTechnologyName
-			});
+			var query = db.Microchips.AsQueryable();
 
-			if (!componentName.IsNullOrEmpty())
+			if (!string.IsNullOrEmpty(componentName))
 			{
-				items = items.Where(r => r.ComponentName == componentName);
+				query = query.Where(d => d.ComponentName == componentName);
 			}
 
-			return await items.ToListAsync();
-        }
+			var items = await query
+				.Select(m => new Microchips(m)
+				{
+					RuComponentKind = m.Kind.RuComponentKind,
+					EnComponentKind = m.Kind.RuComponentKind,
+					RuComponentType = m.Type.RuComponentType,
+					EnComponentType = m.Type.EnComponentType,
+					ManufacturerName = m.Manufacturer.ManufacturerName,
+				})
+				.ToListAsync();
+
+			return items;
+		}
 
 		[HttpGet("bitdepthvalue")]
 		public async Task<ActionResult<object>> Get(

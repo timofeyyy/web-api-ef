@@ -25,22 +25,25 @@ namespace WebAPIApp.Controllers
 			[FromQuery] string? componentName
 			)
         {
-			var items = db.Resistors
-			.Select(r => new Resistors(r)
-			{
-				RuComponentKind = r.Kind.RuComponentKind,
-				EnComponentKind = r.Kind.RuComponentKind,
-				RuComponentType = r.Type.RuComponentType,
-				EnComponentType = r.Type.EnComponentType,
-				ManufacturerName = r.Manufacturer.ManufacturerName,
-			});
+			var query = db.Resistors.AsQueryable();
 
-			if (!componentName.IsNullOrEmpty())
+			if (!string.IsNullOrEmpty(componentName))
 			{
-				items = items.Where(r => r.ComponentName == componentName);
+				query = query.Where(d => d.ComponentName == componentName);
 			}
 
-			return await items.ToListAsync();
-        }
+			var items = await query
+				.Select(r => new Resistors(r)
+				{
+					RuComponentKind = r.Kind.RuComponentKind,
+					EnComponentKind = r.Kind.RuComponentKind,
+					RuComponentType = r.Type.RuComponentType,
+					EnComponentType = r.Type.EnComponentType,
+					ManufacturerName = r.Manufacturer.ManufacturerName,
+				})
+				.ToListAsync();
+
+			return items;
+		}
     }
 }
