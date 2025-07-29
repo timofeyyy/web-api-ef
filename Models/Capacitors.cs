@@ -19,16 +19,21 @@ namespace app.Entities
 		public string? EnComponentKind { get; set; }
 
 		[Key]
-        public int ID { get; set; }
-        public long? DocID { get; set; }
+		[JsonIgnore]
+		public int ID { get; set; }
+		[JsonIgnore]
+		public long? DocID { get; set; }
         [StringLength(450)]
         public string ComponentName { get; set; }
+		[JsonIgnore]
 		public int? Type_ID { get; set; }
 		[JsonIgnore]
 		public ComponentTypes Type { get; set; }
+		[JsonIgnore]
 		public int? Kind_ID { get; set; }
 		[JsonIgnore]
 		public ComponentKinds Kind { get; set; }
+		[JsonIgnore]
 		public int? ManufacturerName_ID { get; set; }
 		[JsonIgnore]
 		public Manufacturers Manufacturer { get; set; }

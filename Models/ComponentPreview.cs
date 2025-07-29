@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace app.Entities
 {
-	public class ComponentsPreivew
+	public class ComponentPreview
 	{
 		public string? RuComponentType { get; set; }
 		public string? RuComponentKind { get; set; }
@@ -13,5 +13,6 @@ namespace app.Entities
 		public string? EnComponentType { get; set; }
 		public string? EnComponentKind { get; set; }
 		public string? ComponentName { get; set; }
+
 	}
 }

@@ -22,16 +22,21 @@ namespace app.Entities
 		[NotMapped]
 		public string? EnTechnologyName { get; set; }
 		[Key]
-        public int ID { get; set; }
-        public long? DocID { get; set; }
+		[JsonIgnore]
+		public int ID { get; set; }
+		[JsonIgnore]
+		public long? DocID { get; set; }
         [StringLength(450)]
         public string ComponentName { get; set; }
+		[JsonIgnore]
 		public int? Type_ID { get; set; }
 		[JsonIgnore]
 		public ComponentTypes Type { get; set; }
+		[JsonIgnore]
 		public int? Kind_ID { get; set; }
 		[JsonIgnore]
 		public ComponentKinds Kind { get; set; }
+		[JsonIgnore]
 		public int? ManufacturerName_ID { get; set; }
 		[JsonIgnore]
 		public Manufacturers Manufacturer { get; set; }
@@ -41,6 +46,7 @@ namespace app.Entities
         public double? Frequency { get; set; }
         public string? BitDepthValue { get; set; }
         public double? ConsumptionCurrent { get; set; }
+		[NotMapped]
 		public int? TechnologyName_ID { get; set; }
 		[JsonIgnore]
 		public Technologies Technology { get; set; }

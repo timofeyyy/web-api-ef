@@ -1,0 +1,477 @@
+#################### 15.07.2025 00:37:26 
+Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 15.07.2025 00:37:26 
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID], [c0].[RuComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 00:37:26 
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 00:37:26 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 00:37:26 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 00:37:27 
+Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 15.07.2025 00:37:27 
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID], [c0].[RuComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 00:37:27 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 00:37:27 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 00:37:27 
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:39:51 
+An error occurred using the connection to database 'ComponentDB' on server 'tcp:127.0.0.1,1433'.
+#################### 15.07.2025 12:39:51 
+An error occurred using the connection to database 'ComponentDB' on server 'tcp:127.0.0.1,1433'.
+#################### 15.07.2025 12:39:51 
+An error occurred using the connection to database 'ComponentDB' on server 'tcp:127.0.0.1,1433'.
+#################### 15.07.2025 12:39:51 
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.)
+ ---> System.ComponentModel.Win32Exception (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:10061,State:0,Class:20
+#################### 15.07.2025 12:39:51 
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.)
+ ---> System.ComponentModel.Win32Exception (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:10061,State:0,Class:20
+#################### 15.07.2025 12:39:51 
+An exception occurred while iterating over the results of a query for context type 'app.Context.DataBase'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.)
+ ---> System.ComponentModel.Win32Exception (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:10061,State:0,Class:20
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (77ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID], [c0].[RuComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID], [c0].[RuComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID], [c0].[RuComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:43:48 
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:44:20 
+Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:44:20 
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:44:20 
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID], [c0].[RuComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:44:20 
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:44:21 
+Executed DbCommand (39ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID], [c0].[RuComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:44:21 
+Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+#################### 15.07.2025 12:44:21 
+Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+#################### 15.07.2025 12:44:21 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:44:21 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:44:21 
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID], [c0].[RuComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID], [c0].[RuComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID], [c0].[RuComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:13 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:14 
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 15.07.2025 12:46:14 
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID], [c0].[RuComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:14 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[ID], [t].[ComponentName], [t].[DocID], [t].[Kind_ID], [t].[ManufacturerName_ID], [t].[MaxOperatingTemperature], [t].[MaxPermissibleDCCollectorCurrent], [t].[MaxPermissibleDCVoltage], [t].[MinOperatingTemperature], [t].[Package], [t].[QualicationSG], [t].[QualicationЕС], [t].[RadiationResistance], [t].[RadiationResistanceI], [t].[Remark1], [t].[Remark2], [t].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentKinds] AS [c] ON [t].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [t].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:14 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [d].[ID], [d].[ComponentName], [d].[DocID], [d].[Kind_ID], [d].[ManufacturerName_ID], [d].[MaxOperatingTemperature], [d].[MaxPermissibleAverageDirectCurrent], [d].[MaxPermissibleDCVoltage], [d].[MaxiPermissibleDirectCurrent], [d].[MinOperatingTemperature], [d].[Package], [d].[QualicationSG], [d].[QualicationЕС], [d].[RadiationResistance], [d].[RadiationResistanceI], [d].[Remark1], [d].[Remark2], [d].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentKinds] AS [c] ON [d].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [d].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+#################### 15.07.2025 12:46:14 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[ID], [r].[ComponentName], [r].[CurrentLimit], [r].[DocID], [r].[Kind_ID], [r].[ManufacturerName_ID], [r].[MaxOperatingTemperature], [r].[MaxRatedResistance], [r].[MaxVoltage], [r].[MinOperatingTemperature], [r].[MinRatedResistance], [r].[MinVoltage], [r].[Package], [r].[PowerRating], [r].[QualicationSG], [r].[QualicationЕС], [r].[Remark1], [r].[Remark2], [r].[ResistanceTolerance], [r].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m].[ManufacturerName]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentKinds] AS [c] ON [r].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [r].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]

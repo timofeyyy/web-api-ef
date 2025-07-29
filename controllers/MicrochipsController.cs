@@ -31,7 +31,18 @@ namespace WebAPIApp.Controllers
 			{
 				query = query.Where(d => d.ComponentName == componentName);
 			}
-
+			//if (!string.IsNullOrEmpty(manufacturerName))
+			//{
+			//	query = query.Where(d => d.ManufacturerName == manufacturerName);
+			//}
+			//if (!string.IsNullOrEmpty(bitdepthvalue))
+			//{
+			//	query = query.Where(d => d.BitDepthValue == bitdepthvalue);
+			//}
+			//if (!string.IsNullOrEmpty(ruComponentKind))
+			//{
+			//	query = query.Where(d => d.RuComponentKind == ruComponentKind);
+			//}
 			var items = await query
 				.Select(m => new Microchips(m)
 				{

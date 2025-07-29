@@ -22,7 +22,7 @@ namespace WebAPIApp.Controllers
 		
       
 		[HttpGet("short")]
-		public async Task<ActionResult<IEnumerable<ComponentsPreivew>>> Get(
+		public async Task<ActionResult<IEnumerable<ComponentPreview>>> Get(
 		[FromQuery] string? ruComponentType,
 			[FromQuery] string? ruComponentKind,
 			[FromQuery] string? manufacturerName,
@@ -33,7 +33,7 @@ namespace WebAPIApp.Controllers
 			var items = db.ComponentTypes
 			.SelectMany(c => db.Microchips
 				.Where(m => m.Type.RuComponentType == c.RuComponentType)
-				.Select(m => new ComponentsPreivew()
+				.Select(m => new ComponentPreview()
 				{
 					ManufacturerName = m.Manufacturer.ManufacturerName,
 					RuComponentKind = m.Kind.RuComponentKind,
@@ -43,7 +43,7 @@ namespace WebAPIApp.Controllers
 					ComponentName = m.ComponentName
 				}))
 			.Concat(db.Transistors
-				.Select(t => new ComponentsPreivew()
+				.Select(t => new ComponentPreview()
 				{
 					ManufacturerName = t.Manufacturer.ManufacturerName,
 					RuComponentKind = t.Kind.RuComponentKind,
@@ -53,7 +53,7 @@ namespace WebAPIApp.Controllers
 					ComponentName = t.ComponentName
 				}))
 			.Concat(db.Resistors
-				.Select(r => new ComponentsPreivew()
+				.Select(r => new ComponentPreview()
 				{
 					ManufacturerName = r.Manufacturer.ManufacturerName,
 					RuComponentKind = r.Kind.RuComponentKind,
@@ -63,7 +63,7 @@ namespace WebAPIApp.Controllers
 					ComponentName = r.ComponentName
 				}))
 			.Concat(db.Capacitors
-				.Select(c => new ComponentsPreivew()
+				.Select(c => new ComponentPreview()
 				{
 					ManufacturerName = c.Manufacturer.ManufacturerName,
 					RuComponentKind = c.Kind.RuComponentKind,
@@ -73,7 +73,7 @@ namespace WebAPIApp.Controllers
 					ComponentName = c.ComponentName
 				}))
 			.Concat(db.Diods
-				.Select(d => new ComponentsPreivew()
+				.Select(d => new ComponentPreview()
 				{
 					ManufacturerName = d.Manufacturer.ManufacturerName,
 					RuComponentKind = d.Kind.RuComponentKind,

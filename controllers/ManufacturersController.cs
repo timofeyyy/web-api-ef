@@ -1,0 +1,118 @@
+using app.Context;
+using app.Entities;
+using app.Logger;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WebAPIApp.Controllers
+{
+    [ApiController]
+    [Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
+    public class ManufacturersController : ControllerBase
+    {
+        DataBase db;
+		public ManufacturersController(DataBase context)
+        {
+            db = context;
+        }
+		
+      
+		[HttpGet("production")]
+		public async Task<ActionResult<Object>> Get(
+			[FromQuery] string? ruComponentType,
+			[FromQuery] string? ruComponentKind,
+			[FromQuery] string? manufacturerName
+			)
+		{
+			var items = db.ComponentTypes
+			.SelectMany(c => db.Microchips
+				.Where(m => m.Type.RuComponentType == c.RuComponentType)
+				.Select(m => new ComponentPreview()
+				{
+					ManufacturerName = m.Manufacturer.ManufacturerName,
+					RuComponentKind = m.Kind.RuComponentKind,
+					EnComponentKind = m.Kind.EnComponentKind,
+					RuComponentType = m.Type.RuComponentType,
+					EnComponentType = m.Type.EnComponentType,
+					ComponentName = m.ComponentName
+				}))
+			.Concat(db.Transistors
+				.Select(t => new ComponentPreview()
+				{
+					ManufacturerName = t.Manufacturer.ManufacturerName,
+					RuComponentKind = t.Kind.RuComponentKind,
+					EnComponentKind = t.Kind.EnComponentKind,
+					RuComponentType = t.Type.RuComponentType,
+					EnComponentType = t.Type.EnComponentType,
+					ComponentName = t.ComponentName
+				}))
+			.Concat(db.Resistors
+				.Select(r => new ComponentPreview()
+				{
+					ManufacturerName = r.Manufacturer.ManufacturerName,
+					RuComponentKind = r.Kind.RuComponentKind,
+					EnComponentKind = r.Kind.EnComponentKind,
+					RuComponentType = r.Type.RuComponentType,
+					EnComponentType = r.Type.EnComponentType,
+					ComponentName = r.ComponentName
+				}))
+			.Concat(db.Capacitors
+				.Select(c => new ComponentPreview()
+				{
+					ManufacturerName = c.Manufacturer.ManufacturerName,
+					RuComponentKind = c.Kind.RuComponentKind,
+					EnComponentKind = c.Kind.EnComponentKind,
+					RuComponentType = c.Type.RuComponentType,
+					EnComponentType = c.Type.EnComponentType,
+					ComponentName = c.ComponentName
+				}))
+			.Concat(db.Diods
+				.Select(d => new ComponentPreview()
+				{
+					ManufacturerName = d.Manufacturer.ManufacturerName,
+					RuComponentKind = d.Kind.RuComponentKind,
+					EnComponentKind = d.Kind.EnComponentKind,
+					RuComponentType = d.Type.RuComponentType,
+					EnComponentType = d.Type.EnComponentType,
+					ComponentName = d.ComponentName
+				}));
+
+			if (ruComponentType != null)
+			{
+				items = items.Where(t => t.RuComponentType == ruComponentType);
+			}
+			if (ruComponentKind != null)
+			{
+				items = items.Where(t => t.RuComponentKind == ruComponentKind);
+			}
+			if (manufacturerName != null)
+			{
+				items = items.Where(t => t.ManufacturerName == manufacturerName);
+			}
+
+			Dictionary<string, Dictionary<string, int>> dict = new Dictionary<string, Dictionary<string, int>>();
+
+			foreach (var item in items)
+			{
+				if (!dict.ContainsKey(item.ManufacturerName))
+				{
+					dict[item.ManufacturerName] = new Dictionary<string, int>();
+				}
+				if (!dict[item.ManufacturerName].ContainsKey(item.EnComponentType))
+				{
+					dict[item.ManufacturerName][item.EnComponentType] = 0;
+				}
+				dict[item.ManufacturerName][item.EnComponentType] += 1;
+			}
+
+			return dict;
+			
+
+		}
+	}
+}
