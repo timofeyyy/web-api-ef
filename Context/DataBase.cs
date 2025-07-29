@@ -1,4 +1,5 @@
 ﻿using app.Entities;
+using app.Models.Ef;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;

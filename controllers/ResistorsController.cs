@@ -1,6 +1,6 @@
 using app.Context;
-using app.Entities;
 using app.Logger;
+using app.Models.Ef;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

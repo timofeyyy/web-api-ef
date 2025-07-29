@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using app.Entities;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Numerics;
 using System.Text.Json.Serialization;
 
-namespace app.Entities
+namespace app.Models.Ef
 {
-    public class Transistors
+    public class Diods
     {
 		[NotMapped]
 		public string? RuComponentType { get; set; }
@@ -37,35 +38,39 @@ namespace app.Entities
 		[JsonIgnore]
 		public int? ManufacturerName_ID { get; set; }
 		[JsonIgnore]
-        public Manufacturers Manufacturer { get; set; }
-        public double? MaxPermissibleDCVoltage { get; set; }
+		public Manufacturers Manufacturer { get; set; }
+		public double? MaxPermissibleDCVoltage { get; set; }
         public double? MinOperatingTemperature { get; set; }
         public double? MaxOperatingTemperature { get; set; }
-        public double? MaxPermissibleDCCollectorCurrent { get; set; }
+        public double? MaxPermissibleAverageDirectCurrent { get; set; }
+        public double? MaxiPermissibleDirectCurrent { get; set; }
         public double? RadiationResistance { get; set; }
         public string? RadiationResistanceI { get; set; }
         public string? QualicationSG { get; set; }
         public string? QualicationЕС { get; set; }
         public string? Package { get; set; }
-        public string? Remark1 { get; set; }
+        public string? Remark1 { get; set; } 
         public string? Remark2 { get; set; }
 
-        public Transistors() { }
-        public Transistors(Transistors t) {
-			ID = t.ID;
-			DocID = t.DocID;
-			MaxPermissibleDCVoltage = t.MaxPermissibleDCVoltage;
-			ComponentName = t.ComponentName;
-			MinOperatingTemperature = t.MinOperatingTemperature;
-			MaxOperatingTemperature = t.MaxOperatingTemperature;
-			MaxPermissibleDCCollectorCurrent = t.MaxPermissibleDCCollectorCurrent;
-			RadiationResistance = t.RadiationResistance;
-			RadiationResistanceI = t.RadiationResistanceI;
-			QualicationSG = t.QualicationSG;
-			QualicationЕС = t.QualicationЕС;
-			Package = t.Package;
-			Remark1 = t.Remark1;
-			Remark2 = t.Remark2;
+        public Diods() { }
+        public Diods(Diods d) {
+			ID = d.ID;
+			DocID = d.DocID;
+
+
+			MaxPermissibleDCVoltage = d.MaxPermissibleDCVoltage;
+			ComponentName = d.ComponentName;
+			MinOperatingTemperature = d.MinOperatingTemperature;
+			MaxOperatingTemperature = d.MaxOperatingTemperature;
+			MaxPermissibleAverageDirectCurrent = d.MaxPermissibleAverageDirectCurrent;
+			MaxiPermissibleDirectCurrent = d.MaxiPermissibleDirectCurrent;
+			RadiationResistance = d.RadiationResistance;
+			RadiationResistanceI = d.RadiationResistanceI;
+			QualicationSG = d.QualicationSG;
+			QualicationЕС = d.QualicationЕС;
+			Package = d.Package;
+			Remark1 = d.Remark1;
+			Remark2 = d.Remark2;
 		}
     }
 }

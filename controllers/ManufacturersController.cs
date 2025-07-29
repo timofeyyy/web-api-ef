@@ -20,10 +20,22 @@ namespace WebAPIApp.Controllers
         {
             db = context;
         }
-		
-      
+
+		//[HttpGet("names")]
+		//public async Task<ActionResult<IEnumerable<string>>> Get(
+		//	[FromQuery] string? manufacturerName
+		//	)
+		//{
+		//	var items = db.Manufacturers.Select(m => m.ManufacturerName);
+		//	if (manufacturerName != null)
+		//	{
+		//		items = items.Where(m => m == manufacturerName);
+		//	}
+		//	return await items.ToListAsync();
+		//}
+
 		[HttpGet("production")]
-		public async Task<ActionResult<Object>> Get(
+		public async Task<ActionResult<Dictionary<string, Dictionary<string, int>>>> Get(
 			[FromQuery] string? ruComponentType,
 			[FromQuery] string? ruComponentKind,
 			[FromQuery] string? manufacturerName
@@ -111,8 +123,6 @@ namespace WebAPIApp.Controllers
 			}
 
 			return dict;
-			
-
 		}
 	}
 }

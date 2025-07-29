@@ -1,16 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using app.Entities;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace app.Entities
+namespace app.Models.Ef
 {
-    public class ComponentKinds
+    public class ComponentTypes
     {
         [Key]
         public int ID { get; set; }
         [StringLength(450)]
-        public string RuComponentKind { get; set; }
+        public string RuComponentType { get; set; }
         [StringLength(450)]
-        public string EnComponentKind { get; set; }
+        public string EnComponentType { get; set; }
         [JsonIgnore]
 		public List<Capacitors> Capacitors { get; set; }
 		[JsonIgnore]

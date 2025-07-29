@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace app.Entities
+namespace app.Models.Ef
 {
     public class Technologies
     {
