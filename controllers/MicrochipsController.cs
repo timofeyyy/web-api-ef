@@ -57,33 +57,33 @@ namespace WebAPIApp.Controllers
 			return items;
 		}
 
-		[HttpGet("bitdepthvalue")]
-		public async Task<ActionResult<object>> Get(
-			[FromQuery] string? componentName,
-			[FromQuery] string? manufacturerName,
-			[FromQuery] string? ruComponentKind,
-			[FromQuery] string? bitdepthvalue
-			)
-		{
-			var items = db.Microchips.Select(m => new { m.Manufacturer.ManufacturerName, m.BitDepthValue, m.ComponentName, m.Kind.RuComponentKind });
+		//[HttpGet("bitdepthvalue")]
+		//public async Task<ActionResult<object>> Get(
+		//	[FromQuery] string? componentName,
+		//	[FromQuery] string? manufacturerName,
+		//	[FromQuery] string? ruComponentKind,
+		//	[FromQuery] string? bitdepthvalue
+		//	)
+		//{
+		//	var items = db.Microchips.Select(m => new { m.Manufacturer.ManufacturerName, m.BitDepthValue, m.ComponentName, m.Kind.RuComponentKind });
 
-			if (!manufacturerName.IsNullOrEmpty())
-			{
-				items = items.Where(m => m.ManufacturerName == manufacturerName);
-			}
-			if (!ruComponentKind.IsNullOrEmpty())
-			{
-				items = items.Where(m => m.RuComponentKind == ruComponentKind);
-			}
-			if (!componentName.IsNullOrEmpty())
-			{
-				items = items.Where(m => m.ComponentName == componentName);
-			}
-			if (!bitdepthvalue.IsNullOrEmpty())
-			{
-				items = items.Where(m => m.BitDepthValue == bitdepthvalue);
-			}
-			return await items.ToListAsync();
-		}
+		//	if (!manufacturerName.IsNullOrEmpty())
+		//	{
+		//		items = items.Where(m => m.ManufacturerName == manufacturerName);
+		//	}
+		//	if (!ruComponentKind.IsNullOrEmpty())
+		//	{
+		//		items = items.Where(m => m.RuComponentKind == ruComponentKind);
+		//	}
+		//	if (!componentName.IsNullOrEmpty())
+		//	{
+		//		items = items.Where(m => m.ComponentName == componentName);
+		//	}
+		//	if (!bitdepthvalue.IsNullOrEmpty())
+		//	{
+		//		items = items.Where(m => m.BitDepthValue == bitdepthvalue);
+		//	}
+		//	return await items.ToListAsync();
+		//}
 	}
 }

@@ -1,13 +1,8 @@
 using app.Context;
 using app.Entities;
-using app.Logger;
-using Microsoft.AspNetCore.Components;
+using app.Models.other;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace WebAPIApp.Controllers
 {

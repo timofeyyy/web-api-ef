@@ -9,13 +9,9 @@ namespace app.Models.Ef
     public class Microchips
     {
 		[NotMapped]
-		public string? RuComponentType { get; set; }
-		[NotMapped]
 		public string? RuComponentKind { get; set; }
 		[NotMapped]
 		public string? ManufacturerName { get; set; }
-		[NotMapped]
-		public string? EnComponentType { get; set; }
 		[NotMapped]
 		public string? EnComponentKind { get; set; }
 		[NotMapped]
@@ -48,6 +44,7 @@ namespace app.Models.Ef
         public string? BitDepthValue { get; set; }
         public double? ConsumptionCurrent { get; set; }
 		[NotMapped]
+		[JsonIgnore]
 		public int? TechnologyName_ID { get; set; }
 		[JsonIgnore]
 		public Technologies Technology { get; set; }
@@ -59,7 +56,10 @@ namespace app.Models.Ef
         public double? SamplingTime { get; set; }
         public string? Qualication { get; set; }
         public string? Remark1 { get; set; }
-
+		[NotMapped]
+		public string? RuComponentType { get; set; }
+		[NotMapped]
+		public string? EnComponentType { get; set; }
 		public Microchips() { }
 
 		public Microchips(Microchips m) {

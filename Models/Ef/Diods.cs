@@ -9,13 +9,9 @@ namespace app.Models.Ef
     public class Diods
     {
 		[NotMapped]
-		public string? RuComponentType { get; set; }
-		[NotMapped]
 		public string? RuComponentKind { get; set; }
 		[NotMapped]
 		public string? ManufacturerName { get; set; }
-		[NotMapped]
-		public string? EnComponentType { get; set; }
 		[NotMapped]
 		public string? EnComponentKind { get; set; }
 
@@ -51,8 +47,12 @@ namespace app.Models.Ef
         public string? Package { get; set; }
         public string? Remark1 { get; set; } 
         public string? Remark2 { get; set; }
+		[NotMapped]
+		public string? RuComponentType { get; set; }
+		[NotMapped]
+		public string? EnComponentType { get; set; }
 
-        public Diods() { }
+		public Diods() { }
         public Diods(Diods d) {
 			ID = d.ID;
 			DocID = d.DocID;

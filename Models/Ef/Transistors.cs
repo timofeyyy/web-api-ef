@@ -9,13 +9,9 @@ namespace app.Models.Ef
     public class Transistors
     {
 		[NotMapped]
-		public string? RuComponentType { get; set; }
-		[NotMapped]
 		public string? RuComponentKind { get; set; }
 		[NotMapped]
 		public string? ManufacturerName { get; set; }
-		[NotMapped]
-		public string? EnComponentType { get; set; }
 		[NotMapped]
 		public string? EnComponentKind { get; set; }
 
@@ -50,8 +46,11 @@ namespace app.Models.Ef
         public string? Package { get; set; }
         public string? Remark1 { get; set; }
         public string? Remark2 { get; set; }
-
-        public Transistors() { }
+		[NotMapped]
+		public string? RuComponentType { get; set; }
+		[NotMapped]
+		public string? EnComponentType { get; set; }
+		public Transistors() { }
         public Transistors(Transistors t) {
 			ID = t.ID;
 			DocID = t.DocID;

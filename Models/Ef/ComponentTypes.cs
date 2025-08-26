@@ -6,7 +6,8 @@ namespace app.Models.Ef
 {
     public class ComponentTypes
     {
-        [Key]
+		[JsonIgnore]
+		[Key]
         public int ID { get; set; }
         [StringLength(450)]
         public string RuComponentType { get; set; }

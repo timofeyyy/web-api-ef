@@ -2,6 +2,7 @@ using app.Context;
 using app.Entities;
 using app.Logger;
 using app.Models.Ef;
+using app.Models.other;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -212,6 +213,12 @@ namespace WebAPIApp.Controllers
 			return dict;
 		}
 
+		[HttpGet("names")]
+		public async Task<ActionResult<IEnumerable<ComponentTypes>>> Get()
+		{
+			var items = db.ComponentTypes.Select(t => t);
+			return await items.ToListAsync();
+		}
 
 		[HttpGet("all")]
 		public async Task<ActionResult<ComponentAll>> Get(
@@ -347,11 +354,11 @@ namespace WebAPIApp.Controllers
 
 	
 			return new ComponentAll() {
-				microchips = m,
-				capacitors = c,
-				diods = d,
-				resistors = r,
-				transistors = t
+				microchip = m,
+				capacitor = c,
+				diod = d,
+				resistor = r,
+				transistor = t
 			};
 		}
 	}

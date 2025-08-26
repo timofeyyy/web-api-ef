@@ -8,14 +8,12 @@ namespace app.Entities
 {
     public class Capacitors
     {
-		[NotMapped]
-		public string? RuComponentType { get; set; }
+
 		[NotMapped]
 		public string? RuComponentKind { get; set; }
 		[NotMapped]
 		public string? ManufacturerName { get; set; }
-		[NotMapped]
-		public string? EnComponentType { get; set; }
+		
 		[NotMapped]
 		public string? EnComponentKind { get; set; }
 
@@ -52,7 +50,11 @@ namespace app.Entities
         public string? QualicationЕС { get; set; }
         public string? Remark1 { get; set; }
         public string? Remark2 { get; set; }
-		
+		[NotMapped]
+		public string? RuComponentType { get; set; }
+		[NotMapped]
+		public string? EnComponentType { get; set; }
+
 		public Capacitors() { }
 		public Capacitors(Capacitors c) {
 			ID = c.ID;

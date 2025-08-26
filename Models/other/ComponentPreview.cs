@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Numerics;
 using System.Text.Json.Serialization;
 
-namespace app.Entities
+namespace app.Models.other
 {
 	public class ComponentPreview
 	{
