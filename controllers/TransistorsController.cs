@@ -33,14 +33,7 @@ namespace WebAPIApp.Controllers
 			}
 
 			var items = await query
-				.Select(t => new Transistors(t)
-				{
-					RuComponentKind = t.Kind.RuComponentKind,
-					EnComponentKind = t.Kind.RuComponentKind,
-					RuComponentType = t.Type.RuComponentType,
-					EnComponentType = t.Type.EnComponentType,
-					ManufacturerName = t.Manufacturer.ManufacturerName,
-				})
+				.Select(t=>t)
 				.ToListAsync();
 
 			return items;

@@ -46,6 +46,8 @@ namespace app.Models.Ef
         public string? Package { get; set; }
         public string? Remark1 { get; set; }
         public string? Remark2 { get; set; }
+		public DateTime? Date { get; set; }
+
 		[NotMapped]
 		public string? RuComponentType { get; set; }
 		[NotMapped]
@@ -66,6 +68,7 @@ namespace app.Models.Ef
 			Package = t.Package;
 			Remark1 = t.Remark1;
 			Remark2 = t.Remark2;
+			Date = t.Date;
 		}
     }
 }

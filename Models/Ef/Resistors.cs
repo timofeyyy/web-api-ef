@@ -48,7 +48,8 @@ namespace app.Models.Ef
         public string? QualicationЕС { get; set; }
         public string? Package { get; set; }
         public string? Remark1 { get; set; }
-        public string? Remark2 { get; set; }
+		public DateTime? Date { get; set; }
+		public string? Remark2 { get; set; }
 		[NotMapped]
 		public string? RuComponentType { get; set; }
 		[NotMapped]
@@ -72,6 +73,7 @@ namespace app.Models.Ef
 			Package = r.Package;
 			Remark1 = r.Remark1;
 			Remark2 = r.Remark2;
+			Date = r.Date;
 		}
     }
 }

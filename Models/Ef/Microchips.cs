@@ -56,6 +56,7 @@ namespace app.Models.Ef
         public double? SamplingTime { get; set; }
         public string? Qualication { get; set; }
         public string? Remark1 { get; set; }
+		public DateTime? Date { get; set; }
 		[NotMapped]
 		public string? RuComponentType { get; set; }
 		[NotMapped]
@@ -82,6 +83,7 @@ namespace app.Models.Ef
 			SamplingTime = m.SamplingTime;
 			Qualication = m.Qualication;
 			Remark1 = m.Remark1;
+			Date = m.Date;
 		}
 	}
 }

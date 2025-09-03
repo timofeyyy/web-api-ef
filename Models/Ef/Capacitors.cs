@@ -50,6 +50,7 @@ namespace app.Entities
         public string? QualicationЕС { get; set; }
         public string? Remark1 { get; set; }
         public string? Remark2 { get; set; }
+		public DateTime? Date { get; set; }
 		[NotMapped]
 		public string? RuComponentType { get; set; }
 		[NotMapped]
@@ -74,6 +75,7 @@ namespace app.Entities
 			QualicationЕС = c.QualicationЕС;
 			Remark1 = c.Remark1;
 			Remark2 = c.Remark2;
+			Date = c.Date;
 		}
 	}
 }
