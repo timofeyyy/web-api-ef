@@ -1,4 +1,6 @@
 ﻿using app.Entities;
+using app.src1.attrs;
+using app.src1.interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Numerics;
@@ -6,8 +8,8 @@ using System.Text.Json.Serialization;
 
 namespace app.Models.Ef
 {
-    public class Microchips
-    {
+    public class Microchips : IComponentModel
+	{
 		[NotMapped]
 		public string? RuComponentKind { get; set; }
 		[NotMapped]
@@ -19,7 +21,7 @@ namespace app.Models.Ef
 		[NotMapped]
 		public string? EnTechnologyName { get; set; }
 		[Key]
-		[JsonIgnore]
+		//[JsonIgnore]
 		public int ID { get; set; }
 		[JsonIgnore]
 		public long? DocID { get; set; }
@@ -38,28 +40,40 @@ namespace app.Models.Ef
 		[JsonIgnore]
 		public Manufacturers Manufacturer { get; set; }
 		public string? Interfaces { get; set; }
+		[ChartUsage]
         public double MinVoltage { get; set; }
+		[ChartUsage]
         public double MaxVoltage { get; set; }
+		[ChartUsage]
         public double? Frequency { get; set; }
+		[ChartUsage]
         public string? BitDepthValue { get; set; }
+		[ChartUsage]
         public double? ConsumptionCurrent { get; set; }
 		[NotMapped]
 		[JsonIgnore]
 		public int? TechnologyName_ID { get; set; }
 		[JsonIgnore]
 		public Technologies Technology { get; set; }
+		[ChartUsage]
         public double MinOperatingTemperature { get; set; }
+		[ChartUsage]
         public double MaxOperatingTemperature { get; set; }
+		[ChartUsage]
         public double? RadiationResistance { get; set; }
         public string? RadiationResistanceI { get; set; }
+		[ChartUsage]
         public string? MemoryFormat { get; set; }
+		[ChartUsage]
         public double? SamplingTime { get; set; }
         public string? Qualication { get; set; }
         public string? Remark1 { get; set; }
 		public DateTime? Date { get; set; }
 		[NotMapped]
+		//[JsonIgnore]
 		public string? RuComponentType { get; set; }
 		[NotMapped]
+		//[JsonIgnore]
 		public string? EnComponentType { get; set; }
 		public Microchips() { }
 

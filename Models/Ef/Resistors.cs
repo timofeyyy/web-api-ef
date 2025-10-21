@@ -1,4 +1,6 @@
 ﻿using app.Entities;
+using app.src1.attrs;
+using app.src1.interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Numerics;
@@ -6,17 +8,18 @@ using System.Text.Json.Serialization;
 
 namespace app.Models.Ef
 {
-    public class Resistors
-    {
+    public class Resistors : IComponentModel
+	{
 		[NotMapped]
 		public string? RuComponentKind { get; set; }
 		[NotMapped]
+		[ChartUsage]
 		public string? ManufacturerName { get; set; }
 		[NotMapped]
 		public string? EnComponentKind { get; set; }
 
 		[Key]
-		[JsonIgnore]
+		//[JsonIgnore]
 		public int ID { get; set; }
 		[JsonIgnore]
 		public long? DocID { get; set; }
@@ -35,14 +38,23 @@ namespace app.Models.Ef
 		public int? ManufacturerName_ID { get; set; }
 		[JsonIgnore]
 		public Manufacturers Manufacturer { get; set; }
+		[ChartUsage]
 		public double? PowerRating { get; set; }
+		[ChartUsage]
         public double? MinVoltage { get; set; }
+		[ChartUsage]
         public double? MaxVoltage { get; set; }
+		[ChartUsage]
         public double? MinRatedResistance { get; set; }
+		[ChartUsage]
         public double? MaxRatedResistance { get; set; }
+		[ChartUsage]
         public double? ResistanceTolerance { get; set; }
+		[ChartUsage]
         public double? MinOperatingTemperature { get; set; }
+		[ChartUsage]
         public double? MaxOperatingTemperature { get; set; }
+		[ChartUsage]
         public double? CurrentLimit { get; set; }
         public string? QualicationSG { get; set; }
         public string? QualicationЕС { get; set; }
@@ -50,8 +62,10 @@ namespace app.Models.Ef
         public string? Remark1 { get; set; }
 		public DateTime? Date { get; set; }
 		public string? Remark2 { get; set; }
+		//[JsonIgnore]
 		[NotMapped]
 		public string? RuComponentType { get; set; }
+		//[JsonIgnore]
 		[NotMapped]
 		public string? EnComponentType { get; set; }
 		public Resistors() { }

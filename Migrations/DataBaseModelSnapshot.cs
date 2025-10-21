@@ -230,12 +230,17 @@ namespace app.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<int?>("CountryID")
+                        .HasColumnType("int");
+
                     b.Property<string>("ManufacturerName")
                         .IsRequired()
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("CountryID");
 
                     b.ToTable("Manufacturers");
                 });
@@ -500,6 +505,47 @@ namespace app.Migrations
                     b.ToTable("Transistors");
                 });
 
+            modelBuilder.Entity("app.Models.ef.Country", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("CountryName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<byte?>("ForeignNative")
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ForeignNative");
+
+                    b.ToTable("Countries");
+                });
+
+            modelBuilder.Entity("app.Models.ef.Foreignness", b =>
+                {
+                    b.Property<byte>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<byte>("ID"));
+
+                    b.Property<string>("ForeignName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Foreignness", (string)null);
+                });
+
             modelBuilder.Entity("app.Entities.Capacitors", b =>
                 {
                     b.HasOne("app.Entities.ComponentKinds", "Kind")
@@ -540,6 +586,15 @@ namespace app.Migrations
                     b.Navigation("Manufacturer");
 
                     b.Navigation("Type");
+                });
+
+            modelBuilder.Entity("app.Models.Ef.Manufacturers", b =>
+                {
+                    b.HasOne("app.Models.ef.Country", "Country")
+                        .WithMany("Manufacturers")
+                        .HasForeignKey("CountryID");
+
+                    b.Navigation("Country");
                 });
 
             modelBuilder.Entity("app.Models.Ef.Microchips", b =>
@@ -611,6 +666,15 @@ namespace app.Migrations
                     b.Navigation("Type");
                 });
 
+            modelBuilder.Entity("app.Models.ef.Country", b =>
+                {
+                    b.HasOne("app.Models.ef.Foreignness", "Foreignness")
+                        .WithMany("Countries")
+                        .HasForeignKey("ForeignNative");
+
+                    b.Navigation("Foreignness");
+                });
+
             modelBuilder.Entity("app.Entities.ComponentKinds", b =>
                 {
                     b.Navigation("Capacitors");
@@ -653,6 +717,16 @@ namespace app.Migrations
             modelBuilder.Entity("app.Models.Ef.Technologies", b =>
                 {
                     b.Navigation("Microchips");
+                });
+
+            modelBuilder.Entity("app.Models.ef.Country", b =>
+                {
+                    b.Navigation("Manufacturers");
+                });
+
+            modelBuilder.Entity("app.Models.ef.Foreignness", b =>
+                {
+                    b.Navigation("Countries");
                 });
 #pragma warning restore 612, 618
         }

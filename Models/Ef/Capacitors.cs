@@ -1,4 +1,6 @@
 ﻿using app.Models.Ef;
+using app.src1.attrs;
+using app.src1.interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Numerics;
@@ -6,19 +8,19 @@ using System.Text.Json.Serialization;
 
 namespace app.Entities
 {
-    public class Capacitors
-    {
-
+    public class Capacitors : IComponentModel
+	{
 		[NotMapped]
 		public string? RuComponentKind { get; set; }
 		[NotMapped]
+		[ChartUsage]
 		public string? ManufacturerName { get; set; }
-		
+
 		[NotMapped]
 		public string? EnComponentKind { get; set; }
 
 		[Key]
-		[JsonIgnore]
+		//[JsonIgnore]
 		public int ID { get; set; }
 		[JsonIgnore]
 		public long? DocID { get; set; }
@@ -38,21 +40,31 @@ namespace app.Entities
 		public Manufacturers Manufacturer { get; set; }
 		[StringLength(450)]
         public string? OutputType { get; set; }
+		[ChartUsage]
         public double? MinVoltage { get; set; }
-        public double? MaxVoltage { get; set; }
-        public double? MaxCapacity { get; set; }
-        public double? MinCapacity { get; set; }
-        public double? MinOperatingTemperature { get; set; }
-        public double? MaxOperatingTemperature { get; set; }
-        public double? AcceptableCapacityIncrease { get; set; }
-        public double? AcceptableСapacityReduction { get; set; }
+		[ChartUsage]
+		public double? MaxVoltage { get; set; }
+		[ChartUsage]
+		public double? MaxCapacity { get; set; }
+		[ChartUsage]
+		public double? MinCapacity { get; set; }
+		[ChartUsage]
+		public double? MinOperatingTemperature { get; set; }
+		[ChartUsage]
+		public double? MaxOperatingTemperature { get; set; }
+		[ChartUsage]
+		public double? AcceptableCapacityIncrease { get; set; }
+		[ChartUsage]
+		public double? AcceptableСapacityReduction { get; set; }
         public string? QualicationSG { get; set; }
         public string? QualicationЕС { get; set; }
         public string? Remark1 { get; set; }
         public string? Remark2 { get; set; }
 		public DateTime? Date { get; set; }
+		//[JsonIgnore]
 		[NotMapped]
 		public string? RuComponentType { get; set; }
+		//[JsonIgnore]
 		[NotMapped]
 		public string? EnComponentType { get; set; }
 

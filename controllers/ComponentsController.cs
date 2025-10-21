@@ -1,15 +1,14 @@
-using app.Context;
-using app.Entities;
-using app.Logger;
+using app.db;
+using app.Db.Rep;
 using app.Models.Ef;
-using app.Models.other;
+using app.Models.other.alias;
+using app.Models.other.component;
+using app.Models.other.production;
+using app.src1.interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using NuGet.Protocol.Resources;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.Json;
+
+
 
 namespace WebAPIApp.Controllers
 {
@@ -17,349 +16,115 @@ namespace WebAPIApp.Controllers
     [Route("api/[controller]")]
     public class ComponentsController : ControllerBase
     {
-        DataBase db;
-		public ComponentsController(DataBase context)
-        {
-            db = context;
-        }
-		
-      
-		[HttpGet("short")]
-		public async Task<ActionResult<IEnumerable<ComponentPreview>>> Get(
-		[FromQuery] string? ruComponentType,
-			[FromQuery] string? ruComponentKind,
-			[FromQuery] string? manufacturerName,
-			[FromQuery] string? componentName
-			)
+		readonly UnitOfWork _uow;
+
+		public ComponentsController(UnitOfWork uow)
 		{
-
-			var items = db.ComponentTypes
-			.SelectMany(c => db.Microchips
-				.Where(m => m.Type.RuComponentType == c.RuComponentType)
-				.Select(m => new ComponentPreview()
-				{
-					ManufacturerName = m.Manufacturer.ManufacturerName,
-					RuComponentKind = m.Kind.RuComponentKind,
-					EnComponentKind = m.Kind.EnComponentKind,
-					RuComponentType = m.Type.RuComponentType,
-					EnComponentType = m.Type.EnComponentType,
-					ComponentName = m.ComponentName
-				}))
-			.Concat(db.Transistors
-				.Select(t => new ComponentPreview()
-				{
-					ManufacturerName = t.Manufacturer.ManufacturerName,
-					RuComponentKind = t.Kind.RuComponentKind,
-					EnComponentKind = t.Kind.EnComponentKind,
-					RuComponentType = t.Type.RuComponentType,
-					EnComponentType = t.Type.EnComponentType,
-					ComponentName = t.ComponentName
-				}))
-			.Concat(db.Resistors
-				.Select(r => new ComponentPreview()
-				{
-					ManufacturerName = r.Manufacturer.ManufacturerName,
-					RuComponentKind = r.Kind.RuComponentKind,
-					EnComponentKind = r.Kind.EnComponentKind,
-					RuComponentType = r.Type.RuComponentType,
-					EnComponentType = r.Type.EnComponentType,
-					ComponentName = r.ComponentName
-				}))
-			.Concat(db.Capacitors
-				.Select(c => new ComponentPreview()
-				{
-					ManufacturerName = c.Manufacturer.ManufacturerName,
-					RuComponentKind = c.Kind.RuComponentKind,
-					EnComponentKind = c.Kind.EnComponentKind,
-					RuComponentType = c.Type.RuComponentType,
-					EnComponentType = c.Type.EnComponentType,
-					ComponentName = c.ComponentName
-				}))
-			.Concat(db.Diods
-				.Select(d => new ComponentPreview()
-				{
-					ManufacturerName = d.Manufacturer.ManufacturerName,
-					RuComponentKind = d.Kind.RuComponentKind,
-					EnComponentKind = d.Kind.EnComponentKind,
-					RuComponentType = d.Type.RuComponentType,
-					EnComponentType =d.Type.EnComponentType,
-					ComponentName = d.ComponentName
-				}));
-
-			if (ruComponentType != null)
-			{
-				items = items.Where(t => t.RuComponentType == ruComponentType);
-			}
-			if (ruComponentKind != null)
-			{
-				items = items.Where(t => t.RuComponentKind == ruComponentKind);
-			}
-			if (manufacturerName != null)
-			{
-				items = items.Where(t => t.ManufacturerName == manufacturerName);
-			}
-			if (componentName != null)
-			{
-				items = items.Where(t => t.ComponentName == componentName);
-			}
-
-			return await items.ToListAsync();
+			_uow = uow;
 		}
 
 		[HttpGet("statistic")]
-		public async Task<ActionResult<Dictionary<string, List<ManufacturerProduction>>>> Get(
-			[FromQuery] string? ruComponentType
-			)
+		public async Task<ActionResult<Dictionary<string, List<ManufacturerProductionModel>>>> GetManufacturerNameStatistic([FromQuery] string? ruComponentType)
 		{
+			
+			Dictionary<string, string> parameters = new Dictionary<string, string>();
+			parameters["RuComponentType"] = ruComponentType;
 
-			Dictionary<string, int> totals = new Dictionary<string, int>();
-			totals.Add("microchip", db.Microchips.Count());
-			totals.Add("resistor", db.Resistors.Count());
-			totals.Add("transistor", db.Transistors.Count());
-			totals.Add("diod", db.Diods.Count());
-			totals.Add("capacitor", db.Capacitors.Count());
+			//Dictionary<string, int> totals = new Dictionary<string, int>();
+			//totals.Add("microchip", _uow.GetCount();
+			//totals.Add("resistor", _uow.GetResistorCount());
+			//totals.Add("transistor", _uow.GetTransistorCount());
+			//totals.Add("diod", _uow.GetDiodCount());
+			//totals.Add("capacitor", _uow.GetCapacitorCount());
 
 
-			var items = db.ComponentTypes
-			.SelectMany(c => db.Microchips
-				.Where(m => m.Type.RuComponentType == c.RuComponentType)
-				.Select(m => new ComponentPreview()
-				{
-					ManufacturerName = m.Manufacturer.ManufacturerName,
-					RuComponentKind = m.Kind.RuComponentKind,
-					EnComponentKind = m.Kind.EnComponentKind,
-					RuComponentType = m.Type.RuComponentType,
-					EnComponentType = m.Type.EnComponentType,
-					ComponentName = m.ComponentName
-				}))
-			.Concat(db.Transistors
-				.Select(t => new ComponentPreview()
-				{
-					ManufacturerName = t.Manufacturer.ManufacturerName,
-					RuComponentKind = t.Kind.RuComponentKind,
-					EnComponentKind = t.Kind.EnComponentKind,
-					RuComponentType = t.Type.RuComponentType,
-					EnComponentType = t.Type.EnComponentType,
-					ComponentName = t.ComponentName
-				}))
-			.Concat(db.Resistors
-				.Select(r => new ComponentPreview()
-				{
-					ManufacturerName = r.Manufacturer.ManufacturerName,
-					RuComponentKind = r.Kind.RuComponentKind,
-					EnComponentKind = r.Kind.EnComponentKind,
-					RuComponentType = r.Type.RuComponentType,
-					EnComponentType = r.Type.EnComponentType,
-					ComponentName = r.ComponentName
-				}))
-			.Concat(db.Capacitors
-				.Select(c => new ComponentPreview()
-				{
-					ManufacturerName = c.Manufacturer.ManufacturerName,
-					RuComponentKind = c.Kind.RuComponentKind,
-					EnComponentKind = c.Kind.EnComponentKind,
-					RuComponentType = c.Type.RuComponentType,
-					EnComponentType = c.Type.EnComponentType,
-					ComponentName = c.ComponentName
-				}))
-			.Concat(db.Diods
-				.Select(d => new ComponentPreview()
-				{
-					ManufacturerName = d.Manufacturer.ManufacturerName,
-					RuComponentKind = d.Kind.RuComponentKind,
-					EnComponentKind = d.Kind.EnComponentKind,
-					RuComponentType = d.Type.RuComponentType,
-					EnComponentType = d.Type.EnComponentType,
-					ComponentName = d.ComponentName
-				}));
+			List<IComponentModel> components = await _uow.GetComponentPreviewByParamValue(parameters);
 
-			if (ruComponentType != null)
-			{
-				items = items.Where(t => t.RuComponentType == ruComponentType);
-			}
-
-			Dictionary<string, List<ManufacturerProduction>> dict = new Dictionary<string, List<ManufacturerProduction>>();
-
-			foreach (var item in items)
-			{
-				if(!dict.ContainsKey(item.EnComponentType))
-				{
-					dict[item.EnComponentType] = new List<ManufacturerProduction>();
-				}
-
-				var list = dict[item.EnComponentType].Where(mp => mp.ManufacturerName == item.ManufacturerName).ToList();
-				int componentTypeTotal = totals[item.EnComponentType.ToLower()];
-
-				if (list.Count == 0)
-				{
-					ManufacturerProduction mp = new ManufacturerProduction()
-					{
-						ManufacturerName = item.ManufacturerName,
-						Amount = 1,
-						Weight = 100 / double.Parse(componentTypeTotal.ToString())
-					};
-					dict[item.EnComponentType].Add(mp);
-				}
-				else
-				{
-					foreach (var existedMP in dict[item.EnComponentType].Where(mp => mp.ManufacturerName == item.ManufacturerName))
-					{
-						existedMP.Amount += 1;
-						existedMP.Weight = (100 * existedMP.Amount) / double.Parse(componentTypeTotal.ToString());
-						break;
-					}
-				}
-			}
+			var dict = _uow.GetManufacturerStatistic(components);
 			return dict;
 		}
 
 		[HttpGet("names")]
-		public async Task<ActionResult<IEnumerable<ComponentTypes>>> Get()
+		public async Task<ActionResult<IEnumerable<ComponentTypes>>> GetNames()
 		{
-			var items = db.ComponentTypes.Select(t => t);
-			return await items.ToListAsync();
+			return await _uow.GetComponentTypes();
 		}
 
 		[HttpGet("all")]
-		public async Task<ActionResult<ComponentAll>> Get(
+		public async Task<ActionResult<ComponentAllModel>> GetComponents(
 		[FromQuery] string? ruComponentType,
 			[FromQuery] string? ruComponentKind,
 			[FromQuery] string? manufacturerName
 			)
 		{
-
-			List<Microchips> m = new List<Microchips>();
-			List<Capacitors> c = new List<Capacitors>();
-			List<Diods> d = new List<Diods>();
-			List<Transistors> t = new List<Transistors>();
-			List<Resistors> r = new List<Resistors>();
-
-			if (ruComponentType.IsNullOrEmpty() || ruComponentType.ToLower() == "микросхема") {
-				m = db.Microchips
-				.Select(m => new Microchips(m)
-				{
-					RuComponentKind = m.Kind.RuComponentKind,
-					EnComponentKind = m.Kind.RuComponentKind,
-					RuComponentType = m.Type.RuComponentType,
-					EnComponentType = m.Type.EnComponentType,
-					ManufacturerName = m.Manufacturer.ManufacturerName,
-					EnTechnologyName = m.Technology.EnTechnologyName,
-					RuTechnologyName = m.Technology.RuTechnologyName
-				}).ToList();
-
-				if (!ruComponentKind.IsNullOrEmpty()) {
-					m = m.Where(m => m.RuComponentKind == ruComponentKind).ToList();
-				}
-
-				if (!manufacturerName.IsNullOrEmpty())
-				{
-					m = m.Where(m => m.ManufacturerName == manufacturerName).ToList();
-				}
-			}
-
-			if (ruComponentType.IsNullOrEmpty() || ruComponentType.ToLower() == "конденсатор")
+			Dictionary<string, string> dict = new Dictionary<string, string>();
+			dict["RuComponentType"] = ruComponentType;
+			dict["RuComponentKind"] = ruComponentKind;
+			dict["ManufacturerName"] = manufacturerName;
+			return await _uow.SelectAll(dict);
+		}
+		[HttpGet("{entype}/columns/chart")]
+		public async Task<ActionResult<IEnumerable<AliasModel>>> GetChartColumns(
+			string entype
+			)
+		{
+			var items = await _uow.GetChartColumns(entype);
+			if(items == null)
 			{
-				 c = db.Capacitors
-				.Select(c => new Capacitors(c)
-				{
-					RuComponentKind = c.Kind.RuComponentKind,
-					EnComponentKind = c.Kind.RuComponentKind,
-					RuComponentType = c.Type.RuComponentType,
-					EnComponentType = c.Type.EnComponentType,
-					ManufacturerName = c.Manufacturer.ManufacturerName
-				}).ToList();
-
-				if (!ruComponentKind.IsNullOrEmpty())
-				{
-					c = c.Where(c => c.RuComponentKind == ruComponentKind).ToList();
-				}
-
-				if (!manufacturerName.IsNullOrEmpty())
-				{
-					c = c.Where(c => c.ManufacturerName == manufacturerName).ToList();
-				}
+				return BadRequest();
 			}
-
-
-			if (ruComponentType.IsNullOrEmpty() || ruComponentType.ToLower() == "транзистор")
+			return items;
+		}
+		[HttpGet("{entype}/columns/all")]
+		public async Task<ActionResult<IEnumerable<AliasModel>>> GetAllMapedColumns(
+			string entype
+			)
+		{
+			var items = await _uow.GetAllMapedColumfGetParamStatisticns(entype);
+			if (items == null)
 			{
-				t = db.Transistors
-				.Select(t => new Transistors(t)
-				{
-					RuComponentKind = t.Kind.RuComponentKind,
-					EnComponentKind = t.Kind.RuComponentKind,
-					RuComponentType = t.Type.RuComponentType,
-					EnComponentType = t.Type.EnComponentType,
-					ManufacturerName = t.Manufacturer.ManufacturerName
-				}).ToList();
-
-				if (!ruComponentKind.IsNullOrEmpty())
-				{
-					t = t.Where(t => t.RuComponentKind == ruComponentKind).ToList();
-				}
-
-				if (!manufacturerName.IsNullOrEmpty())
-				{
-					t = t.Where(t => t.ManufacturerName == manufacturerName).ToList();
-				}
+				return BadRequest();
 			}
+			return items;
+		}
 
-			if (ruComponentType.IsNullOrEmpty() || ruComponentType.ToLower() == "диод")
+		[HttpGet("alias")]
+		public async Task<ActionResult<string>> GetAlias()
+		{
+			var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "alias.json");
+			if (!System.IO.File.Exists(path))
+				return NotFound();
+
+			string json = await System.IO.File.ReadAllTextAsync(path);
+			var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(json);
+			return Content(json, "application/json");
+		}
+		[HttpGet("{entype}/{parameter}/statistic")]
+		public async Task<ActionResult<Dictionary<string, List<ParamProductionModel>>>> GetParamStatistic(
+				string entype,
+				string parameter
+			)
+		{
+			var cts = await _uow.GetComponentTypes();
+			var isEntypeExists = _uow.IsEnComponentTypeExists(cts, entype);
+			if(!isEntypeExists)
 			{
-				d = db.Diods
-				.Select(d => new Diods(d)
-				{
-					RuComponentKind = d.Kind.RuComponentKind,
-					EnComponentKind = d.Kind.RuComponentKind,
-					RuComponentType = d.Type.RuComponentType,
-					EnComponentType = d.Type.EnComponentType,
-					ManufacturerName = d.Manufacturer.ManufacturerName,
-				}).ToList();
-
-				if (!ruComponentKind.IsNullOrEmpty())
-				{
-					d = d.Where(d => d.RuComponentKind == ruComponentKind).ToList();
-				}
-
-				if (!manufacturerName.IsNullOrEmpty())
-				{
-					d = d.Where(d => d.ManufacturerName == manufacturerName).ToList();
-				}
+				return BadRequest();
 			}
-
-
-
-			if (ruComponentType.IsNullOrEmpty() || ruComponentType.ToLower() == "резистор")
+			var alias = await _uow.GetAllMapedColumfGetParamStatisticns(entype);
+			var IsParameterExists = _uow.IsParameterExists(alias, parameter);
+			if(!IsParameterExists)
 			{
-				r = db.Resistors
-				.Select(r => new Resistors(r)
-				{
-					RuComponentKind = r.Kind.RuComponentKind,
-					EnComponentKind = r.Kind.RuComponentKind,
-					RuComponentType = r.Type.RuComponentType,
-					EnComponentType = r.Type.EnComponentType,
-					ManufacturerName = r.Manufacturer.ManufacturerName,
-				}).ToList();
-
-				if (!ruComponentKind.IsNullOrEmpty())
-				{
-					r = r.Where(r => r.RuComponentKind == ruComponentKind).ToList();
-				}
-
-				if (!manufacturerName.IsNullOrEmpty())
-				{
-					r = r.Where(r => r.ManufacturerName == manufacturerName).ToList();
-				}
+				return BadRequest();
 			}
 
-	
-			return new ComponentAll() {
-				microchip = m,
-				capacitor = c,
-				diod = d,
-				resistor = r,
-				transistor = t
-			};
+			List<IComponentModel> components = await _uow.GetAllComponentsByEnType(entype);
+			if (components == null || components.Count() == 0)
+			{
+				return BadRequest();
+			}
+			var statistic =  _uow.GetParamStatistic(components, parameter, entype);
+			return statistic;
 		}
 	}
 }

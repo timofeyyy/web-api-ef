@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Numerics;
 using System.Text.Json.Serialization;
 
-namespace app.Models.other
+namespace app.Models.other.component
 {
-	public class ComponentAll
+	public class ComponentAllModel
 	{
 		public List<Microchips>? microchip { get; set; }
 		public List<Capacitors>? capacitor { get; set; }

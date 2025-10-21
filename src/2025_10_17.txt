@@ -1,0 +1,411 @@
+#################### 17.10.2025 00:02:39 
+Executed DbCommand (56ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Date], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 17.10.2025 14:02:05 
+Executed DbCommand (97ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Date], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 17.10.2025 14:02:06 
+Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Microchips] AS [m]
+#################### 17.10.2025 14:02:06 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Resistors] AS [r]
+#################### 17.10.2025 14:02:06 
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Transistors] AS [t]
+#################### 17.10.2025 14:02:06 
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Diods] AS [d]
+#################### 17.10.2025 14:02:06 
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Capacitors] AS [c]
+#################### 17.10.2025 14:09:07 
+Executed DbCommand (64ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Date], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 17.10.2025 14:09:07 
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Microchips] AS [m]
+#################### 17.10.2025 14:09:07 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Resistors] AS [r]
+#################### 17.10.2025 14:09:07 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Transistors] AS [t]
+#################### 17.10.2025 14:09:07 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Diods] AS [d]
+#################### 17.10.2025 14:09:07 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Capacitors] AS [c]
+#################### 17.10.2025 14:10:22 
+Executed DbCommand (61ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Date], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 17.10.2025 14:10:23 
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Microchips] AS [m]
+#################### 17.10.2025 14:10:23 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Resistors] AS [r]
+#################### 17.10.2025 14:10:23 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Transistors] AS [t]
+#################### 17.10.2025 14:10:23 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Diods] AS [d]
+#################### 17.10.2025 14:10:23 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Capacitors] AS [c]
+#################### 17.10.2025 14:12:13 
+Executed DbCommand (48ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Date], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 17.10.2025 14:12:14 
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Microchips] AS [m]
+#################### 17.10.2025 14:12:14 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Resistors] AS [r]
+#################### 17.10.2025 14:12:14 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Transistors] AS [t]
+#################### 17.10.2025 14:12:14 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Diods] AS [d]
+#################### 17.10.2025 14:12:14 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Capacitors] AS [c]
+#################### 17.10.2025 14:12:56 
+Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Date], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 17.10.2025 14:12:56 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Microchips] AS [m]
+#################### 17.10.2025 14:12:56 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Resistors] AS [r]
+#################### 17.10.2025 14:12:56 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Transistors] AS [t]
+#################### 17.10.2025 14:12:56 
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Diods] AS [d]
+#################### 17.10.2025 14:12:56 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Capacitors] AS [c]
+#################### 17.10.2025 14:13:54 
+Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[AcceptableCapacityIncrease], [c].[AcceptableСapacityReduction], [c].[ComponentName], [c].[Date], [c].[DocID], [c].[Kind_ID], [c].[ManufacturerName_ID], [c].[MaxCapacity], [c].[MaxOperatingTemperature], [c].[MaxVoltage], [c].[MinCapacity], [c].[MinOperatingTemperature], [c].[MinVoltage], [c].[OutputType], [c].[QualicationSG], [c].[QualicationЕС], [c].[Remark1], [c].[Remark2], [c].[Type_ID], [c0].[RuComponentKind], [c1].[RuComponentType], [c1].[EnComponentType], [m].[ManufacturerName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentKinds] AS [c0] ON [c].[Kind_ID] = [c0].[ID]
+LEFT JOIN [ComponentTypes] AS [c1] ON [c].[Type_ID] = [c1].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+#################### 17.10.2025 14:13:54 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Microchips] AS [m]
+#################### 17.10.2025 14:13:54 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Resistors] AS [r]
+#################### 17.10.2025 14:13:54 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Transistors] AS [t]
+#################### 17.10.2025 14:13:54 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Diods] AS [d]
+#################### 17.10.2025 14:13:55 
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Capacitors] AS [c]
+#################### 17.10.2025 14:15:43 
+Executed DbCommand (44ms) [Parameters=[@__ToLower_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [m0].[ID], [m0].[ManufacturerName], [c0].[ID], [c0].[EnComponentKind], [c0].[RuComponentKind], [c].[ID], [c].[EnComponentType], [c].[RuComponentType], [m].[ComponentName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentTypes] AS [c] ON [m].[Type_ID] = [c].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [ComponentKinds] AS [c0] ON [m].[Kind_ID] = [c0].[ID]
+WHERE LOWER([c].[RuComponentType]) = @__ToLower_0
+#################### 17.10.2025 14:15:43 
+Executed DbCommand (25ms) [Parameters=[@__ToLower_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[ManufacturerName], [c0].[ID], [c0].[EnComponentKind], [c0].[RuComponentKind], [c].[ID], [c].[EnComponentType], [c].[RuComponentType], [r].[ComponentName]
+FROM [Resistors] AS [r]
+LEFT JOIN [ComponentTypes] AS [c] ON [r].[Type_ID] = [c].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [r].[ManufacturerName_ID] = [m].[ID]
+LEFT JOIN [ComponentKinds] AS [c0] ON [r].[Kind_ID] = [c0].[ID]
+WHERE LOWER([c].[RuComponentType]) = @__ToLower_0
+#################### 17.10.2025 14:15:43 
+Executed DbCommand (19ms) [Parameters=[@__ToLower_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[ManufacturerName], [c0].[ID], [c0].[EnComponentKind], [c0].[RuComponentKind], [c].[ID], [c].[EnComponentType], [c].[RuComponentType], [t].[ComponentName]
+FROM [Transistors] AS [t]
+LEFT JOIN [ComponentTypes] AS [c] ON [t].[Type_ID] = [c].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [t].[ManufacturerName_ID] = [m].[ID]
+LEFT JOIN [ComponentKinds] AS [c0] ON [t].[Kind_ID] = [c0].[ID]
+WHERE LOWER([c].[RuComponentType]) = @__ToLower_0
+#################### 17.10.2025 14:15:43 
+Executed DbCommand (26ms) [Parameters=[@__ToLower_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[ManufacturerName], [c0].[ID], [c0].[EnComponentKind], [c0].[RuComponentKind], [c].[ID], [c].[EnComponentType], [c].[RuComponentType], [d].[ComponentName]
+FROM [Diods] AS [d]
+LEFT JOIN [ComponentTypes] AS [c] ON [d].[Type_ID] = [c].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [d].[ManufacturerName_ID] = [m].[ID]
+LEFT JOIN [ComponentKinds] AS [c0] ON [d].[Kind_ID] = [c0].[ID]
+WHERE LOWER([c].[RuComponentType]) = @__ToLower_0
+#################### 17.10.2025 14:15:43 
+Executed DbCommand (19ms) [Parameters=[@__ToLower_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[ManufacturerName], [c1].[ID], [c1].[EnComponentKind], [c1].[RuComponentKind], [c0].[ID], [c0].[EnComponentType], [c0].[RuComponentType], [c].[ComponentName]
+FROM [Capacitors] AS [c]
+LEFT JOIN [ComponentTypes] AS [c0] ON [c].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m] ON [c].[ManufacturerName_ID] = [m].[ID]
+LEFT JOIN [ComponentKinds] AS [c1] ON [c].[Kind_ID] = [c1].[ID]
+WHERE LOWER([c0].[RuComponentType]) = @__ToLower_0
+#################### 17.10.2025 14:16:32 
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[EnComponentType], [c].[RuComponentType]
+FROM [ComponentTypes] AS [c]
+#################### 17.10.2025 14:35:36 
+Executed DbCommand (51ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[EnComponentType], [c].[RuComponentType]
+FROM [ComponentTypes] AS [c]
+#################### 17.10.2025 14:38:30 
+Executed DbCommand (54ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[EnComponentType], [c].[RuComponentType]
+FROM [ComponentTypes] AS [c]
+#################### 17.10.2025 14:39:38 
+Executed DbCommand (39ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[EnComponentType], [c].[RuComponentType]
+FROM [ComponentTypes] AS [c]
+#################### 17.10.2025 14:39:45 
+Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[EnComponentType], [c].[RuComponentType]
+FROM [ComponentTypes] AS [c]
+#################### 17.10.2025 14:39:50 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[EnComponentType], [c].[RuComponentType]
+FROM [ComponentTypes] AS [c]
+#################### 17.10.2025 14:39:51 
+Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Date], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 17.10.2025 14:39:51 
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Microchips] AS [m]
+#################### 17.10.2025 14:39:51 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Resistors] AS [r]
+#################### 17.10.2025 14:39:51 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Transistors] AS [t]
+#################### 17.10.2025 14:39:51 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Diods] AS [d]
+#################### 17.10.2025 14:39:51 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Capacitors] AS [c]
+#################### 17.10.2025 14:50:33 
+Executed DbCommand (58ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[EnComponentType], [c].[RuComponentType]
+FROM [ComponentTypes] AS [c]
+#################### 17.10.2025 14:50:33 
+Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Date], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 17.10.2025 14:50:33 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Microchips] AS [m]
+#################### 17.10.2025 14:50:33 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Resistors] AS [r]
+#################### 17.10.2025 14:50:33 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Transistors] AS [t]
+#################### 17.10.2025 14:50:33 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Diods] AS [d]
+#################### 17.10.2025 14:50:33 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Capacitors] AS [c]
+#################### 17.10.2025 14:50:50 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[EnComponentType], [c].[RuComponentType]
+FROM [ComponentTypes] AS [c]
+#################### 17.10.2025 14:50:50 
+Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Date], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 17.10.2025 14:50:50 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Microchips] AS [m]
+#################### 17.10.2025 14:50:50 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Resistors] AS [r]
+#################### 17.10.2025 14:50:50 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Transistors] AS [t]
+#################### 17.10.2025 14:50:50 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Diods] AS [d]
+#################### 17.10.2025 14:50:50 
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Capacitors] AS [c]
+#################### 17.10.2025 14:51:04 
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[EnComponentType], [c].[RuComponentType]
+FROM [ComponentTypes] AS [c]
+#################### 17.10.2025 14:51:04 
+Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Date], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 17.10.2025 14:51:04 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Microchips] AS [m]
+#################### 17.10.2025 14:51:04 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Resistors] AS [r]
+#################### 17.10.2025 14:51:04 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Transistors] AS [t]
+#################### 17.10.2025 14:51:04 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Diods] AS [d]
+#################### 17.10.2025 14:51:04 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Capacitors] AS [c]
+#################### 17.10.2025 15:08:16 
+Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[EnComponentType], [c].[RuComponentType]
+FROM [ComponentTypes] AS [c]
+#################### 17.10.2025 15:08:17 
+Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Date], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 17.10.2025 15:08:17 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Microchips] AS [m]
+#################### 17.10.2025 15:08:17 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Resistors] AS [r]
+#################### 17.10.2025 15:08:17 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Transistors] AS [t]
+#################### 17.10.2025 15:08:17 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Diods] AS [d]
+#################### 17.10.2025 15:08:17 
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Capacitors] AS [c]
+#################### 17.10.2025 15:09:57 
+Executed DbCommand (59ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[ID], [c].[EnComponentType], [c].[RuComponentType]
+FROM [ComponentTypes] AS [c]
+#################### 17.10.2025 15:09:58 
+Executed DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[ID], [m].[BitDepthValue], [m].[ComponentName], [m].[ConsumptionCurrent], [m].[Date], [m].[DocID], [m].[Frequency], [m].[Interfaces], [m].[Kind_ID], [m].[ManufacturerName_ID], [m].[MaxOperatingTemperature], [m].[MaxVoltage], [m].[MemoryFormat], [m].[MinOperatingTemperature], [m].[MinVoltage], [m].[Qualication], [m].[RadiationResistance], [m].[RadiationResistanceI], [m].[Remark1], [m].[SamplingTime], [m].[TechnologyName_ID], [m].[Type_ID], [c].[RuComponentKind], [c0].[RuComponentType], [c0].[EnComponentType], [m0].[ManufacturerName], [t].[EnTechnologyName], [t].[RuTechnologyName]
+FROM [Microchips] AS [m]
+LEFT JOIN [ComponentKinds] AS [c] ON [m].[Kind_ID] = [c].[ID]
+LEFT JOIN [ComponentTypes] AS [c0] ON [m].[Type_ID] = [c0].[ID]
+LEFT JOIN [Manufacturers] AS [m0] ON [m].[ManufacturerName_ID] = [m0].[ID]
+LEFT JOIN [Technologies] AS [t] ON [m].[TechnologyName_ID] = [t].[ID]
+#################### 17.10.2025 15:09:58 
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Microchips] AS [m]

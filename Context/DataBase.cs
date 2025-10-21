@@ -1,4 +1,5 @@
 ﻿using app.Entities;
+using app.Models.ef;
 using app.Models.Ef;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -10,6 +11,8 @@ namespace app.Context
 {
     public class DataBase : DbContext
     {
+        public DbSet<Foreignness> Foreignnesses { get; set; }
+        public DbSet<Country> Countries { get; set; }
         public DbSet<Capacitors> Capacitors { get; set; }
         public DbSet<Resistors> Resistors { get; set; }
         public DbSet<Diods> Diods { get; set; }
@@ -418,11 +421,29 @@ namespace app.Context
 		   .HasOne(t => t.Manufacturer)
 		   .WithMany(m => m.Capacitors)
 		   .HasForeignKey(t => t.ManufacturerName_ID);
-		}
+			modelBuilder.Entity<Foreignness>()
+	        .ToTable("Foreignness");
 
-		public static implicit operator Database(DataBase v)
-		{
-			throw new NotImplementedException();
+			
+
+			modelBuilder.Entity<Foreignness>()
+		   .Property(p => p.ID)
+		   .HasColumnType("tinyint");
+
+			modelBuilder.Entity<Country>()
+		   .Property(c => c.ForeignNative)
+		   .HasColumnType("tinyint");
+
+			modelBuilder.Entity<Country>()
+		   .HasOne(c => c.Foreignness)
+		   .WithMany(f => f.Countries)
+		   .HasForeignKey(c => c.ForeignNative);
+
+			modelBuilder.Entity<Manufacturers>()
+		   .HasOne(m => m.Country)
+		   .WithMany(c => c.Manufacturers)
+		   .HasForeignKey(m => m.CountryID);
+
 		}
 	}
 }
