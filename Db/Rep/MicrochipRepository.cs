@@ -35,7 +35,7 @@ namespace app.Db.Rep
 							.Select(c => new Microchips(c)
 							{
 								RuComponentKind = c.Kind.RuComponentKind,
-								EnComponentKind = c.Kind.RuComponentKind,
+								EnComponentKind = c.Kind.EnComponentKind,
 								RuComponentType = c.Type.RuComponentType,
 								EnComponentType = c.Type.EnComponentType,
 								ManufacturerName = c.Manufacturer.ManufacturerName,
@@ -65,7 +65,7 @@ namespace app.Db.Rep
 				var cap = new Microchips(c)
 				{
 					RuComponentKind = c.Kind.RuComponentKind,
-					EnComponentKind = c.Kind.RuComponentKind,
+					EnComponentKind = c.Kind.EnComponentKind,
 					RuComponentType = c.Type.RuComponentType,
 					EnComponentType = c.Type.EnComponentType,
 					ManufacturerName = c.Manufacturer.ManufacturerName,
@@ -84,38 +84,5 @@ namespace app.Db.Rep
 
 			return result;
 		}
-		
-		//public override Task<List<IComponentModel>> SelectPreview(Dictionary<string, string> dict)
-		//{
-		//	var query = db.Microchips.AsQueryable();
-		//	query = FilterByParamValue(dict, query);
-		//	var items = SelectPreview(query);
-		//	return items.ToListAsync();
-		//}
-		//public override Task<List<IComponentModel>> SelectPreview(List<int> ids)
-		//{
-		//	var query = db.Microchips.AsQueryable();
-		//	query = FilterByIds(ids, query);
-		//	var items = SelectPreview(query);
-		//	return items.ToListAsync();
-
-		//}
-		//public override Task<List<Microchips>> SelectByListIds(List<int> ids)
-		//{
-		//	var query = db.Microchips.AsQueryable();
-		//	query = FilterByIds(ids, query);
-		//	var items = query.Select(c => new Microchips(c)
-		//	{
-		//		RuComponentKind = c.Kind.RuComponentKind,
-		//		EnComponentKind = c.Kind.RuComponentKind,
-		//		RuComponentType = c.Type.RuComponentType,
-		//		EnComponentType = c.Type.EnComponentType,
-		//		ManufacturerName = c.Manufacturer.ManufacturerName,
-		//		EnTechnologyName = c.Technology.EnTechnologyName,
-		//		RuTechnologyName = c.Technology.RuTechnologyName
-		//	});
-
-		//	return items.ToListAsync();
-		//}
 	}
 }

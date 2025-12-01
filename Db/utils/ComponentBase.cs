@@ -14,6 +14,14 @@
 			{
 				query = query.Where(c => c.Kind.RuComponentKind.ToLower() == dict["RuComponentKind"].ToString().ToLower());
 			}
+			if (dict != null && dict.ContainsKey("EnComponentType") && dict["EnComponentType"] != null)
+			{
+				query = query.Where(c => c.Type.EnComponentType.ToLower() == dict["EnComponentType"].ToString().ToLower());
+			}
+			if (dict != null && dict.ContainsKey("EnComponentKind") && dict["EnComponentKind"] != null)
+			{
+				query = query.Where(c => c.Kind.EnComponentKind.ToLower() == dict["EnComponentKind"].ToString().ToLower());
+			}
 			if (dict != null && dict.ContainsKey("ManufacturerName") && dict["ManufacturerName"] != null)
 			{
 				query = query.Where(c => c.Manufacturer.ManufacturerName.ToLower() == dict["ManufacturerName"].ToString().ToLower());
@@ -36,22 +44,5 @@
 			}
 			return query;
 		}
-
-		//public abstract int GetCount();
-
-		//public abstract Task<List<IComponentModel>> SelectPreview(Dictionary<string, string> dict);
-		//public abstract Task<List<IComponentModel>> SelectPreview(List<int> ids);
-		//public abstract Task<List<T>> SelectByListIds(List<int> ids);
-		//public IQueryable<IComponentModel> SelectPreview(IQueryable<T> query) {
-		//	var items = query
-		//						.Select(m => new ComponentPreviewModel()
-		//						{
-		//							Manufacturer = m.Manufacturer,
-		//							Kind = m.Kind,
-		//							Type = m.Type,
-		//							ComponentName = m.ComponentName
-		//						});
-		//	return items;
-		//}
 	}
 }

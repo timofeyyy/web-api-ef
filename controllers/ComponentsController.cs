@@ -49,14 +49,18 @@ namespace WebAPIApp.Controllers
 
 		[HttpGet("all")]
 		public async Task<ActionResult<ComponentAllModel>> GetComponents(
-		[FromQuery] string? ruComponentType,
+			[FromQuery] string? ruComponentType,
 			[FromQuery] string? ruComponentKind,
+			[FromQuery] string? enComponentType,
+			[FromQuery] string? enComponentKind,
 			[FromQuery] string? manufacturerName
 			)
 		{
 			Dictionary<string, object> dict = new();
 			dict["RuComponentType"] = ruComponentType;
 			dict["RuComponentKind"] = ruComponentKind;
+			dict["EnComponentType"] = enComponentType;
+			dict["EnComponentKind"] = enComponentKind;
 			dict["ManufacturerName"] = manufacturerName;
 			return await _componentService.GetComponentsAsObj((pairs: dict, ids: null));
 		}

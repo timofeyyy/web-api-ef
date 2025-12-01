@@ -33,7 +33,7 @@ namespace app.Db.Rep
 							.Select(c => new Capacitors(c)
 							{
 								RuComponentKind = c.Kind.RuComponentKind,
-								EnComponentKind = c.Kind.RuComponentKind,
+								EnComponentKind = c.Kind.EnComponentKind,
 								RuComponentType = c.Type.RuComponentType,
 								EnComponentType = c.Type.EnComponentType,
 								ManufacturerName = c.Manufacturer.ManufacturerName,

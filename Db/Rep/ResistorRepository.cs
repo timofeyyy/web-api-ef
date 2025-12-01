@@ -28,7 +28,7 @@ namespace app.Db.Rep
 							.Select(c => new Resistors(c)
 							{
 								RuComponentKind = c.Kind.RuComponentKind,
-								EnComponentKind = c.Kind.RuComponentKind,
+								EnComponentKind = c.Kind.EnComponentKind,
 								RuComponentType = c.Type.RuComponentType,
 								EnComponentType = c.Type.EnComponentType,
 								ManufacturerName = c.Manufacturer.ManufacturerName
@@ -56,7 +56,7 @@ namespace app.Db.Rep
 				var cap = new Resistors(c)
 				{
 					RuComponentKind = c.Kind.RuComponentKind,
-					EnComponentKind = c.Kind.RuComponentKind,
+					EnComponentKind = c.Kind.EnComponentKind,
 					RuComponentType = c.Type.RuComponentType,
 					EnComponentType = c.Type.EnComponentType,
 					ManufacturerName = c.Manufacturer.ManufacturerName
@@ -76,39 +76,5 @@ namespace app.Db.Rep
 		{
 			return db.Resistors.Count();
 		}
-		
-		
-		
-		
-		
-		//public override Task<List<IComponentModel>> SelectPreview(Dictionary<string, string> dict)
-		//{
-		//	var query = db.Resistors.AsQueryable();
-		//	query = FilterByParamValue(dict, query);
-		//	var items = SelectPreview(query);
-		//	return items.ToListAsync();
-		//}
-		//public override Task<List<IComponentModel>> SelectPreview(List<int> ids)
-		//{
-		//	var query = db.Resistors.AsQueryable();
-		//	query = FilterByIds(ids, query);
-		//	var items = SelectPreview(query);
-		//	return items.ToListAsync();
-		//}
-		//public override Task<List<Resistors>> SelectByListIds(List<int> ids)
-		//{
-		//	var query = db.Resistors.AsQueryable();
-		//	query = FilterByIds(ids, query);
-		//	var items = query.Select(c => new Resistors(c)
-		//	{
-		//		RuComponentKind = c.Kind.RuComponentKind,
-		//		EnComponentKind = c.Kind.RuComponentKind,
-		//		RuComponentType = c.Type.RuComponentType,
-		//		EnComponentType = c.Type.EnComponentType,
-		//		ManufacturerName = c.Manufacturer.ManufacturerName,
-		//	});
-
-		//	return items.ToListAsync();
-		//}
 	}
 }

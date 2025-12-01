@@ -33,7 +33,7 @@ namespace app.Db.Rep
 							.Select(c => new Transistors(c)
 							{								
 								RuComponentKind = c.Kind.RuComponentKind,
-								EnComponentKind = c.Kind.RuComponentKind,
+								EnComponentKind = c.Kind.EnComponentKind,
 								RuComponentType = c.Type.RuComponentType,
 								EnComponentType = c.Type.EnComponentType,
 								ManufacturerName = c.Manufacturer.ManufacturerName
@@ -63,7 +63,7 @@ namespace app.Db.Rep
 				var cap = new Transistors(c)
 				{
 					RuComponentKind = c.Kind.RuComponentKind,
-					EnComponentKind = c.Kind.RuComponentKind,
+					EnComponentKind = c.Kind.EnComponentKind,
 					RuComponentType = c.Type.RuComponentType,
 					EnComponentType = c.Type.EnComponentType,
 					ManufacturerName = c.Manufacturer.ManufacturerName
@@ -84,44 +84,5 @@ namespace app.Db.Rep
 		{
 			return db.Transistors.Count();
 		}
-
-		//public override Task<List<IComponentModel>> SelectPreview(Dictionary<string, string> dict)
-		//{
-		//	throw new NotImplementedException();
-		//}
-
-		//public override Task<List<IComponentModel>> SelectPreview(List<int> ids)
-		//{
-		//	throw new NotImplementedException();
-		//}
-		//public override Task<List<IComponentModel>> SelectPreview(Dictionary<string, string> dict)
-		//{
-		//	var query = db.Transistors.AsQueryable();
-		//	query = FilterByParamValue(dict, query);
-		//	var items = SelectPreview(query);
-		//	return items.ToListAsync();
-		//}
-		//public override Task<List<IComponentModel>> SelectPreview(List<int> ids)
-		//{
-		//	var query = db.Transistors.AsQueryable();
-		//	query = FilterByIds(ids, query);
-		//	var items = SelectPreview(query);
-		//	return items.ToListAsync();
-		//}
-		//public override Task<List<Transistors>> SelectByListIds(List<int> ids)
-		//{
-		//	var query = db.Transistors.AsQueryable();
-		//	query = FilterByIds(ids, query);
-		//	var items = query.Select(c => new Transistors(c)
-		//	{
-		//		RuComponentKind = c.Kind.RuComponentKind,
-		//		EnComponentKind = c.Kind.RuComponentKind,
-		//		RuComponentType = c.Type.RuComponentType,
-		//		EnComponentType = c.Type.EnComponentType,
-		//		ManufacturerName = c.Manufacturer.ManufacturerName,
-		//	});
-
-		//	return items.ToListAsync();
-		//}
 	}
 }
