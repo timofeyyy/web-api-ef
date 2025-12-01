@@ -18,18 +18,13 @@ namespace app.Db.ef
 		[NotMapped]
 		[IsEqualFilter(nameof(EnComponentKind))]
 		public string? EnComponentKind { get; set; }
+		
 		[NotMapped]
-		[IsEqualFilter(nameof(RuTechnologyName))]
-		public string? RuTechnologyName { get; set; }
-		[NotMapped]
-		[IsEqualFilter(nameof(EnTechnologyName))]
-		public string? EnTechnologyName { get; set; }
-		[NotMapped]
-		[JsonIgnore]
+		//[JsonIgnore]
 		[IsEqualFilter(nameof(RuComponentType))]
 		public string? RuComponentType { get; set; }
 		[NotMapped]
-		[JsonIgnore]
+		//[JsonIgnore]
 		[IsEqualFilter(nameof(EnComponentType))]
 		public string? EnComponentType { get; set; }
 
@@ -70,15 +65,16 @@ namespace app.Db.ef
 		[StringLength(450)]
 		[IsEqualFilter(nameof(ComponentName))]
 		public string ComponentName { get; set; }
-		[StringLength(450)]
-		[IsEqualFilter(nameof(Interfaces))]
-		public string? Interfaces { get; set; }
 		[ChartUsage]
 		[IsMoreFilter(nameof(MinVoltage))]
 		public double MinVoltage { get; set; }
 		[ChartUsage]
 		[IsLessFilter(nameof(MaxVoltage))]
 		public double MaxVoltage { get; set; }
+		[StringLength(450)]
+		[IsEqualFilter(nameof(Interfaces))]
+		public string? Interfaces { get; set; }
+	
 		[ChartUsage]
 		[IsEqualFilter(nameof(Frequency))]
 		public double? Frequency { get; set; }
@@ -121,7 +117,12 @@ namespace app.Db.ef
 		[StringLength(450)]
 		[IsEqualFilter(nameof(SpecificationDoc))]
 		public string? SpecificationDoc { get; set; }
-
+		[NotMapped]
+		[IsEqualFilter(nameof(RuTechnologyName))]
+		public string? RuTechnologyName { get; set; }
+		[NotMapped]
+		[IsEqualFilter(nameof(EnTechnologyName))]
+		public string? EnTechnologyName { get; set; }
 
 		public Microchips() { }
 

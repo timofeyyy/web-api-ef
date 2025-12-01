@@ -20,11 +20,11 @@ namespace app.Db.ef
 		[IsEqualFilter(nameof(EnComponentKind))]
 		public string? EnComponentKind { get; set; }
 		[NotMapped]
-		[JsonIgnore]
+		//[JsonIgnore]
 		[IsEqualFilter(nameof(RuComponentType))]
 		public string? RuComponentType { get; set; }
 		[NotMapped]
-		[JsonIgnore]
+		//[JsonIgnore]
 		[IsEqualFilter(nameof(EnComponentType))]
 		public string? EnComponentType { get; set; }
 
