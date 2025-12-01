@@ -1,10 +1,13 @@
-using app.db;
-using app.Db.Rep;
-using app.Models.Ef;
-using app.Models.other.alias;
-using app.Models.other.component;
-using app.Models.other.production;
-using app.src1.interfaces;
+using app.Db.ef;
+using app.Db.utils;
+using app.Services.Common.alias;
+using app.Services.Common.Ref;
+using app.Services.Component;
+using app.Services.Component.component;
+using app.Services.Component.Models;
+using app.Services.ComponentType;
+using app.Services.Manufacturer;
+using app.Services.Manufacturer.production;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
@@ -12,42 +15,36 @@ using System.Text.Json;
 
 namespace WebAPIApp.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class ComponentsController : ControllerBase
-    {
-		readonly UnitOfWork _uow;
-
-		public ComponentsController(UnitOfWork uow)
+	[ApiController]
+	[Route("api/[controller]")]
+	public class ComponentsController : ControllerBase
+	{
+		readonly IComponentService _componentService;
+		readonly IRefHelper _refHelperService;
+		readonly IComponentTypeService _componentTypeService;
+		readonly IManufacturerService _manufacturerService;
+		public ComponentsController(IComponentService componentService, IRefHelper refHelperService, IComponentTypeService componentTypeService, IManufacturerService manufacturerService)
 		{
-			_uow = uow;
+			_componentService = componentService;
+			_refHelperService = refHelperService;
+			_componentTypeService = componentTypeService;
+			_manufacturerService = manufacturerService;
 		}
-
 		[HttpGet("statistic")]
 		public async Task<ActionResult<Dictionary<string, List<ManufacturerProductionModel>>>> GetManufacturerNameStatistic([FromQuery] string? ruComponentType)
 		{
-			
-			Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+			Dictionary<string, object> parameters = new();
 			parameters["RuComponentType"] = ruComponentType;
-
-			//Dictionary<string, int> totals = new Dictionary<string, int>();
-			//totals.Add("microchip", _uow.GetCount();
-			//totals.Add("resistor", _uow.GetResistorCount());
-			//totals.Add("transistor", _uow.GetTransistorCount());
-			//totals.Add("diod", _uow.GetDiodCount());
-			//totals.Add("capacitor", _uow.GetCapacitorCount());
-
-
-			List<IComponentModel> components = await _uow.GetComponentPreviewByParamValue(parameters);
-
-			var dict = _uow.GetManufacturerStatistic(components);
+			List<IComponentModel> components = await _componentService.GetComponentsAsObjIEnum((pairs: parameters, ids: null));
+			var dict = _manufacturerService.GetStatistic(components, _componentService.ComponentDataModel.GetTotalsDictionary());
 			return dict;
 		}
 
 		[HttpGet("names")]
 		public async Task<ActionResult<IEnumerable<ComponentTypes>>> GetNames()
 		{
-			return await _uow.GetComponentTypes();
+			return await _componentTypeService.GetNamesAsObj();
 		}
 
 		[HttpGet("all")]
@@ -57,19 +54,20 @@ namespace WebAPIApp.Controllers
 			[FromQuery] string? manufacturerName
 			)
 		{
-			Dictionary<string, string> dict = new Dictionary<string, string>();
+			Dictionary<string, object> dict = new();
 			dict["RuComponentType"] = ruComponentType;
 			dict["RuComponentKind"] = ruComponentKind;
 			dict["ManufacturerName"] = manufacturerName;
-			return await _uow.SelectAll(dict);
+			return await _componentService.GetComponentsAsObj((pairs: dict, ids: null));
 		}
 		[HttpGet("{entype}/columns/chart")]
 		public async Task<ActionResult<IEnumerable<AliasModel>>> GetChartColumns(
 			string entype
 			)
 		{
-			var items = await _uow.GetChartColumns(entype);
-			if(items == null)
+			entype = entype.ToLower();
+			var items = await _refHelperService.GetChartColumns(entype);
+			if (items == null)
 			{
 				return BadRequest();
 			}
@@ -80,7 +78,18 @@ namespace WebAPIApp.Controllers
 			string entype
 			)
 		{
-			var items = await _uow.GetAllMapedColumfGetParamStatisticns(entype);
+			entype = entype.ToLower();
+			var items = await _refHelperService.GetAllMapedColumns(entype);
+			if (items == null)
+			{
+				return BadRequest();
+			}
+			return items;
+		}
+		[HttpGet("columns/all")]
+		public async Task<ActionResult<Dictionary<string, List<AliasModel>>>> GetAllMapedColumns()
+		{
+			var items = await _refHelperService.GetAllMapedColumns();
 			if (items == null)
 			{
 				return BadRequest();
@@ -99,32 +108,86 @@ namespace WebAPIApp.Controllers
 			var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(json);
 			return Content(json, "application/json");
 		}
+		[HttpGet("{entype}/{id}")]
+		public async Task<ActionResult<Dictionary<string, object>>> GetParamStatistic(
+				string entype,
+				int id
+			)
+		{
+			entype = entype.ToLower();
+			var isEntypeExists = await _componentTypeService.IsEnComponentTypeExists(entype);
+			if (!isEntypeExists)
+			{
+				return BadRequest();
+			}
+			Dictionary<string, string> parameters = new();
+			parameters["Id"] = id.ToString();
+			List<IComponentModel> components = await _componentService.GetComponentsByEnType(entype);
+			var prComponents = await _componentService.GetPriorityComponents(components, entype, parameters);
+			var dict = prComponents[entype.ToLower()];
+			if(dict.Count == 0)
+			{
+				return BadRequest();
+			}
+			var items = dict["Id"];
+			if (items.Count == 0)
+			{
+				return BadRequest();
+			}
+			return items[0];
+		}
 		[HttpGet("{entype}/{parameter}/statistic")]
 		public async Task<ActionResult<Dictionary<string, List<ParamProductionModel>>>> GetParamStatistic(
 				string entype,
 				string parameter
 			)
 		{
-			var cts = await _uow.GetComponentTypes();
-			var isEntypeExists = _uow.IsEnComponentTypeExists(cts, entype);
-			if(!isEntypeExists)
+			entype = entype.ToLower();
+			var isEntypeExists = await _componentTypeService.IsEnComponentTypeExists(entype);
+			if (!isEntypeExists)
 			{
 				return BadRequest();
 			}
-			var alias = await _uow.GetAllMapedColumfGetParamStatisticns(entype);
-			var IsParameterExists = _uow.IsParameterExists(alias, parameter);
-			if(!IsParameterExists)
+			var IsParameterExists = await _refHelperService.IsParameterExists(entype, parameter);
+			if (!IsParameterExists)
 			{
 				return BadRequest();
 			}
 
-			List<IComponentModel> components = await _uow.GetAllComponentsByEnType(entype);
+			List<IComponentModel> components = await _componentService.GetComponentsByEnType(entype);
 			if (components == null || components.Count() == 0)
 			{
 				return BadRequest();
 			}
-			var statistic =  _uow.GetParamStatistic(components, parameter, entype);
+			var statistic = _componentService.GetParamStat(components, parameter, entype);
 			return statistic;
+		}
+
+		[HttpGet("{entype}/priorities")]
+		public async Task<ActionResult<Dictionary<string, Dictionary<string, List<Dictionary<string, object>>>>>> GetComponentsByProperties(
+				string entype,
+				[FromQuery] Dictionary<string, string> parameters
+			)
+		{
+			entype = entype.ToLower();
+			var isEntypeExists = await _componentTypeService.IsEnComponentTypeExists(entype);
+			if (!isEntypeExists)
+			{
+				return BadRequest();
+			}
+			foreach (var key in parameters.Keys)
+			{
+				var IsParameterExists = await _refHelperService.IsParameterExists(entype, key);
+				if (!IsParameterExists)
+				{
+					return BadRequest();
+				}
+			}
+			List<IComponentModel> components = await _componentService.GetComponentsByEnType(entype);
+
+			var prComponents = await _componentService.GetPriorityComponents(components, entype, parameters);
+
+			return prComponents;
 		}
 	}
 }

@@ -1,8 +1,0 @@
-﻿namespace app.Models.other.alias
-{
-	public class AliasModel
-	{
-		public string RuVal { get; set; }
-		public string EnVal { get; set; }
-	}
-}

@@ -1,9 +1,9 @@
-using app.Context;
-using app.db;
-using app.Entities;
-using app.Models.Ef;
-using app.Models.other.production;
-using app.src1.interfaces;
+using app.Db.ef;
+using app.Db.Uow;
+using app.Db.utils;
+using app.Services.Component;
+using app.Services.Manufacturer;
+using app.Services.Manufacturer.production;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -13,12 +13,14 @@ namespace WebAPIApp.Controllers
     [Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
     public class ManufacturersController : ControllerBase
     {
-		readonly UnitOfWork _uow;
+		readonly IManufacturerService _manufacturerService;
+		readonly IComponentService _componentService;
 
-		public ManufacturersController(UnitOfWork uow)
+		public ManufacturersController(IManufacturerService manufacturerService, IComponentService componentService)
         {
-            _uow = uow;
-        }
+			_manufacturerService = manufacturerService;
+			_componentService = componentService;
+		}
 
 		[HttpGet("production")]
 		public async Task<ActionResult<Dictionary<string, Dictionary<string, int>>>> Get(
@@ -27,28 +29,27 @@ namespace WebAPIApp.Controllers
 			[FromQuery] string? manufacturerName
 			)
 		{
-			Dictionary<string, string> parameters = new Dictionary<string, string>();
+			Dictionary<string, object> parameters = new();
 			parameters["RuComponentType"] = ruComponentType;
 			parameters["RuComponentKind"] = ruComponentKind;
 			parameters["ManufacturerName"] = manufacturerName;
-			List<IComponentModel> components = await _uow.GetComponentPreviewByParamValue(parameters);
-			return _uow.GetManufacturersProductionAsDictionarty(components);
+			
+			List<IComponentModel> components = await _componentService.GetComponentsAsObjIEnum((pairs: parameters, ids: null));
+			return _manufacturerService.GetProdAsDict(components);
 		}
 
 		[HttpGet("production/classification")]
 		public async Task<ActionResult<ClassifiedManufacturersModel>> GetClassifiedManufacturer()
 		{
-			List<IComponentModel> components = await _uow.GetComponentPreviewByParamValue();
-			List<Manufacturers> manufacturers = await _uow.GetManufacturers();
-			var classification = _uow.GetForeignManufacturerList(components, manufacturers);
+			List<IComponentModel> components = await _componentService.GetComponentsAsObjIEnum();
+			var classification = await _manufacturerService.GetForeignList(components);
 			return classification;
 		}
 
 		[HttpGet("all")]
-		public async Task<ActionResult<List<Manufacturers>>> GatAll()
+		public async Task<ActionResult<List<Manufacturers>>> GetAll()
 		{
-			List<Manufacturers> manufacturers = await _uow.GetManufacturers();
-			return manufacturers;
+			return await _manufacturerService.GetAsObj();
 		}
 	}
 }

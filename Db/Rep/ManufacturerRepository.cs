@@ -1,15 +1,8 @@
-﻿using app.Context;
-using app.db;
-using app.Entities;
-using app.Models.Ef;
-using app.src1.interfaces;
+﻿using app.Db.Context;
+using app.Db.ef;
+using app.Db.utils;
 using Microsoft.EntityFrameworkCore;
-using PdfSharp.Pdf.Filters;
-using Swashbuckle.AspNetCore.SwaggerGen;
-using System.Reflection;
-using System.Security.Principal;
-using System.Text.Json.Serialization;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace app.Db.Rep
 {
@@ -25,11 +18,10 @@ namespace app.Db.Rep
 			return db.Manufacturers.Count();
 		}
 
-
-		public Task<List<Manufacturers>> Select(Dictionary<string, string> dict = null)
+		public Task<List<Manufacturers>> SelectAsObj((Dictionary<string, object> pairs, List<int> ids) parameters = default)
 		{
-
 			var query = db.Manufacturers.AsQueryable();
+			
 			var items = query
 							.Select(m => new Manufacturers(m)
 							{
@@ -39,7 +31,38 @@ namespace app.Db.Rep
 			return items.ToListAsync();
 		}
 
-		public Dictionary<string, Dictionary<string, int>> GetManufacturersProductionAsDictionarty(List<IComponentModel> components)
+		public async Task<List<Dictionary<string, object>>> SelectAsDict((Dictionary<string, object> pairs, List<int> ids) parameters = default)
+		{
+			var query = db.Manufacturers.AsQueryable();
+			var result = new List<Dictionary<string, object>>();
+			var props = typeof(Manufacturers).GetProperties()
+				.Where(p => !Attribute.IsDefined(p, typeof(NotMappedAttribute)))
+				.ToArray();
+
+			await foreach (var c in query.AsAsyncEnumerable())
+			{
+				var m = new Manufacturers(c)
+				{
+					CountryName = c.Country.CountryName,
+					ForeignnessType = c.Country.Foreignness.ForeignName,
+				};
+				var dictItem = new Dictionary<string, object>();
+				foreach (var prop in props)
+				{
+					dictItem[prop.Name] = prop.GetValue(m);
+				}
+
+				result.Add(dictItem);
+			}
+
+			return result;
+		}
+
+
+
+
+
+		public Dictionary<string, Dictionary<string, int>> GetMfsProdAsDict(List<IComponentModel> components)
 		{
 			Dictionary<string, Dictionary<string, int>> dict = new Dictionary<string, Dictionary<string, int>>();
 			foreach (var item in components)
@@ -56,7 +79,7 @@ namespace app.Db.Rep
 			}
 			return dict;
 		}
-		public Dictionary<string, Dictionary<string, string>> GetManufacturersAsDictionary(List<Manufacturers> manufacturers)
+		public Dictionary<string, Dictionary<string, string>> GetMfsAsDict(List<Manufacturers> manufacturers)
 		{
 			Dictionary<string, Dictionary<string, string>> dict = new();
 			foreach (var manufacturer in manufacturers)

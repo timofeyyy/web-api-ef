@@ -1,18 +1,29 @@
-﻿using app.Context;
-using app.Entities;
-using app.Models.Ef;
+﻿using app.Db.Context;
+using app.Db.ef;
+using app.Db.utils;
 using Microsoft.EntityFrameworkCore;
 
 namespace app.Db.Rep
 {
-	public class ComponentTypeRepository
+	public class ComponentTypeRepository : IRepositoryBase<ComponentTypes>
 	{
 		DataBase db;
 		public ComponentTypeRepository(DataBase context)
 		{
 			db = context;
 		}
-		public async Task<List<ComponentTypes>> Select()
+
+		public int GetCount()
+		{
+			return db.ComponentTypes.Count();
+		}
+
+		public async Task<List<Dictionary<string, object>>> SelectAsDict((Dictionary<string, object> pairs, List<int> ids) parameters = default)
+		{
+			throw new NotImplementedException();
+		}
+
+		public async Task<List<ComponentTypes>> SelectAsObj((Dictionary<string, object> pairs, List<int> ids) parameters = default)
 		{
 			var items = db.ComponentTypes.Select(t => t);
 			return await items.ToListAsync();

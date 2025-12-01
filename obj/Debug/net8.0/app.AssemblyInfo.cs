@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a715fc54db549a9b845ab33a785903e32ff192a4")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c0d058bad3eabbae9939ad8743dca5a4feb9b05")]
->>>>>>> ade8b73 (pdf & new endpoints)
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b1d725b3f4b2b76a9e4179da5ce76ed57c243a7")]
 [assembly: System.Reflection.AssemblyProductAttribute("app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
