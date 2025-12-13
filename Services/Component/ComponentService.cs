@@ -5,124 +5,72 @@ using app.Services.Common.Ref;
 using app.Services.Component;
 using app.Services.Component.component;
 using app.Services.Component.Models;
+using NuGet.Packaging.Signing;
 using System.Reflection;
 using System.Text.Json.Serialization;
+
 
 namespace app.Services.ComponentService
 {
 	public class ComponentService : IComponentService
 	{
 		readonly UnitOfWork1 _uow;
-		readonly ComponentDataModel _componentDataModel;
-		readonly IRefHelper _refHelper;
-
-		public ComponentDataModel ComponentDataModel { get { return _componentDataModel; } }
-		public ComponentService(UnitOfWork1 uow, ComponentDataModel componentDataModel, IRefHelper refHelper)
+		public ComponentService(UnitOfWork1 uow, ComponentDataModel componentDataModel)
 		{
 			_uow = uow;
-			_componentDataModel = componentDataModel;
-			_refHelper = refHelper;
 		}
 
-
-		public async Task<List<IComponentModel>> GetComponentsAsObjIEnum((Dictionary<string, object> pairs, List<int> ids) parameters = default)
+		public async Task<DataSystemView> SelectAll()
 		{
 			var cTask = Task.Run(async () =>
 			{
-				return await _uow.CapacitorRepository.SelectAsObj(parameters);
+				return await _uow.CapacitorRepository.SelectAll();
 			});
 			var dTask = Task.Run(async () =>
 			{
-				return await _uow.DiodRepository.SelectAsObj(parameters);
+				return await _uow.DiodRepository.SelectAll();
 			});
 			var mTask = Task.Run(async () =>
 			{
-				return await _uow.MicrochipRepository.SelectAsObj(parameters);
+				return await _uow.MicrochipRepository.SelectAll();
 			});
 			var rTask = Task.Run(async () =>
 			{
-				return await _uow.ResistorRepository.SelectAsObj(parameters);
+				return await _uow.ResistorRepository.SelectAll();
 			});
 			var tTask = Task.Run(async () =>
 			{
-				return await _uow.TransistorRepository.SelectAsObj(parameters);
+				return await _uow.TransistorRepository.SelectAll();
 			});
 			await Task.WhenAll(cTask, dTask, mTask, rTask, tTask);
-			List<IComponentModel> components = new List<IComponentModel>();
-			components.AddRange(cTask.Result);
-			components.AddRange(dTask.Result);
-			components.AddRange(mTask.Result);
-			components.AddRange(rTask.Result);
-			components.AddRange(tTask.Result);
-			return components;
-		}
-		public async Task<ComponentAllModel> GetComponentsAsObj((Dictionary<string, object> pairs, List<int> ids) parameters)
-		{
-			var cTask = Task.Run(async () =>
+			return new ComponentAllModel()
 			{
-				return await _uow.CapacitorRepository.SelectAsObj(parameters);
-			});
-			var dTask = Task.Run(async () =>
-			{
-				return await _uow.DiodRepository.SelectAsObj(parameters);
-			});
-			var mTask = Task.Run(async () =>
-			{
-				return await _uow.MicrochipRepository.SelectAsObj(parameters);
-			});
-			var rTask = Task.Run(async () =>
-			{
-				return await _uow.ResistorRepository.SelectAsObj(parameters);
-			});
-			var tTask = Task.Run(async () =>
-			{
-				return await _uow.TransistorRepository.SelectAsObj(parameters);
-			});
-			await Task.WhenAll(cTask, dTask, mTask, rTask, tTask);
-			return new ComponentAllModel
-			{
-				capacitor = cTask.Result,
-				diod = dTask.Result,
-				microchip = mTask.Result,
-				resistor = rTask.Result,
-				transistor = tTask.Result
-			};
-		}
-
-		public async Task<List<IComponentModel>> GetComponentsByEnType(string entype)
-		{
-			Dictionary<string, Func<Task<List<IComponentModel>>>> tasks = _componentDataModel.GetComponentDictionary();
-			if (tasks.ContainsKey(entype))
-			{
-				return await tasks[entype]();
-			}
-			return null;
+				Capacitor = cTask.Result,
+				Diod = dTask.Result,
+				Microchip = mTask.Result,
+				Resistor = rTask.Result,
+				Transistor = tTask.Result
+			}.ToDictionary();
 		}
 
 
-		public Dictionary<string, List<ParamProductionModel>> GetParamStat(List<IComponentModel> components, string parameter, string entype)
+
+		public Dictionary<string, List<ParamProductionModel>> GetParamStat(ComponentList components, string parameter)
 		{
-			Dictionary<string, Func<int>> totals = _componentDataModel.GetTotalsDictionary();
-
-			entype = entype.ToLower();
-			if (!totals.ContainsKey(entype))
-			{
-				return null;
-			}
-			int componentTypeTotal = totals[entype]();
-
+			int componentTypeTotal = components.Count;	
 			Dictionary<string, List<ParamProductionModel>> dict = new Dictionary<string, List<ParamProductionModel>>();
+			if (components.Count == 0) {
+				return dict;
+			}
+			dict[(string)components[0]["EnComponentType"]] = new List<ParamProductionModel>();
+			
 			foreach (var item in components)
 			{
-				if (!dict.ContainsKey(entype))
-				{
-					dict[entype] = new List<ParamProductionModel>();
-				}
+				var props = item.Keys;
+				var prop = props.Where(prop => prop.ToLower() == parameter.ToLower()).First();
+				var entype = (string)item["EnComponentType"];
+				var val = item[prop];
 
-				var t = item.GetType();
-				var props = t.GetProperties();
-				var prop = props.Where(prop => prop.Name.ToLower() == parameter.ToLower()).First();
-				var val = prop.GetValue(item);
 				if ($"{val}" == "-1,7976931348623157E+308" || $"{val}" == "")
 				{
 					continue;
@@ -152,64 +100,106 @@ namespace app.Services.ComponentService
 			return dict;
 		}
 
-		public async Task<Dictionary<string, Dictionary<string, List<Dictionary<string, object>>>>> GetPriorityComponents(List<IComponentModel> components, string entype, Dictionary<string, string> parameters)
-		{
-			Dictionary<string, Dictionary<string, List<Dictionary<string, object>>>> resDict = new();
-			Dictionary<string, List<Dictionary<string, object>>> descent = new();
-			var all = components;
-			foreach (var key in parameters.Keys)
-			{
-				List<IComponentModel> componentsList = new();
-				PropertyInfo? prop = null;
-				foreach (var component in all)
-				{
-					var t = component.GetType();
-					if (prop == null)
-					{
-						var props = t.GetProperties();
-						prop = props.Where(p => p.Name.ToLower() == key.ToLower()).First();
-					}
-					var attrs = prop.GetCustomAttributes(inherit: true);
-					var attr = attrs.OfType<ICompare>().FirstOrDefault();
-					if (attr != null)
-					{
-						var res = attr.Compare(component, parameters[key]);
-						if (res)
-						{
-							componentsList.Add(component);
-						}
-					}
-				}
+		//public async Task<Dictionary<string, Dictionary<string, List<KeyValueObject>>>> GetPriorityComponents(List<KeyValueObject> components, string entype, Dictionary<string, string> parameters)
+		//{
+		//	Dictionary<string, Dictionary<string, List<KeyValueObject>>> resDict = new();
+		//	Dictionary<string, List<KeyValueObject>> descent = new();
+		//	var all = components;
+		//	foreach (var key in parameters.Keys)
+		//	{
+		//		List<KeyValueObject> componentsList = new();
+		//		//var t = components.GetType();
+		//		//var props = t.GetProperties();
 
-				var dictList = ObjListToDictionary(componentsList, new() {
-							(t: typeof(JsonIgnoreAttribute), shoudHave: false)
-						});
-				descent[key] = dictList;
-				all = componentsList;
-			}
-			resDict[entype] = descent;
-			return resDict;
-		}
-		public List<Dictionary<string, object>> ObjListToDictionary<T>(List<T> list, List<(Type t, bool shoudHave)> exceptionsAttr = null) where T : class
-		{
-			List<Dictionary<string, object>> dictList = new();
-			string lastType = null;
-			PropertyInfo[] props = null;
-			foreach (var item in list)
-			{
-				var t = item.GetType();
-				if (lastType != t.Name)
-				{
-					props = _refHelper.GetProps(t, new()
-					{
-						(t: typeof(JsonIgnoreAttribute), shoudHave: false)
-						});
-					}
-				var dict = _uow.ObjToDictionary(item, props);
-				dictList.Add(dict);
-				lastType = t.Name;
-			}
-			return dictList;
-		}
+		//		//foreach (var prop in props)
+		//		//{
+		//		//var all = (List<KeyValueObject>)prop.GetValue(components, null);
+		//		foreach (var item in all)
+		//		{
+		//			var attrs = prop.GetCustomAttributes(inherit: true);
+		//			var attr = attrs.OfType<ICompare>().FirstOrDefault();
+		//			if (attr != null)
+		//			{
+		//				var res = attr.Compare(item, parameters[key]);
+		//				if (res)
+		//				{
+		//					componentsList.Add(item);
+		//				}
+		//			}
+		//		}
+		//		//}
+
+		//		//var dictList = ObjListToDictionary(componentsList);
+		//		//var dictList = ObjListToDictionary(componentsList, new() {
+		//		//			(t: typeof(JsonIgnoreAttribute), shoudHave: false)
+		//		//		});
+		//		descent[key] = dictList;
+		//		all = componentsList;
+		//	}
+		//	resDict[entype] = descent;
+		//	return resDict;
+		//}
+		//public List<KeyValueObject> ObjListToDictionary(List<KeyValueObject> list)
+		//{
+		//	List<KeyValueObject> dictList = new();
+		//	string lastType = null;
+		//	PropertyInfo[] props = null;
+		//	foreach (var item in list)
+		//	{
+		//		var t = item.GetType();
+		//		if (lastType != t.Name)
+		//		{
+		//			props = _refHelper.GetProps(t, new()
+		//			{
+		//				(t: typeof(JsonIgnoreAttribute), shoudHave: false)
+		//				});
+		//		}
+		//		var dict = _uow.ObjToDictionary(item, props);
+		//		dictList.Add(dict);
+		//		lastType = t.Name;
+		//	}
+		//	return dictList;
+		//}
+
+		//public ComponentAllModel FilterByParamValue(ComponentAllModel components, KeyValueObject dict)
+		//{
+		//	//var t = components.GetType();
+		//	//var props = t.GetProperties();
+		//	//foreach (var prop in props)
+		//	//{
+		//	//	List<KeyValueObject> all = (List<KeyValueObject>)prop.GetValue(components, null);	
+		//	//	foreach (var key in dict.Keys)
+		//	//	{
+		//	//		if (dict[key] != null)
+		//	//		{
+		//	//			all = all.Where(item => item[key] == dict[key]).ToList();
+		//	//		}
+		//	//	}
+		//	//}
+		//	return components;
+		//}
+		//public ComponentAllModel FilterByIds(ComponentAllModel components, List<int> indexes) {
+		//	var t = components.GetType();
+		//	var props = t.GetProperties();
+		//	foreach (var prop in props)
+		//	{
+		//		ComponentList all = (ComponentList)prop.GetValue(components, null);
+		//		all.Where(c => indexes.Contains((int)c["ID"])).ToList();
+		//	}
+		//	return components;
+		//} 
+
+		//public async Task<ComponentAllDatesModel> GetComponentsDividedByDates()
+		//{
+		//	var components = await GetComponentsAsObj(parameters);
+		//	var t = components.GetType();
+		//	var props = t.GetProperties();
+		//	foreach (var prop in props)
+		//	{
+		//		var list = prop.GetValue(components, null);
+		//		//Console.WriteLine(list.GetType().Name);
+		//	}
+		//	return new();
+		//}
 	}
 }

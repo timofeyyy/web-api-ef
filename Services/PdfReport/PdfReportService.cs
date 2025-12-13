@@ -2,6 +2,7 @@
 using app.Models.other.priority;
 using app.Services.Common.alias;
 using app.Services.PdfReport.Models;
+using Microsoft.IdentityModel.Tokens;
 using MigraDoc.DocumentObjectModel;
 using MigraDoc.DocumentObjectModel.Shapes;
 using MigraDoc.DocumentObjectModel.Tables;
@@ -23,7 +24,7 @@ namespace app.Services.PdfReport
 			val.Add(val2);
 			val.Add(val3);
 			Paragraph val4 = MakeParagraph("г. Минск", (ParagraphAlignment)0, 12, 8, 8);
-			Paragraph val5 = MakeParagraph(now.ToString("dd.MM.yyyy") + " г", (ParagraphAlignment)2, 12, 8, 8);
+			Paragraph val5 = MakeParagraph(now.ToString("yyyy-MM-dd") + " г", (ParagraphAlignment)2, 12, 8, 8);
 			Table val6 = val.AddTable();
 			val6.AddColumn("8cm");
 			val6.AddColumn("8cm");
@@ -239,8 +240,10 @@ namespace app.Services.PdfReport
 					{
 						_ = item6.itter;
 						int item = item6.index;
-						//Console.WriteLine($"{item} + {num8} = {item + num8}");
-
+						if(item + num8 >= keyValuePair.Value.Count)
+						{
+							continue;
+						}
 						Dictionary<string, object> dictionary2 = keyValuePair.Value[item + num8];
 						object obj2 = null;
 						foreach (string key in dictionary2.Keys)
@@ -250,12 +253,12 @@ namespace app.Services.PdfReport
 								obj2 = dictionary2[key];
 								if (obj2 is DateTime dateTime)
 								{
-									obj2 = dateTime.ToString("dd.MM.yyyy");
+									obj2 = dateTime.ToString("yyyy-MM-dd");
 								}
 								break;
 							}
 						}
-						val39.Cells[item + 1].Add(MakeParagraph($"{obj2}", (ParagraphAlignment)1, 10, 1, 1));
+						val39.Cells[item + 1].Add(MakeParagraph($"{obj2}".IsNullOrEmpty() || $"{obj2}" == "null" ? "Не указано" : $"{obj2}", (ParagraphAlignment)1, 10, 1, 1));
 						val39.Cells[item + 1].VerticalAlignment = (VerticalAlignment)1;
 					}
 					if (num9 == 0)
@@ -285,8 +288,8 @@ namespace app.Services.PdfReport
 
 				foreach (var item in components)
 				{
-					string manufacturerName = item["manufacturerName"] as string ?? "";
-					string ruComponentKind = item["ruComponentKind"] as string ?? "";
+					string manufacturerName = item["ManufacturerName"] as string ?? "";
+					string ruComponentKind = item["RuComponentKind"] as string ?? "";
 
 					var tupleKey = (ruComponentKind, manufacturerName);
 

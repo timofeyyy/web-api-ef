@@ -9,24 +9,21 @@ namespace app.Db.ef
 	public class Microchips : IComponentModel
 	{
 		[NotMapped]
-		[IsEqualFilter(nameof(RuComponentKind))]
-		public string? RuComponentKind { get; set; }
+		[IsEqualFilter()]
+		public string? RuComponentKind { get { return Kind == null ? null : Kind.RuComponentKind; } }
 		[NotMapped]
-		[IsEqualFilter(nameof(ManufacturerName))]
+		[IsEqualFilter()]
 		[ChartUsage]
-		public string? ManufacturerName { get; set; }
+		public string? ManufacturerName { get { return Manufacturer == null ? null : Manufacturer.ManufacturerName; } }
 		[NotMapped]
-		[IsEqualFilter(nameof(EnComponentKind))]
-		public string? EnComponentKind { get; set; }
-		
+		[IsEqualFilter()]
+		public string? EnComponentKind { get { return Kind == null ? null : Kind.EnComponentKind; } }
 		[NotMapped]
-		//[JsonIgnore]
-		[IsEqualFilter(nameof(RuComponentType))]
-		public string? RuComponentType { get; set; }
+		[IsEqualFilter()]
+		public string? RuComponentType { get { return Type == null ? null : Type.RuComponentType; } }
 		[NotMapped]
-		//[JsonIgnore]
-		[IsEqualFilter(nameof(EnComponentType))]
-		public string? EnComponentType { get; set; }
+		[IsEqualFilter()]
+		public string? EnComponentType { get { return Type == null ? null : Type.EnComponentType; } }
 
 
 		[JsonIgnore]
@@ -46,7 +43,7 @@ namespace app.Db.ef
 
 		[JsonIgnore]
 		public int? TechnologyName_ID { get; set; }
-		[IsEqualFilter(nameof(ID))]
+		[IsEqualFilter()]
 		[Key]
 		public int ID { get; set; }
 		[JsonIgnore]
@@ -63,93 +60,68 @@ namespace app.Db.ef
 
 
 		[StringLength(450)]
-		[IsEqualFilter(nameof(ComponentName))]
+		[IsEqualFilter()]
 		public string ComponentName { get; set; }
 		[ChartUsage]
-		[IsMoreFilter(nameof(MinVoltage))]
+		[IsMoreFilter()]
 		public double MinVoltage { get; set; }
 		[ChartUsage]
-		[IsLessFilter(nameof(MaxVoltage))]
+		[IsLessFilter()]
 		public double MaxVoltage { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(Interfaces))]
+		[IsEqualFilter()]
 		public string? Interfaces { get; set; }
-	
+
 		[ChartUsage]
-		[IsEqualFilter(nameof(Frequency))]
+		[IsEqualFilter()]
 		public double? Frequency { get; set; }
 		[StringLength(450)]
 		[ChartUsage]
-		[IsEqualFilter(nameof(BitDepthValue))]
+		[IsEqualFilter()]
 		public string? BitDepthValue { get; set; }
 		[ChartUsage]
-		[IsEqualFilter(nameof(ConsumptionCurrent))]
+		[IsEqualFilter()]
 		public double? ConsumptionCurrent { get; set; }
 		[ChartUsage]
-		[IsMoreFilter(nameof(MinOperatingTemperature))]
+		[IsMoreFilter()]
 		public double MinOperatingTemperature { get; set; }
 		[ChartUsage]
-		[IsLessFilter(nameof(MaxOperatingTemperature))]
+		[IsLessFilter()]
 		public double MaxOperatingTemperature { get; set; }
 		[ChartUsage]
-		[IsEqualFilter(nameof(RadiationResistance))]
+		[IsEqualFilter()]
 		public double? RadiationResistance { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(RadiationResistanceI))]
+		[IsEqualFilter()]
 		public string? RadiationResistanceI { get; set; }
 		[StringLength(450)]
 		[ChartUsage]
-		[IsEqualFilter(nameof(MemoryFormat))]
+		[IsEqualFilter()]
 		public string? MemoryFormat { get; set; }
 		[ChartUsage]
-		[IsEqualFilter(nameof(SamplingTime))]
+		[IsEqualFilter()]
 		public double? SamplingTime { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(Qualication))]
+		[IsEqualFilter()]
 		public string? Qualication { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(Package))]
+		[IsEqualFilter()]
 		public string? Package { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(Remark1))]
+		[IsEqualFilter()]
 		public string? Remark1 { get; set; }
+		[JsonIgnore]
 		public DateTime? Insertion { get; set; }
+		public string? InsertionDate { get { return Insertion == null ? null : Insertion.Value.Date.ToString("yyyy-MM-dd"); } }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(SpecificationDoc))]
+		[IsEqualFilter()]
 		public string? SpecificationDoc { get; set; }
 		[NotMapped]
-		[IsEqualFilter(nameof(RuTechnologyName))]
-		public string? RuTechnologyName { get; set; }
+		[IsEqualFilter()]
+		public string? RuTechnologyName { get { return Technology == null ? null : Technology.RuTechnologyName; } }
 		[NotMapped]
-		[IsEqualFilter(nameof(EnTechnologyName))]
-		public string? EnTechnologyName { get; set; }
-
-		public Microchips() { }
-
-		public Microchips(Microchips m)
-		{
-			ID = m.ID;
-			DocID = m.DocID;
-
-
-			BitDepthValue = m.BitDepthValue;
-			ComponentName = m.ComponentName;
-			ConsumptionCurrent = m.ConsumptionCurrent;
-			Interfaces = m.Interfaces;
-			MinVoltage = m.MinVoltage;
-			MaxVoltage = m.MaxVoltage;
-			Frequency = m.Frequency;
-			MinOperatingTemperature = m.MinOperatingTemperature;
-			MaxOperatingTemperature = m.MaxOperatingTemperature;
-			RadiationResistance = m.RadiationResistance;
-			RadiationResistanceI = m.RadiationResistanceI;
-			MemoryFormat = m.MemoryFormat;
-			SamplingTime = m.SamplingTime;
-			Qualication = m.Qualication;
-			Remark1 = m.Remark1;
-			Insertion = m.Insertion;
-			Package = m.Package;
-			SpecificationDoc = m.SpecificationDoc;
+		[IsEqualFilter()]
+		public string? EnTechnologyName {  get { return Technology == null ? null : Technology.EnTechnologyName; }
 		}
 	}
 }

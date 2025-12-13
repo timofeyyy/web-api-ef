@@ -9,23 +9,21 @@ namespace app.Db.ef
 	public class Resistors : IComponentModel
 	{
 		[NotMapped]
-		[IsEqualFilter(nameof(RuComponentKind))]
-		public string? RuComponentKind { get; set; }
+		[IsEqualFilter()]
+		public string? RuComponentKind { get { return Kind == null ? null : Kind.RuComponentKind; } }
 		[NotMapped]
-		[IsEqualFilter(nameof(ManufacturerName))]
+		[IsEqualFilter()]
 		[ChartUsage]
-		public string? ManufacturerName { get; set; }
+		public string? ManufacturerName { get { return Manufacturer == null ? null : Manufacturer.ManufacturerName; } }
 		[NotMapped]
-		[IsEqualFilter(nameof(EnComponentKind))]
-		public string? EnComponentKind { get; set; }
+		[IsEqualFilter()]
+		public string? EnComponentKind { get { return Kind == null ? null : Kind.EnComponentKind; } }
 		[NotMapped]
-		//[JsonIgnore]
-		[IsEqualFilter(nameof(RuComponentType))]
-		public string? RuComponentType { get; set; }
+		[IsEqualFilter()]
+		public string? RuComponentType { get { return Type == null ? null : Type.RuComponentType; } }
 		[NotMapped]
-		//[JsonIgnore]
-		[IsEqualFilter(nameof(EnComponentType))]
-		public string? EnComponentType { get; set; }
+		[IsEqualFilter()]
+		public string? EnComponentType { get { return Type == null ? null : Type.EnComponentType; } }
 
 
 
@@ -37,7 +35,7 @@ namespace app.Db.ef
 		[JsonIgnore]
 		public Manufacturers Manufacturer { get; set; }
 
-		[IsEqualFilter(nameof(ID))]
+		[IsEqualFilter()]
 		[Key]
 		public int ID { get; set; }
 		[JsonIgnore]
@@ -51,74 +49,53 @@ namespace app.Db.ef
 
 
 
-		[IsEqualFilter(nameof(ComponentName))]
+		[IsEqualFilter()]
 		[StringLength(450)]
 		public string ComponentName { get; set; }
-		[IsEqualFilter(nameof(PowerRating))]
+		[IsEqualFilter()]
 		[ChartUsage]
 		public double? PowerRating { get; set; }
-		[IsMoreFilter(nameof(MinVoltage))]
+		[IsMoreFilter()]
 		public double? MinVoltage { get; set; }
-		[IsLessFilter(nameof(MaxVoltage))]
+		[IsLessFilter()]
 		public double? MaxVoltage { get; set; }
-		[IsMoreFilter(nameof(MinRatedResistance))]
+		[IsMoreFilter()]
 		[ChartUsage]
 		public double? MinRatedResistance { get; set; }
-		[IsLessFilter(nameof(MaxRatedResistance))]
+		[IsLessFilter()]
 		public double? MaxRatedResistance { get; set; }
-		[IsEqualFilter(nameof(ResistanceTolerance))]
+		[IsEqualFilter()]
 		public double? ResistanceTolerance { get; set; }
-		[IsMoreFilter(nameof(MinOperatingTemperature))]
+		[IsMoreFilter()]
 		[ChartUsage]
 		public double? MinOperatingTemperature { get; set; }
-		[IsLessFilter(nameof(MaxOperatingTemperature))]
+		[IsLessFilter()]
 		[ChartUsage]
 		public double? MaxOperatingTemperature { get; set; }
-		[IsEqualFilter(nameof(CurrentLimit))]
+		[IsEqualFilter()]
 		public double? CurrentLimit { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(QualicationSG))]
+		[IsEqualFilter()]
 		public string? QualicationSG { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(QualicationЕС))]
+		[IsEqualFilter()]
 		public string? QualicationЕС { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(Package))]
+		[IsEqualFilter()]
 		[ChartUsage]
 		public string? Package { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(Remark1))]
+		[IsEqualFilter()]
 		public string? Remark1 { get; set; }
 		[StringLength(450)]
 
-		[IsEqualFilter(nameof(Remark2))]
+		[IsEqualFilter()]
 		public string? Remark2 { get; set; }
+		[JsonIgnore]
 		public DateTime? Insertion { get; set; }
+		public string? InsertionDate { get { return Insertion == null ? null : Insertion.Value.Date.ToString("yyyy-MM-dd"); } }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(SpecificationDoc))]
+		[IsEqualFilter()]
 		public string? SpecificationDoc { get; set; }
-		public Resistors() { }
-		public Resistors(Resistors r)
-		{
-			ID = r.ID;
-			DocID = r.DocID;
-			PowerRating = r.PowerRating;
-			ComponentName = r.ComponentName;
-			MinVoltage = r.MinVoltage;
-			MaxVoltage = r.MaxVoltage;
-			MinRatedResistance = r.MinRatedResistance;
-			MaxRatedResistance = r.MaxRatedResistance;
-			ResistanceTolerance = r.ResistanceTolerance;
-			MinOperatingTemperature = r.MinOperatingTemperature;
-			MaxOperatingTemperature = r.MaxOperatingTemperature;
-			CurrentLimit = r.CurrentLimit;
-			QualicationSG = r.QualicationSG;
-			QualicationЕС = r.QualicationЕС;
-			Package = r.Package;
-			Remark1 = r.Remark1;
-			Remark2 = r.Remark2;
-			Insertion = r.Insertion;
-			SpecificationDoc = r.SpecificationDoc;
-		}
 	}
 }

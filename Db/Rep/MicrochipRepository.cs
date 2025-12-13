@@ -8,81 +8,29 @@ using System.Text.Json.Serialization;
 
 namespace app.Db.Rep
 {
-	public class MicrochipRepository : ComponentBase<Microchips>, IRepositoryBase<Microchips>
+	public class MicrochipRepository : IRepositoryBase<Microchips>
 	{
 		DataBase db;
 		public MicrochipRepository(DataBase context)
 		{
 			db = context;
 		}
-
 		public int GetCount()
 		{
 			return db.Microchips.Count();
 		}
-		public Task<List<Microchips>> SelectAsObj((Dictionary<string, object> pairs, List<int> ids) parameters = default)
+		public Task<List<Microchips>> SelectAll()
 		{
-			var query = db.Microchips.AsQueryable();
-			if (parameters.pairs != null)
-			{
-				query = FilterByParamValue(parameters.pairs, query);
-			}
-			if (parameters.ids != null)
-			{
-				query = FilterByIds(parameters.ids, query);
-			}
+			var query = db.Microchips
+			.Include(c => c.Kind)
+			.Include(c => c.Type)
+			.Include(c => c.Manufacturer)
+			.ThenInclude(c => c.Country)
+			.ThenInclude(c => c.Foreignness)
+			.AsQueryable();
 			var items = query
-							.Select(c => new Microchips(c)
-							{
-								RuComponentKind = c.Kind.RuComponentKind,
-								EnComponentKind = c.Kind.EnComponentKind,
-								RuComponentType = c.Type.RuComponentType,
-								EnComponentType = c.Type.EnComponentType,
-								ManufacturerName = c.Manufacturer.ManufacturerName,
-								EnTechnologyName = c.Technology.EnTechnologyName,
-								RuTechnologyName = c.Technology.RuTechnologyName
-							});
+							.Select(c => c);
 			return items.ToListAsync();
-		}
-		public async Task<List<Dictionary<string, object>>> SelectAsDict((Dictionary<string, object> pairs, List<int> ids) parameters = default)
-		{
-			var query = db.Microchips.AsQueryable();
-			if (parameters.pairs != null)
-			{
-				query = FilterByParamValue(parameters.pairs, query);
-			}
-			if (parameters.ids != null)
-			{
-				query = FilterByIds(parameters.ids, query);
-			}
-			var result = new List<Dictionary<string, object>>();
-			var props = typeof(Microchips).GetProperties()
-				.Where(p => !Attribute.IsDefined(p, typeof(NotMappedAttribute)))
-				.ToArray();
-
-			await foreach (var c in query.AsAsyncEnumerable())
-			{
-				var cap = new Microchips(c)
-				{
-					RuComponentKind = c.Kind.RuComponentKind,
-					EnComponentKind = c.Kind.EnComponentKind,
-					RuComponentType = c.Type.RuComponentType,
-					EnComponentType = c.Type.EnComponentType,
-					ManufacturerName = c.Manufacturer.ManufacturerName,
-					EnTechnologyName = c.Technology.EnTechnologyName,
-					RuTechnologyName = c.Technology.RuTechnologyName
-				};
-
-				var dictItem = new Dictionary<string, object>();
-				foreach (var prop in props)
-				{
-					dictItem[prop.Name] = prop.GetValue(cap);
-				}
-
-				result.Add(dictItem);
-			}
-
-			return result;
 		}
 	}
 }

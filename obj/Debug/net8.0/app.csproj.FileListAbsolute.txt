@@ -310,3 +310,4 @@ C:\work\web-api-ef\bin\Debug\net8.0\MigraDoc.Rendering.dll
 C:\work\web-api-ef\bin\Debug\net8.0\MigraDoc.RtfRendering.dll
 C:\work\web-api-ef\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\work\web-api-ef\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\work\web-api-ef\bin\Debug\net8.0\wwwroot\alias.json

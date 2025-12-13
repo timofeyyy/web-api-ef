@@ -18,12 +18,7 @@ namespace app.Db.Rep
 			return db.ComponentTypes.Count();
 		}
 
-		public async Task<List<Dictionary<string, object>>> SelectAsDict((Dictionary<string, object> pairs, List<int> ids) parameters = default)
-		{
-			throw new NotImplementedException();
-		}
-
-		public async Task<List<ComponentTypes>> SelectAsObj((Dictionary<string, object> pairs, List<int> ids) parameters = default)
+		public async Task<List<ComponentTypes>> SelectAll()
 		{
 			var items = db.ComponentTypes.Select(t => t);
 			return await items.ToListAsync();

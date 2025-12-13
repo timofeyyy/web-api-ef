@@ -19,6 +19,7 @@ namespace app.Services.Common.Ref.Models
 			{
 				_chartColumns = await GetAliasDictionary(_refPropsSelected.GetChartColumns);
 			}
+			Console.WriteLine($"_chartColumns {_chartColumns.Count}");
 			return _chartColumns;
 		}
 
@@ -36,11 +37,11 @@ namespace app.Services.Common.Ref.Models
 		{
 			var alias = await GetAlias();
 			Dictionary<string, List<AliasModel>> res = new();
-			res["microchip"] = func(alias, typeof(Microchips));
-			res["capacitor"] = func(alias, typeof(Capacitors));
-			res["diod"] = func(alias, typeof(Diods));
-			res["transistor"] = func(alias, typeof(Transistors));
-			res["resistor"] = func(alias, typeof(Resistors));
+			res["Microchip"] = func(alias, typeof(Microchips));
+			res["Capacitor"] = func(alias, typeof(Capacitors));
+			res["Diod"] = func(alias, typeof(Diods));
+			res["Transistor"] = func(alias, typeof(Transistors));
+			res["Resistor"] = func(alias, typeof(Resistors));
 			return res;
 		}
 

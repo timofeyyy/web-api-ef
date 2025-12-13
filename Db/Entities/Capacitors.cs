@@ -1,5 +1,6 @@
 ﻿using app.Db.utils;
 using app.Services.Common.attrs;
+using NuGet.Protocol;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
@@ -10,25 +11,21 @@ namespace app.Db.ef
 	{
 
 		[NotMapped]
-		[IsEqualFilter(nameof(RuComponentKind))]
-		public string? RuComponentKind { get; set; }
+		[IsEqualFilter()]
+		public string? RuComponentKind { get { return Kind == null ? null : Kind.RuComponentKind; } }
 		[NotMapped]
-		[IsEqualFilter(nameof(ManufacturerName))]
+		[IsEqualFilter()]
 		[ChartUsage]
-		public string? ManufacturerName { get; set; }
+		public string? ManufacturerName { get { return Manufacturer == null ? null : Manufacturer.ManufacturerName; } }
 		[NotMapped]
-		[IsEqualFilter(nameof(EnComponentKind))]
-		public string? EnComponentKind { get; set; }
+		[IsEqualFilter()]
+		public string? EnComponentKind { get { return Kind == null ? null : Kind.EnComponentKind; } }
 		[NotMapped]
-		//[JsonIgnore]
-		[IsEqualFilter(nameof(RuComponentType))]
-		public string? RuComponentType { get; set; }
+		[IsEqualFilter()]
+		public string? RuComponentType { get { return Type == null ? null : Type.RuComponentType; } }
 		[NotMapped]
-		//[JsonIgnore]
-		[IsEqualFilter(nameof(EnComponentType))]
-		public string? EnComponentType { get; set; }
-
-
+		[IsEqualFilter()]
+		public string? EnComponentType { get { return Type == null ? null : Type.EnComponentType; } }
 
 
 		[JsonIgnore]
@@ -38,7 +35,7 @@ namespace app.Db.ef
 		[JsonIgnore]
 		public Manufacturers Manufacturer { get; set; }
 
-		[IsEqualFilter(nameof(ID))]
+		[IsEqualFilter()]
 		[Key]
 		public int ID { get; set; }
 		[JsonIgnore]
@@ -51,75 +48,53 @@ namespace app.Db.ef
 		public int? ManufacturerName_ID { get; set; }
 
 
-		[IsEqualFilter(nameof(ComponentName))]
+		[IsEqualFilter()]
 		[StringLength(450)]
 		public string ComponentName { get; set; }
-		[IsEqualFilter(nameof(OutputType))]
+		[IsEqualFilter()]
 		[StringLength(450)]
 		public string? OutputType { get; set; }
-		[IsMoreFilter(nameof(MinVoltage))]
+		[IsMoreFilter()]
 		[ChartUsage]
 		public double? MinVoltage { get; set; }
-		[IsLessFilter(nameof(MaxVoltage))]
+		[IsLessFilter()]
 		[ChartUsage]
 		public double? MaxVoltage { get; set; }
-		[IsLessFilter(nameof(MaxCapacity))]
+		[IsLessFilter()]
 		[ChartUsage]
 		public double? MaxCapacity { get; set; }
-		[IsMoreFilter(nameof(MinCapacity))]
+		[IsMoreFilter()]
 		[ChartUsage]
 		public double? MinCapacity { get; set; }
-		[IsMoreFilter(nameof(MinOperatingTemperature))]
+		[IsMoreFilter()]
 		[ChartUsage]
 		public double? MinOperatingTemperature { get; set; }
-		[IsLessFilter(nameof(MaxOperatingTemperature))]
+		[IsLessFilter()]
 		[ChartUsage]
 		public double? MaxOperatingTemperature { get; set; }
-		[IsEqualFilter(nameof(AcceptableCapacityIncrease))]
+		[IsEqualFilter()]
 		[ChartUsage]
 		public double? AcceptableCapacityIncrease { get; set; }
-		[IsEqualFilter(nameof(AcceptableСapacityReduction))]
+		[IsEqualFilter()]
 		[ChartUsage]
 		public double? AcceptableСapacityReduction { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(QualicationSG))]
+		[IsEqualFilter()]
 		public string? QualicationSG { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(QualicationЕС))]
+		[IsEqualFilter()]
 		public string? QualicationЕС { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(Remark1))]
+		[IsEqualFilter()]
 		public string? Remark1 { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(Remark2))]
+		[IsEqualFilter()]
 		public string? Remark2 { get; set; }
+		[JsonIgnore]
 		public DateTime? Insertion { get; set; }
+		public string? InsertionDate { get { return Insertion == null ? null : Insertion.Value.Date.ToString("yyyy-MM-dd"); } }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(SpecificationDoc))]
+		[IsEqualFilter()]
 		public string? SpecificationDoc { get; set; }
-
-		public Capacitors() { }
-		public Capacitors(Capacitors c)
-		{
-			ID = c.ID;
-			DocID = c.DocID;
-
-			OutputType = c.OutputType;
-			ComponentName = c.ComponentName;
-			MinVoltage = c.MinVoltage;
-			MaxVoltage = c.MaxVoltage;
-			MaxCapacity = c.MaxCapacity;
-			MinCapacity = c.MinCapacity;
-			MinOperatingTemperature = c.MinOperatingTemperature;
-			MaxOperatingTemperature = c.MaxOperatingTemperature;
-			AcceptableCapacityIncrease = c.AcceptableCapacityIncrease;
-			AcceptableСapacityReduction = c.AcceptableСapacityReduction;
-			QualicationSG = c.QualicationSG;
-			QualicationЕС = c.QualicationЕС;
-			Remark1 = c.Remark1;
-			Remark2 = c.Remark2;
-			Insertion = c.Insertion;
-			SpecificationDoc = c.SpecificationDoc;
-		}
 	}
 }

@@ -2,54 +2,83 @@ using app.Db.ef;
 using app.Db.Uow;
 using app.Db.utils;
 using app.Services.Component;
+using app.Services.Component.component;
 using app.Services.Manufacturer;
 using app.Services.Manufacturer.production;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 
 
 namespace WebAPIApp.Controllers
 {
-    [ApiController]
-    [Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
-    public class ManufacturersController : ControllerBase
-    {
+	[ApiController]
+	[Route("api/[controller]")]
+	public class ManufacturersController : ControllerBase
+	{
 		readonly IManufacturerService _manufacturerService;
 		readonly IComponentService _componentService;
+		readonly IMemoryCache _cache;
 
-		public ManufacturersController(IManufacturerService manufacturerService, IComponentService componentService)
-        {
+
+		public ManufacturersController(IManufacturerService manufacturerService, IComponentService componentService, IMemoryCache cache)
+		{
 			_manufacturerService = manufacturerService;
 			_componentService = componentService;
+			_cache = cache;
 		}
 
 		[HttpGet("production")]
 		public async Task<ActionResult<Dictionary<string, Dictionary<string, int>>>> Get(
-			[FromQuery] string? ruComponentType,
-			[FromQuery] string? ruComponentKind,
-			[FromQuery] string? manufacturerName
-			)
+				[FromQuery] string? RuComponentType,
+				[FromQuery] string? RuComponentKind,
+				[FromQuery] string? ManufacturerName
+				)
 		{
-			Dictionary<string, object> parameters = new();
-			parameters["RuComponentType"] = ruComponentType;
-			parameters["RuComponentKind"] = ruComponentKind;
-			parameters["ManufacturerName"] = manufacturerName;
-			
-			List<IComponentModel> components = await _componentService.GetComponentsAsObjIEnum((pairs: parameters, ids: null));
-			return _manufacturerService.GetProdAsDict(components);
+			KeyValueObject dict = new();
+			dict["RuComponentType"] = RuComponentType;
+			dict["RuComponentKind"] = RuComponentKind;
+			dict["ManufacturerName"] = ManufacturerName;
+
+			_cache.TryGetValue("components/all", out DataSystemView all);
+			if (all == null)
+			{
+				all = await _componentService.SelectAll();
+				_cache.Set("components/all", all, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+
+			}
+			all = all.FilterByParamValue(dict);
+			return _manufacturerService.GetProdAsDict(all);
 		}
 
 		[HttpGet("production/classification")]
 		public async Task<ActionResult<ClassifiedManufacturersModel>> GetClassifiedManufacturer()
 		{
-			List<IComponentModel> components = await _componentService.GetComponentsAsObjIEnum();
-			var classification = await _manufacturerService.GetForeignList(components);
-			return classification;
+			_cache.TryGetValue("components/all", out DataSystemView all);
+			if (all == null)
+			{
+				all = await _componentService.SelectAll();
+				_cache.Set("components/all", all, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+
+			}
+			_cache.TryGetValue("manufacturers/all", out List<Manufacturers> manufacturers);
+			if (manufacturers == null)
+			{
+				manufacturers = await _manufacturerService.SelectAll();
+				_cache.Set("manufacturers/all", all, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+			}
+			return _manufacturerService.GetForeignList(all, manufacturers);
 		}
 
 		[HttpGet("all")]
 		public async Task<ActionResult<List<Manufacturers>>> GetAll()
 		{
-			return await _manufacturerService.GetAsObj();
+			_cache.TryGetValue("manufacturers/all", out List<Manufacturers> manufacturers);
+			if (manufacturers == null)
+			{
+				manufacturers = await _manufacturerService.SelectAll();
+				_cache.Set("manufacturers/all", manufacturers, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+			}
+			return manufacturers;
 		}
 	}
 }

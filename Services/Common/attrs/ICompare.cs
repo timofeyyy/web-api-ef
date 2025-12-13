@@ -2,6 +2,6 @@
 {
 	public interface ICompare
 	{
-		public bool Compare(object instance, object comparedVal);
+		public bool Compare(object value, object comparedVal);
 	}
 }

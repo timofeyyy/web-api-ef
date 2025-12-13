@@ -11,24 +11,24 @@ namespace app.Services.ComponentType
 		{
 			_uow = uow;
 		}
-		public Task<List<ComponentTypes>> GetNamesAsObj()
+		public Task<List<ComponentTypes>> SelectAll()
 		{
-			return _uow.ComponentTypeRepository.SelectAsObj();
+			return _uow.ComponentTypeRepository.SelectAll();
 		}
-		public async Task<bool> IsEnComponentTypeExists(string entype)
-		{
-			var ctList = await GetNamesAsObj();
-			return ctList.Exists(el => el.EnComponentType.ToLower() == entype.ToLower());
-		}
-		public async Task<ComponentTypes> GetByEn(string entype)
-		{
-			var ctList = await GetNamesAsObj();
-			return ctList.Find(el => el.EnComponentType.ToLower() == entype.ToLower());
-		}
-		public async Task<ComponentTypes> GetByRu(string rutype)
-		{
-			var ctList = await GetNamesAsObj();
-			return ctList.Find(el => el.RuComponentType.ToLower() == rutype.ToLower());
-		}
+		//public async Task<bool> IsEnComponentTypeExists(string entype)
+		//{
+		//	var ctList = await GetNamesAsObj();
+		//	return ctList.Exists(el => el.EnComponentType.ToLower() == entype.ToLower());
+		//}
+		//public async Task<ComponentTypes> GetByEn(string entype)
+		//{
+		//	var ctList = await GetNamesAsObj();
+		//	return ctList.Find(el => el.EnComponentType.ToLower() == entype.ToLower());
+		//}
+		//public async Task<ComponentTypes> GetByRu(string rutype)
+		//{
+		//	var ctList = await GetNamesAsObj();
+		//	return ctList.Find(el => el.RuComponentType.ToLower() == rutype.ToLower());
+		//}
 	}
 }

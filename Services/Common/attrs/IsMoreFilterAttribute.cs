@@ -4,17 +4,17 @@ namespace app.Services.Common.attrs
 {
 	public class IsMoreFilterAttribute : Attribute, ICompare
 	{
-		readonly string _column;
-		public IsMoreFilterAttribute(string column) {
-			_column = column;
-		}
-		public bool Compare(object instance, object comparedValue)
+		//readonly string _column;
+		//public IsMoreFilterAttribute(string column) {
+		//	_column = column;
+		//}
+		public bool Compare(object value, object comparedValue)
 		{
 			try
 			{
-				var type = instance.GetType();
-				var prop = type.GetProperty(_column);
-				var value = prop.GetValue(instance);
+				//var type = instance.GetType();
+				//var prop = type.GetProperty(_column);
+				//var value = prop.GetValue(instance);
 				if (value == null)
 				{
 					return (string)comparedValue == "null" || comparedValue == null;

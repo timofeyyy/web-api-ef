@@ -4,10 +4,10 @@ namespace app.Services.ComponentType
 {
 	public interface IComponentTypeService
 	{
-		public Task<List<ComponentTypes>> GetNamesAsObj();
-		public Task<bool> IsEnComponentTypeExists(string entype);
-		public Task<ComponentTypes> GetByEn(string entype);
-		public Task<ComponentTypes> GetByRu(string rutype);
+		public Task<List<ComponentTypes>> SelectAll();
+		//public Task<bool> IsEnComponentTypeExists(string entype);
+		//public Task<ComponentTypes> GetByEn(string entype);
+		//public Task<ComponentTypes> GetByRu(string rutype);
 	}
 }
 

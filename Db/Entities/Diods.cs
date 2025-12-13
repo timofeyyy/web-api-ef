@@ -9,25 +9,23 @@ namespace app.Db.ef
 	public class Diods : IComponentModel
 	{
 		[NotMapped]
-		[IsEqualFilter(nameof(RuComponentKind))]
-		public string? RuComponentKind { get; set; }
+		[IsEqualFilter()]
+		public string? RuComponentKind { get { return Kind == null ? null : Kind.RuComponentKind; } }
 		[NotMapped]
-		[IsEqualFilter(nameof(ManufacturerName))]
+		[IsEqualFilter()]
 		[ChartUsage]
-		public string? ManufacturerName { get; set; }
+		public string? ManufacturerName { get { return Manufacturer == null ? null : Manufacturer.ManufacturerName; } }
 		[NotMapped]
-		[IsEqualFilter(nameof(EnComponentKind))]
-		public string? EnComponentKind { get; set; }
+		[IsEqualFilter()]
+		public string? EnComponentKind { get { return Kind == null ? null : Kind.EnComponentKind; } }
 		[NotMapped]
-		//[JsonIgnore]
-		[IsEqualFilter(nameof(RuComponentType))]
-		public string? RuComponentType { get; set; }
+		[IsEqualFilter()]
+		public string? RuComponentType { get { return Type == null ? null : Type.RuComponentType; } }
 		[NotMapped]
-		//[JsonIgnore]
-		[IsEqualFilter(nameof(EnComponentType))]
-		public string? EnComponentType { get; set; }
+		[IsEqualFilter()]
+		public string? EnComponentType { get { return Type == null ? null : Type.EnComponentType; } }
 
-		[IsEqualFilter(nameof(ID))]
+		[IsEqualFilter()]
 		[Key]
 		public int ID { get; set; }
 		[JsonIgnore]
@@ -50,72 +48,51 @@ namespace app.Db.ef
 
 
 
-		[IsEqualFilter(nameof(ComponentName))]
+		[IsEqualFilter()]
 		[StringLength(450)]
 		public string ComponentName { get; set; }
-		[IsLessFilter(nameof(MaxPermissibleDCVoltage))]
+		[IsLessFilter()]
 		[ChartUsage]
 		public double? MaxPermissibleDCVoltage { get; set; }
-		[IsMoreFilter(nameof(MinOperatingTemperature))]
+		[IsMoreFilter()]
 		[ChartUsage]
 		public double? MinOperatingTemperature { get; set; }
-		[IsLessFilter(nameof(MaxOperatingTemperature))]
+		[IsLessFilter()]
 		[ChartUsage]
 		public double? MaxOperatingTemperature { get; set; }
-		[IsLessFilter(nameof(MaxPermissibleAverageDirectCurrent))]
+		[IsLessFilter()]
 		[ChartUsage]
 		public double? MaxPermissibleAverageDirectCurrent { get; set; }
-		[IsLessFilter(nameof(MaxiPermissibleDirectCurrent))]
+		[IsLessFilter()]
 		[ChartUsage]
 		public double? MaxiPermissibleDirectCurrent { get; set; }
-		[IsEqualFilter(nameof(RadiationResistance))]
+		[IsEqualFilter()]
 		[ChartUsage]
 		public double? RadiationResistance { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(RadiationResistanceI))]
+		[IsEqualFilter()]
 		public string? RadiationResistanceI { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(QualicationSG))]
+		[IsEqualFilter()]
 		public string? QualicationSG { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(QualicationЕС))]
+		[IsEqualFilter()]
 		public string? QualicationЕС { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(Package))]
+		[IsEqualFilter()]
 		[ChartUsage]
 		public string? Package { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(Remark1))]
+		[IsEqualFilter()]
 		public string? Remark1 { get; set; }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(Remark2))]
+		[IsEqualFilter()]
 		public string? Remark2 { get; set; }
+		[JsonIgnore]
 		public DateTime? Insertion { get; set; }
+		public string? InsertionDate { get { return Insertion == null ? null : Insertion.Value.Date.ToString("yyyy-MM-dd"); } }
 		[StringLength(450)]
-		[IsEqualFilter(nameof(SpecificationDoc))]
+		[IsEqualFilter()]
 		public string? SpecificationDoc { get; set; }
-		public Diods() { }
-		public Diods(Diods d)
-		{
-			ID = d.ID;
-			DocID = d.DocID;
-
-
-			MaxPermissibleDCVoltage = d.MaxPermissibleDCVoltage;
-			ComponentName = d.ComponentName;
-			MinOperatingTemperature = d.MinOperatingTemperature;
-			MaxOperatingTemperature = d.MaxOperatingTemperature;
-			MaxPermissibleAverageDirectCurrent = d.MaxPermissibleAverageDirectCurrent;
-			MaxiPermissibleDirectCurrent = d.MaxiPermissibleDirectCurrent;
-			RadiationResistance = d.RadiationResistance;
-			RadiationResistanceI = d.RadiationResistanceI;
-			QualicationSG = d.QualicationSG;
-			QualicationЕС = d.QualicationЕС;
-			Package = d.Package;
-			Remark1 = d.Remark1;
-			Remark2 = d.Remark2;
-			Insertion = d.Insertion;
-			SpecificationDoc = d.SpecificationDoc;
-		}
 	}
 }

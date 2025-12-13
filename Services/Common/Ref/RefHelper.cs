@@ -15,26 +15,37 @@ namespace app.Services.Common.Ref
 		public async Task<List<AliasModel>> GetAllMapedColumns(string entype)
 		{
 			Dictionary<string, List<AliasModel>> tasks = await _refDataModel.GetAllMapedColumns();
-			if (tasks.ContainsKey(entype))
+			string key = null;
+			foreach (var task in tasks)
 			{
-				return tasks[entype];
+				if (task.Key.ToLower() == entype.ToLower()) { 
+					key = task.Key;
+				}
 			}
-			return null;
+			if(key == null)
+			{
+				return null;
+			}
+			return tasks[key];
 		}
 
-		public Task<List<AliasModel>> GetAllMapedCustomColumns(string entype)
-		{
-			throw new NotImplementedException();
-		}
 
 		public async Task<List<AliasModel>> GetChartColumns(string entype)
 		{
 			Dictionary<string, List<AliasModel>> tasks = await _refDataModel.GetChartColumns();
-			if (tasks.ContainsKey(entype))
+			string key = null;
+			foreach (var task in tasks)
 			{
-				return tasks[entype];
+				if (task.Key.ToLower() == entype.ToLower())
+				{
+					key = task.Key;
+				}
 			}
-			return null;
+			if (key == null)
+			{
+				return null;
+			}
+			return tasks[key];
 		}
 
 		//public async Task<bool> IsEnComponentTypeExists(string entype)
@@ -45,7 +56,18 @@ namespace app.Services.Common.Ref
 		public async Task<bool> IsParameterExists(string entype, string parameter)
 		{
 			var amList = await _refDataModel.GetAllMapedColumns();
-			return amList[entype].Exists(el => el.EnVal.ToLower() == parameter.ToLower());
+			string key = null;
+			foreach (var item in amList)
+			{
+				if(item.Key.ToLower() == entype.ToLower())
+				{
+					key = item.Key;
+				}
+			}
+			if (key == null) {
+				return false;
+			}
+			return amList[key].Exists(el => el.EnVal.ToLower() == parameter.ToLower());
 		}
 
 		public PropertyInfo[] GetProps(Type t, List<(Type t, bool shoudHave)> exceptionsAttr = null)

@@ -9,6 +9,10 @@ using app.Services.ComponentType;
 using app.Services.Manufacturer;
 using app.Services.Manufacturer.production;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
+using Microsoft.CodeAnalysis;
+using Microsoft.Extensions.Caching.Memory;
+using Mono.TextTemplating;
 using System.Text.Json;
 
 
@@ -23,53 +27,91 @@ namespace WebAPIApp.Controllers
 		readonly IRefHelper _refHelperService;
 		readonly IComponentTypeService _componentTypeService;
 		readonly IManufacturerService _manufacturerService;
-		public ComponentsController(IComponentService componentService, IRefHelper refHelperService, IComponentTypeService componentTypeService, IManufacturerService manufacturerService)
+		readonly IMemoryCache _cache;
+
+		public ComponentsController(IComponentService componentService, IRefHelper refHelperService, IComponentTypeService componentTypeService, IManufacturerService manufacturerService, IMemoryCache cache)
 		{
 			_componentService = componentService;
 			_refHelperService = refHelperService;
 			_componentTypeService = componentTypeService;
 			_manufacturerService = manufacturerService;
+			_cache = cache;
 		}
 		[HttpGet("statistic")]
-		public async Task<ActionResult<Dictionary<string, List<ManufacturerProductionModel>>>> GetManufacturerNameStatistic([FromQuery] string? ruComponentType)
+		public async Task<ActionResult<Dictionary<string, List<ManufacturerProductionModel>>>> GetManufacturerNameStatistic(
+			[FromQuery] string? RuComponentType,
+			[FromQuery] string? EnComponentType
+			)
 		{
-
-			Dictionary<string, object> parameters = new();
-			parameters["RuComponentType"] = ruComponentType;
-			List<IComponentModel> components = await _componentService.GetComponentsAsObjIEnum((pairs: parameters, ids: null));
-			var dict = _manufacturerService.GetStatistic(components, _componentService.ComponentDataModel.GetTotalsDictionary());
-			return dict;
+			KeyValueObject parameters = new();
+			parameters["RuComponentType"] = RuComponentType;
+			parameters["EnComponentType"] = EnComponentType;
+			_cache.TryGetValue("components/all", out DataSystemView all);
+			if (all == null)
+			{
+				all = await _componentService.SelectAll();
+				_cache.Set("components/all", all, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+			}
+			all = all.FilterByParamValue(parameters);
+			return _manufacturerService.GetStatistic(all);
 		}
 
 		[HttpGet("names")]
-		public async Task<ActionResult<IEnumerable<ComponentTypes>>> GetNames()
+		public async Task<ActionResult<ComponentList>> GetNames()
 		{
-			return await _componentTypeService.GetNamesAsObj();
+			_cache.TryGetValue("components/names", out List<ComponentTypes> names);
+			if (names == null)
+			{
+				names = await _componentTypeService.SelectAll();
+				_cache.Set("components/names", names, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+			}
+			return names.ToDictionary();
 		}
 
+
 		[HttpGet("all")]
-		public async Task<ActionResult<ComponentAllModel>> GetComponents(
-			[FromQuery] string? ruComponentType,
-			[FromQuery] string? ruComponentKind,
-			[FromQuery] string? enComponentType,
-			[FromQuery] string? enComponentKind,
-			[FromQuery] string? manufacturerName
+		public async Task<ActionResult<DataClientView>> GetComponents(
+			[FromQuery] string? RuComponentType,
+			[FromQuery] string? RuComponentKind,
+			[FromQuery] string? EnComponentType,
+			[FromQuery] string? EnComponentKind,
+			[FromQuery] string? ManufacturerName
 			)
 		{
-			Dictionary<string, object> dict = new();
-			dict["RuComponentType"] = ruComponentType;
-			dict["RuComponentKind"] = ruComponentKind;
-			dict["EnComponentType"] = enComponentType;
-			dict["EnComponentKind"] = enComponentKind;
-			dict["ManufacturerName"] = manufacturerName;
-			return await _componentService.GetComponentsAsObj((pairs: dict, ids: null));
+			KeyValueObject dict = new();
+			dict["RuComponentType"] = RuComponentType;
+			dict["RuComponentKind"] = RuComponentKind;
+			dict["EnComponentType"] = EnComponentType;
+			dict["EnComponentKind"] = EnComponentKind;
+			dict["ManufacturerName"] = ManufacturerName;
+			_cache.TryGetValue("components/all", out DataSystemView all);
+			if (all == null)
+			{
+				all = await _componentService.SelectAll();
+				_cache.Set("components/all", all, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+			}
+			return all.FilterByParamValue(dict).RemoveMetadata();
 		}
+
+		[HttpGet("dates")]
+		public async Task<ActionResult<SelectionView>> GetLatestComponents()
+		{
+			_cache.TryGetValue("components/all", out DataSystemView all);
+			if (all == null)
+			{
+				all = await _componentService.SelectAll();
+				_cache.Set("components/all", all, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+			}
+			return all.SelectAsDates();
+		}
+
 		[HttpGet("{entype}/columns/chart")]
 		public async Task<ActionResult<IEnumerable<AliasModel>>> GetChartColumns(
 			string entype
 			)
 		{
 			entype = entype.ToLower();
+
 			var items = await _refHelperService.GetChartColumns(entype);
 			if (items == null)
 			{
@@ -113,32 +155,38 @@ namespace WebAPIApp.Controllers
 			return Content(json, "application/json");
 		}
 		[HttpGet("{entype}/{id}")]
-		public async Task<ActionResult<Dictionary<string, object>>> GetParamStatistic(
+		public async Task<ActionResult<KeyValueObject>> GetComponentById(
 				string entype,
 				int id
 			)
 		{
 			entype = entype.ToLower();
-			var isEntypeExists = await _componentTypeService.IsEnComponentTypeExists(entype);
+			_cache.TryGetValue("components/names", out List<ComponentTypes> names);
+			if (names == null)
+			{
+				names = await _componentTypeService.SelectAll();
+				_cache.Set("components/names", names, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+			}
+			var isEntypeExists = names.ExistEnType(entype);
 			if (!isEntypeExists)
 			{
 				return BadRequest();
 			}
-			Dictionary<string, string> parameters = new();
-			parameters["Id"] = id.ToString();
-			List<IComponentModel> components = await _componentService.GetComponentsByEnType(entype);
-			var prComponents = await _componentService.GetPriorityComponents(components, entype, parameters);
-			var dict = prComponents[entype.ToLower()];
-			if(dict.Count == 0)
+			KeyValueObject parameters = new();
+			parameters["ID"] = id;
+
+			_cache.TryGetValue("components/all", out DataSystemView all);
+			if (all == null)
+			{
+				all = await _componentService.SelectAll();
+				_cache.Set("components/all", all, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+			}
+			var components = all.FilterByParamValue(parameters).GetComponentsByEnType(entype);
+			if (components.Components.Count == 0)
 			{
 				return BadRequest();
 			}
-			var items = dict["Id"];
-			if (items.Count == 0)
-			{
-				return BadRequest();
-			}
-			return items[0];
+			return components.Components[0];
 		}
 		[HttpGet("{entype}/{parameter}/statistic")]
 		public async Task<ActionResult<Dictionary<string, List<ParamProductionModel>>>> GetParamStatistic(
@@ -147,34 +195,57 @@ namespace WebAPIApp.Controllers
 			)
 		{
 			entype = entype.ToLower();
-			var isEntypeExists = await _componentTypeService.IsEnComponentTypeExists(entype);
+			_cache.TryGetValue("components/names", out List<ComponentTypes> names);
+			if (names == null)
+			{
+				names = await _componentTypeService.SelectAll();
+				_cache.Set("components/names", names, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+			}
+			var isEntypeExists = names.ExistEnType(entype);
 			if (!isEntypeExists)
 			{
 				return BadRequest();
 			}
+
 			var IsParameterExists = await _refHelperService.IsParameterExists(entype, parameter);
 			if (!IsParameterExists)
 			{
 				return BadRequest();
 			}
 
-			List<IComponentModel> components = await _componentService.GetComponentsByEnType(entype);
-			if (components == null || components.Count() == 0)
+
+			_cache.TryGetValue("components/all", out DataSystemView all);
+			if (all == null)
+			{
+				all = await _componentService.SelectAll();
+				_cache.Set("components/all", all, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+			}
+
+
+			ComponentSection components = all.GetComponentsByEnType(entype);
+			if (components == null || components.Components.Count() == 0)
 			{
 				return BadRequest();
 			}
-			var statistic = _componentService.GetParamStat(components, parameter, entype);
+			var statistic = _componentService.GetParamStat(components.Components, parameter);
 			return statistic;
 		}
 
 		[HttpGet("{entype}/priorities")]
-		public async Task<ActionResult<Dictionary<string, Dictionary<string, List<Dictionary<string, object>>>>>> GetComponentsByProperties(
+		public async Task<ActionResult<DataClientView>> GetComponentsByProperties(
 				string entype,
 				[FromQuery] Dictionary<string, string> parameters
 			)
 		{
 			entype = entype.ToLower();
-			var isEntypeExists = await _componentTypeService.IsEnComponentTypeExists(entype);
+			_cache.TryGetValue("components/names", out List<ComponentTypes> names);
+			if (names == null)
+			{
+				names = await _componentTypeService.SelectAll();
+				_cache.Set("components/names", names, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+			}
+
+			var isEntypeExists = names.ExistEnType(entype);
 			if (!isEntypeExists)
 			{
 				return BadRequest();
@@ -187,11 +258,14 @@ namespace WebAPIApp.Controllers
 					return BadRequest();
 				}
 			}
-			List<IComponentModel> components = await _componentService.GetComponentsByEnType(entype);
+			_cache.TryGetValue("components/all", out DataSystemView all);
+			if (all == null)
+			{
+				all = await _componentService.SelectAll();
+				_cache.Set("components/all", all, new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromHours(1)));
+			}
 
-			var prComponents = await _componentService.GetPriorityComponents(components, entype, parameters);
-
-			return prComponents;
+			return all.GetComponentsByEnType(entype).GetStepSelection(parameters);
 		}
 	}
 }

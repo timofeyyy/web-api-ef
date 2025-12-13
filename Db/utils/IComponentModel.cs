@@ -9,10 +9,10 @@ namespace app.Db.utils
 		public ComponentTypes Type { get; set; }
 		public ComponentKinds Kind { get; set; }
 		public Manufacturers Manufacturer { get; set; }
-		public string? RuComponentKind { get; set; }
-		public string? ManufacturerName { get; set; }
-		public string? EnComponentKind { get; set; }
-		public string? RuComponentType { get; set; }
-		public string? EnComponentType { get; set; }
+		public string? RuComponentKind { get; }
+		public string? ManufacturerName { get; }
+		public string? EnComponentKind { get; }
+		public string? RuComponentType { get; }
+		public string? EnComponentType { get; }
 	}
 }
